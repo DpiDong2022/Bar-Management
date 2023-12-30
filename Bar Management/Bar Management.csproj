@@ -299,13 +299,13 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231229170420_initial.cs" />
-    <Compile Include="Migrations\20231229170420_initial.designer.cs">
-      <DependentUpon>20231229170420_initial.cs</DependentUpon>
+    <Compile Include="Migrations\20231230051212_initial.cs" />
+    <Compile Include="Migrations\20231230051212_initial.designer.cs">
+      <DependentUpon>20231230051212_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231229170855_fff.cs" />
-    <Compile Include="Migrations\20231229170855_fff.designer.cs">
-      <DependentUpon>20231229170855_fff.cs</DependentUpon>
+    <Compile Include="Migrations\20231230051858_test.cs" />
+    <Compile Include="Migrations\20231230051858_test.designer.cs">
+      <DependentUpon>20231230051858_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bar_Management.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231229170420_initial")]
-    partial class initial
+    [Migration("20231230051858_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -436,6 +436,9 @@ namespace Bar_Management.Migrations
                     b.Property<int>("NguyenLieuId")
                         .HasColumnType("int");
 
+                    b.Property<int>("NhaCungCapId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SoLuong")
                         .HasColumnType("int");
 
@@ -445,6 +448,8 @@ namespace Bar_Management.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NguyenLieuId");
+
+                    b.HasIndex("NhaCungCapId");
 
                     b.HasIndex("TrangThaiId");
 
@@ -579,6 +584,12 @@ namespace Bar_Management.Migrations
                     b.HasOne("Bar_Management.Models.NguyenLieu", "NguyenLieu")
                         .WithMany()
                         .HasForeignKey("NguyenLieuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bar_Management.Models.NhaCungCap", "NhaCungCap")
+                        .WithMany()
+                        .HasForeignKey("NhaCungCapId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

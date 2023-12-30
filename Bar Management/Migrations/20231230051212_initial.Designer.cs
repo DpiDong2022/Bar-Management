@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bar_Management.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231229170855_fff")]
-    partial class fff
+    [Migration("20231230051212_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
