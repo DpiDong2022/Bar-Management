@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,8 +95,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -250,14 +250,12 @@
             // LoaiMonAnComboBox
             // 
             this.LoaiMonAnComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.loaiMonAnsBindingSource, "Id", true));
-            this.LoaiMonAnComboBox.DataSource = this.loaiMonAnsBindingSource;
-            this.LoaiMonAnComboBox.DisplayMember = "TenLoai";
             this.LoaiMonAnComboBox.FormattingEnabled = true;
             this.LoaiMonAnComboBox.Location = new System.Drawing.Point(435, 179);
             this.LoaiMonAnComboBox.Name = "LoaiMonAnComboBox";
             this.LoaiMonAnComboBox.Size = new System.Drawing.Size(134, 24);
             this.LoaiMonAnComboBox.TabIndex = 23;
-            this.LoaiMonAnComboBox.ValueMember = "Id";
+            this.LoaiMonAnComboBox.SelectedIndexChanged += new System.EventHandler(this.LoaiMonAnComboBox_SelectedIndexChanged);
             // 
             // loaiMonAnsBindingSource
             // 

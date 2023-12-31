@@ -5,6 +5,7 @@ using Bar_Management.DTO;
 using Bar_Management.Models;
 using Bar_Management.Tool;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,6 @@ namespace Bar_Management.FoodForm {
     public partial class Food: Form {
         private readonly MonAnLogic _logic;
         private readonly LoaiMonAnLogic _loaiMonAnLogic;
-        private readonly GenericRepository<LoaiMonAn> _repoLoaiMon;
         private BindingList<MonAnDto> _table;
         private readonly IMapper _mapper;
         private string _mode;
@@ -29,6 +29,9 @@ namespace Bar_Management.FoodForm {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             _loaiMonAnLogic = new LoaiMonAnLogic();
             LoadTable();
+            LoaiMonAnComboBox.ValueMember = "id";
+            LoaiMonAnComboBox.DisplayMember = "tenLoai";
+            LoaiMonAnComboBox.DataSource = new BindingList<LoaiMonAn>(_loaiMonAnLogic.GetAll().ToList());
         }
 
         private void LoadTable() {
@@ -102,22 +105,23 @@ namespace Bar_Management.FoodForm {
             LoaiMonAnComboBox.SelectedIndex = 0;
             TenMonAnbox.Focus();
             _mode = "them";
+            
         }
 
         private void LuuBtn_Click(object sender, EventArgs e) {
             string tenMonAn = TenMonAnbox.Text.Trim();
             string gia = GiaMonAnTextboxs.Text.Trim();
             string moTa = motaText.Text.Trim();
-            int loaiId = (int)(LoaiMonAnComboBox.SelectedValue);
+            int tenLoaiMonAnId = (dataGridView1.SelectedRows[0].DataBoundItem as MonAnDto).LoaiMonAn.Id;
             // validate
-            bool isValid = Validate(tenMonAn, gia,moTa, loaiId);
+            bool isValid = Validate(tenMonAn, gia,moTa, tenLoaiMonAnId);
             if (!isValid) return;
-
+           
             MonAn monAn = new MonAn(){
                 TenMon = tenMonAn,
                 Gia = decimal.Parse(gia),
                 MoTa = moTa,
-                LoaiMonAnId = (int)(LoaiMonAnComboBox.SelectedValue),
+                LoaiMonAnId = tenLoaiMonAnId,
                 IsAvailable = 1
             };
 
@@ -131,6 +135,10 @@ namespace Bar_Management.FoodForm {
                 LoadTable();
             } else if (_mode == "sua") {
                 update(monAn, monAnDto);
+                /*int index = dataGridView1.SelectedRows[0].Index;
+                int id = (int)(dataGridView1.Rows[index].Cells[0].Value);
+                monAn.Id = id;*/
+                
                 errorLuu.Clear();
             } else {
                 errorLuu.SetError(LuuBtn, "Hãy chọn chức năng Thêm hoặc Sửa");
@@ -150,8 +158,9 @@ namespace Bar_Management.FoodForm {
                 monAnDto.Id = id;
 
                 if (_logic.Update(monAn)) {
-                    _table.RemoveAt(index);
-                    _table.Insert(index, monAnDto);
+                    _table.ResetItem(index);
+                   /* _table.RemoveAt(index);
+                    _table.Insert(index, monAnDto);*/
                 }
             }
         }
@@ -167,7 +176,6 @@ namespace Bar_Management.FoodForm {
 
         private void Food_MouseClick(object sender, MouseEventArgs e) {
         }
-
         private void XoaBtn_Click(object sender, EventArgs e) {
             var selectedRows = dataGridView1.SelectedRows;
             if (selectedRows.Count == 0) {
@@ -182,15 +190,31 @@ namespace Bar_Management.FoodForm {
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e) {
+            // kiểm tra hàng được chọn là rỗng
             var selectedRows = dataGridView1.SelectedRows;
             if (selectedRows.Count != 0) {
+                // lấy ra trực tiếp đối tượng hàng từ DataGridView, không cần gọi thuộc tính cell[0], cell[1], cell[2],... để lấy giá trị từng ô;
+                MonAnDto monAnDto = selectedRows[0].DataBoundItem as MonAnDto;
+
                 errorXoa.Clear();
-                var selectedRow = selectedRows[0];
-                TenMonAnbox.Text = selectedRow.Cells[1].Value.ToString().Trim();
-                GiaMonAnTextboxs.Text = selectedRow.Cells[2].Value.ToString().Trim();
-                motaText.Text = selectedRow.Cells[4].Value.ToString().Trim();
+                TenMonAnbox.Text = monAnDto.TenMon;
+                motaText.Text = monAnDto.MoTa;
+                GiaMonAnTextboxs.Text = monAnDto.Gia;
+
+                int id = monAnDto.Id;
+
+                foreach (var item in LoaiMonAnComboBox.Items)
+                {
+                    if (((LoaiMonAn)item).Id == id) {
+                        LoaiMonAnComboBox.SelectedIndex = LoaiMonAnComboBox.Items.IndexOf(item);
+                        break;
+                    }
+                }
+                //LoaiMonAnComboBox.SelectedItem = (LoaiMonAn)(selectedRow.Cells[5].Value);
                 _mode = "sua";
-                Validate(TenMonAnbox.Text, GiaMonAnTextboxs.Text, motaText.Text, (int)(LoaiMonAnComboBox.SelectedValue));
+                var d = LoaiMonAnComboBox.SelectedItem;
+                var dd = LoaiMonAnComboBox.SelectedValue;
+                //Validate(TenMonAnbox.Text, GiaMonAnTextboxs.Text, motaText.Text, int.Parse(LoaiMonAnComboBox.SelectedValue.ToString()));
             }
         }
 
@@ -200,6 +224,10 @@ namespace Bar_Management.FoodForm {
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
+
+        private void LoaiMonAnComboBox_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
     }

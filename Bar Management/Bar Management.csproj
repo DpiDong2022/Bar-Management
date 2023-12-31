@@ -619,7 +619,9 @@
   <ItemGroup>
     <None Include="Resources\warehouse.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="QuanBar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
