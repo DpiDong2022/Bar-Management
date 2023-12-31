@@ -36,6 +36,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -149,6 +158,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -163,6 +174,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ban.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="BusinessLogic\BanLogic.cs" />
     <Compile Include="BusinessLogic\ChiTieHoaDonLogic.cs" />
     <Compile Include="BusinessLogic\CongThucLogic.cs" />
@@ -180,11 +194,25 @@
     <Compile Include="BusinessLogic\TonKhoLogic.cs" />
     <Compile Include="BusinessLogic\TrangThaiBanLogic.cs" />
     <Compile Include="BusinessLogic\TrangThaiTonKhoLogic.cs" />
+    <Compile Include="BusinessLogic\ValidateTool.cs" />
+    <Compile Include="ChiTietHoaDon.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CongThuc.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AppDbContext.cs" />
     <Compile Include="DAO\AppDbContextSingleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
+    <Compile Include="DatBanTruoc.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\MonAnDto.cs" />
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +255,12 @@
     <Compile Include="Interfaces\FoodForm\FoodAdd.Designer.cs">
       <DependentUpon>FoodAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\FoodForm\FoodF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FoodForm\FoodF.Designer.cs">
+      <DependentUpon>FoodF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\HomeForm\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +290,9 @@
     </Compile>
     <Compile Include="Interfaces\WarehouseForm\Warehouse.Designer.cs">
       <DependentUpon>Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiMonAn.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -299,13 +336,9 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231230051212_initial.cs" />
-    <Compile Include="Migrations\20231230051212_initial.designer.cs">
-      <DependentUpon>20231230051212_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231230051858_test.cs" />
-    <Compile Include="Migrations\20231230051858_test.designer.cs">
-      <DependentUpon>20231230051858_test.cs</DependentUpon>
+    <Compile Include="Migrations\20231230053020_initial.cs" />
+    <Compile Include="Migrations\20231230053020_initial.designer.cs">
+      <DependentUpon>20231230053020_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
@@ -325,6 +358,18 @@
     <Compile Include="Models\TonKho.cs" />
     <Compile Include="Models\TrangThaiBan.cs" />
     <Compile Include="Models\TrangThaiTonKho.cs" />
+    <Compile Include="MonAn.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NguyenLieu.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\RevenueForm\Revenue.cs">
@@ -338,6 +383,48 @@
     </Compile>
     <Compile Include="Interfaces\TableForm\Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanBar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanBar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanBar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanBar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBarHaiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SuKien.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TonKho.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\AutoMapperProfile.cs" />
+    <Compile Include="TrangThaiBan.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrangThaiTonKho.cs">
+      <DependentUpon>QuanBar.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Interfaces\AccountForm\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
@@ -359,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FoodForm\FoodAdd.resx">
       <DependentUpon>FoodAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FoodForm\FoodF.resx">
+      <DependentUpon>FoodF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\HomeForm\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
@@ -413,6 +503,7 @@
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Bar_Management.DTO.MonAnDto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -427,6 +518,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="QuanBar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanBar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanBar.edmx.diagram">
+      <DependentUpon>QuanBar.edmx</DependentUpon>
+    </None>
+    <None Include="QuanLyBarHaiDataSet.xsc">
+      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBarHaiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBarHaiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBarHaiDataSet.xss">
+      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\working.png" />
   </ItemGroup>
   <ItemGroup>
@@ -510,8 +619,24 @@
   <ItemGroup>
     <None Include="Resources\warehouse.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Tool\" />
+    <Content Include="QuanBar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuanBar.Context.cs</LastGenOutput>
+      <DependentUpon>QuanBar.edmx</DependentUpon>
+    </Content>
+    <Content Include="QuanBar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanBar.edmx</DependentUpon>
+      <LastGenOutput>QuanBar.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\excelicon .png" />
+    <None Include="Resources\excelIcon.png" />
+    <None Include="Resources\xlsx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

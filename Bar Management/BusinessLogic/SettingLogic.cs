@@ -34,5 +34,6 @@ namespace Bar_Management.BusinessLogic {
         public bool Update(Setting obj) {
             return _repo.Update(obj);
         }
+
     }
 }

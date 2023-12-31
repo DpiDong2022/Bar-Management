@@ -17,7 +17,6 @@ namespace Bar_Management.Interfaces {
             InitializeComponent();
             _table = new BindingList<Setting>(_settingLogic.GetAll().ToList());
             dataGridView1.DataSource = _table;
-            dataGridView1.Columns["Id"].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
@@ -44,7 +43,7 @@ namespace Bar_Management.Interfaces {
             if (!String.IsNullOrEmpty(textBox1.Text)) {
                 var setting = new Setting();
                 setting.NgonNgu = textBox1.Text;
-                if (_settingLogic.Update(setting)) {
+                if (_settingLogic.Insert(setting)) {
                     MessageBox.Show("true");
                     _table.Add(setting);
                 }

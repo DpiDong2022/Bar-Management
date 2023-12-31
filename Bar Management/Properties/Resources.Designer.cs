@@ -203,6 +203,26 @@ namespace Bar_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excelIcon {
+            get {
+                object obj = ResourceManager.GetObject("excelIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excelicon_ {
+            get {
+                object obj = ResourceManager.GetObject("excelicon ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fe260bd4501708e42944319c9892af68 {
             get {
                 object obj = ResourceManager.GetObject("fe260bd4501708e42944319c9892af68", resourceCulture);
@@ -336,6 +356,16 @@ namespace Bar_Management.Properties {
         internal static System.Drawing.Bitmap working {
             get {
                 object obj = ResourceManager.GetObject("working", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xlsx {
+            get {
+                object obj = ResourceManager.GetObject("xlsx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

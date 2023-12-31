@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd93f2bbf0844d2298512e1663575c8a" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.Ban" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.ChiTietHoaDon" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.CongThuc" Width="1.5" PointX="12" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.DatBanTruoc" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.HoaDon" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.LoaiMonAn" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.MonAn" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.NguyenLieu" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.NhaCungCap" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.NhanVien" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.Role" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.Setting" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.SuKien" Width="1.5" PointX="7.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.TaiKhoan" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.TonKho" Width="1.5" PointX="12" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.TrangThaiBan" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBarHaiModel.TrangThaiTonKho" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_Bans_TrangThaiBans_TrangThaiId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_DatBanTruocs_Bans_BanId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_ChiTietHoaDons_HoaDons_HoaDonId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_ChiTietHoaDons_MonAns_MonAnId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_CongThucs_MonAns_MonAnId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_CongThucs_NguyenLieus_NguyenLieuId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_DatBanTruocs_TaiKhoans_TaiKhoanDatId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_HoaDons_TaiKhoans_TaiKhoanTaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_MonAns_LoaiMonAns_LoaiMonAnId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TonKhos_NguyenLieus_NguyenLieuId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TonKhos_NhaCungCaps_NhaCungCapId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TaiKhoans_NhanViens_NhanVienId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TaiKhoans_Roles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TaiKhoans_Settings_SettingId" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBarHaiModel.FK_TonKhos_TrangThaiTonKhos_TrangThaiId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

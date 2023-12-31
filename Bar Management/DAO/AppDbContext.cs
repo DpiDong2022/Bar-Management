@@ -33,10 +33,8 @@ namespace Bar_Management.DAO {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 
             //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
-            optionsBuilder.UseSqlServer("server= DESKTOP-FJ29HTR; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-            //optionsBuilder.UseSqlServer("server=.\\DONGSQLSERVER; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
+            //optionsBuilder.UseSqlServer("server= DESKTOP-FJ29HTR; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("server=.\\DONGSQLSERVER; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
         }
-
-
     }
 }

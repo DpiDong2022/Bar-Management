@@ -1,4 +1,5 @@
-﻿using Bar_Management.Interfaces;
+﻿using Bar_Management.FoodForm;
+using Bar_Management.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Bar_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new test1());
+            Application.Run(new MainForm.Main());
         }
     }
 }

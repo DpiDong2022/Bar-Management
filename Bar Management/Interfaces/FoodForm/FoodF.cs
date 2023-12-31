@@ -8,17 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bar_Management.Interfaces.WarehouseForm
-{
-    public partial class Warehouse : Form
-    {
-        public Warehouse()
-        {
+namespace Bar_Management.Interfaces.FoodForm {
+    public partial class FoodF: Form {
+        public FoodF() {
             InitializeComponent();
-        }
-
-        private void Warehouse_Load(object sender, EventArgs e) {
-
         }
     }
 }
