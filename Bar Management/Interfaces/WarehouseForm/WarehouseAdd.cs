@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Bar_Management.Interfaces.WarehouseForm
 {
-    public partial class Warehouse : Form
+    public partial class WarehouseAdd : Form
     {
-        public Warehouse()
+        public WarehouseAdd()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            WarehouseAdd newForm = new WarehouseAdd();
-            newForm.Show();
+            this.Close();
         }
     }
 }

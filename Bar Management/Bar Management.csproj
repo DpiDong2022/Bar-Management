@@ -257,6 +257,12 @@
     <Compile Include="Interfaces\WarehouseForm\Warehouse.Designer.cs">
       <DependentUpon>Warehouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\WarehouseForm\WarehouseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\WarehouseForm\WarehouseAdd.Designer.cs">
+      <DependentUpon>WarehouseAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,13 +305,9 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231230051212_initial.cs" />
-    <Compile Include="Migrations\20231230051212_initial.designer.cs">
-      <DependentUpon>20231230051212_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231230051858_test.cs" />
-    <Compile Include="Migrations\20231230051858_test.designer.cs">
-      <DependentUpon>20231230051858_test.cs</DependentUpon>
+    <Compile Include="Migrations\20231231101441_initial.cs" />
+    <Compile Include="Migrations\20231231101441_initial.designer.cs">
+      <DependentUpon>20231231101441_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
@@ -374,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\WarehouseForm\Warehouse.resx">
       <DependentUpon>Warehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\WarehouseForm\WarehouseAdd.resx">
+      <DependentUpon>WarehouseAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
