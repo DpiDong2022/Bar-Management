@@ -7,6 +7,7 @@ using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -52,17 +53,26 @@ namespace Bar_Management.BusinessLogic {
             return _repo.Update(obj);
         }
 
-        public List<MonAnDto> TimKiem(string searchKey) {
+        public List<MonAnDto> TimKiem(string searchKey, int loaiMonAnId=-1, int tinhTrang=-1) {
+            IEnumerable<MonAn> monans;
             if (string.IsNullOrEmpty(searchKey)) {
-                return GetAll().Select(monAn => _mapper.Map<MonAnDto>(monAn)).ToList();
+                monans = GetAll();
+            } else {
+                searchKey = searchKey.ToLower();
+                string[] keys = searchKey.Split(' ');
+                IEnumerable<LoaiMonAn> loaimonAns = new GenericRepository<LoaiMonAn>().GetAll();
+
+                monans = GetAll().Where(monAn => keys.Any(
+                    key => monAn.TenMon.ToLower().Contains(key)
+                    || monAn.MoTa.ToLower().ToLower().Contains(key)));
             }
-            searchKey = searchKey.ToLower();
-            string[] keys = searchKey.Split(' ');
-            IEnumerable<LoaiMonAn> loaimonAns = new GenericRepository<LoaiMonAn>().GetAll();
-            return GetAll().Where(monAn => keys.Any(
-                key => monAn.TenMon.ToLower().Contains(key)
-                || monAn.MoTa.ToLower().ToLower().Contains(key)))
-                .Select(monAn => _mapper.Map<MonAnDto>(monAn)).ToList();
+            if (loaiMonAnId != -1) {
+                monans = monans.Where(monan => monan.LoaiMonAnId == loaiMonAnId);
+            }
+            if (tinhTrang != -1) {
+                monans = monans.Where(monan => monan.IsAvailable == tinhTrang);
+            }
+            return monans.Select(monan => _mapper.Map<MonAnDto>(monan)).ToList();
         }
 
         public void ExportToExcel(BindingList<MonAnDto> table) {

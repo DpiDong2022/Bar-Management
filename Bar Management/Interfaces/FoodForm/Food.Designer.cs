@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,8 +39,6 @@
             this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.TenMonAnbox = new System.Windows.Forms.TextBox();
             this.GiaMonAnTextboxs = new System.Windows.Forms.TextBox();
             this.motaText = new System.Windows.Forms.TextBox();
@@ -62,12 +60,16 @@
             this.errorEdit = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorLuu = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorXoa = new System.Windows.Forms.ErrorProvider(this.components);
-            this.SuaBtn = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.errorHinhAnh = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTrangThai = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SuaBtn = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxTranthai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiMonAnsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyBarHaiDataSet)).BeginInit();
@@ -79,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorLuu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHinhAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -89,8 +91,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,7 +111,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1331, 566);
             this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // dgvID
@@ -182,28 +183,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Search";
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Bar_Management.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 50;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.FillWeight = 70F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::Bar_Management.Properties.Resources.bin;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 70;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 70;
-            // 
             // TenMonAnbox
             // 
             this.TenMonAnbox.Location = new System.Drawing.Point(384, 173);
@@ -221,7 +200,7 @@
             // motaText
             // 
             this.motaText.CausesValidation = false;
-            this.motaText.Location = new System.Drawing.Point(601, 173);
+            this.motaText.Location = new System.Drawing.Point(623, 139);
             this.motaText.MaxLength = 100;
             this.motaText.Multiline = true;
             this.motaText.Name = "motaText";
@@ -231,10 +210,11 @@
             // LoaiMonAnComboBox
             // 
             this.LoaiMonAnComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.loaiMonAnsBindingSource, "Id", true));
+            this.LoaiMonAnComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoaiMonAnComboBox.FormattingEnabled = true;
             this.LoaiMonAnComboBox.Location = new System.Drawing.Point(384, 233);
             this.LoaiMonAnComboBox.Name = "LoaiMonAnComboBox";
-            this.LoaiMonAnComboBox.Size = new System.Drawing.Size(134, 24);
+            this.LoaiMonAnComboBox.Size = new System.Drawing.Size(134, 26);
             this.LoaiMonAnComboBox.TabIndex = 23;
             this.LoaiMonAnComboBox.SelectedIndexChanged += new System.EventHandler(this.LoaiMonAnComboBox_SelectedIndexChanged);
             // 
@@ -294,7 +274,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(547, 176);
+            this.label3.Location = new System.Drawing.Point(569, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 31;
@@ -346,22 +326,26 @@
             // 
             this.errorXoa.ContainerControl = this;
             // 
-            // SuaBtn
-            // 
-            this.SuaBtn.Image = global::Bar_Management.Properties.Resources.excelicon_;
-            this.SuaBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SuaBtn.Location = new System.Drawing.Point(16, 86);
-            this.SuaBtn.Name = "SuaBtn";
-            this.SuaBtn.Size = new System.Drawing.Size(170, 57);
-            this.SuaBtn.TabIndex = 26;
-            this.SuaBtn.Text = "Tải xuống danh sách";
-            this.SuaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SuaBtn.UseVisualStyleBackColor = true;
-            this.SuaBtn.Click += new System.EventHandler(this.SuaBtn_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(830, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 16);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Hình ảnh:";
+            // 
+            // errorHinhAnh
+            // 
+            this.errorHinhAnh.ContainerControl = this;
+            // 
+            // errorTrangThai
+            // 
+            this.errorTrangThai.ContainerControl = this;
             // 
             // pictureBox1
             // 
@@ -377,26 +361,68 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Ảnh món ăn";
             this.pictureBox1.WaitOnLoad = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop);
             this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
             // 
-            // label5
+            // SuaBtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(830, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 16);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Hình ảnh:";
+            this.SuaBtn.Image = global::Bar_Management.Properties.Resources.excelicon_;
+            this.SuaBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SuaBtn.Location = new System.Drawing.Point(16, 86);
+            this.SuaBtn.Name = "SuaBtn";
+            this.SuaBtn.Size = new System.Drawing.Size(170, 57);
+            this.SuaBtn.TabIndex = 26;
+            this.SuaBtn.Text = "Tải xuống danh sách";
+            this.SuaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SuaBtn.UseVisualStyleBackColor = true;
+            this.SuaBtn.Click += new System.EventHandler(this.SuaBtn_Click);
             // 
-            // errorHinhAnh
+            // dataGridViewImageColumn1
             // 
-            this.errorHinhAnh.ContainerControl = this;
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Bar_Management.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 50;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
             // 
-            // errorProvider2
+            // dataGridViewImageColumn2
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.FillWeight = 70F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::Bar_Management.Properties.Resources.bin;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 70;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 70;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(543, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Trạng thái:";
+            // 
+            // comboBoxTranthai
+            // 
+            this.comboBoxTranthai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxTranthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTranthai.FormattingEnabled = true;
+            this.comboBoxTranthai.ItemHeight = 18;
+            this.comboBoxTranthai.Items.AddRange(new object[] {
+            "--Trạng thái--",
+            "Còn",
+            "Hết"});
+            this.comboBoxTranthai.Location = new System.Drawing.Point(623, 233);
+            this.comboBoxTranthai.Name = "comboBoxTranthai";
+            this.comboBoxTranthai.Size = new System.Drawing.Size(134, 26);
+            this.comboBoxTranthai.TabIndex = 36;
+            this.comboBoxTranthai.SelectedIndexChanged += new System.EventHandler(this.comboBoxTranthai_SelectedIndexChanged);
             // 
             // Food
             // 
@@ -405,6 +431,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1556, 880);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBoxTranthai);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -440,9 +468,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorLuu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHinhAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,6 +514,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorHinhAnh;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorTrangThai;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxTranthai;
     }
 }

@@ -2,22 +2,28 @@
 using Bar_Management.BusinessLogic;
 using Bar_Management.DAO;
 using Bar_Management.DTO;
+using Bar_Management.Interfaces;
+using Bar_Management.Models;
 using Bar_Management.Tool;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bar_Management.FoodForm {
     public partial class Food: Form {
         private readonly MonAnLogic _logic;
         private readonly LoaiMonAnLogic _loaiMonAnLogic;
-        private BindingList<MonAnDto> _table;
+        private SortableBindingList<MonAnDto> _table;
+        private SortableBindingList<LoaiMonAn> _tableLoaimonAn;
         private readonly IMapper _mapper;
         private string _mode;
         private string _picturePath;
@@ -29,8 +35,13 @@ namespace Bar_Management.FoodForm {
             LoadTable();
             LoaiMonAnComboBox.ValueMember = "Id";
             LoaiMonAnComboBox.DisplayMember = "TenLoai";
-            LoaiMonAnComboBox.DataSource = new BindingList<LoaiMonAn>(_loaiMonAnLogic.GetAll().ToList());
-            
+            _tableLoaimonAn = new SortableBindingList<LoaiMonAn>(_loaiMonAnLogic.GetAll().ToList());
+            _tableLoaimonAn.Insert(0,new LoaiMonAn() {Id=-1, TenLoai= "--Loại đồ ăn--" });
+            LoaiMonAnComboBox.DataSource = _tableLoaimonAn;
+            comboBoxTranthai.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoaiMonAnComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTranthai.SelectedIndex = 0;
+            LoaiMonAnComboBox.SelectedIndex = 0;
         }
 
         private void LoadTable() {
@@ -39,7 +50,7 @@ namespace Bar_Management.FoodForm {
             }
             IEnumerable<LoaiMonAn> loaimons = _loaiMonAnLogic.GetAll();
             //linq
-            _table = new BindingList<MonAnDto>(_logic.GetAll().Select(monAn => new MonAnDto() {
+            _table = new SortableBindingList<MonAnDto>(_logic.GetAll().Select(monAn => new MonAnDto() {
                 Id = monAn.Id,
                 TenMon = monAn.TenMon,
                 Gia = string.Format("{0:#,##0}", monAn.Gia),
@@ -52,7 +63,7 @@ namespace Bar_Management.FoodForm {
             dataGridView1.Columns["HinhAnh"].Visible = false;
         }
 
-        private bool Validate(string tenMon, string gia, string moTa, int loaiMonId) {
+        private bool Validate(string tenMon, string gia, string moTa, int loaiMonId, string trangThai) {
             bool isValid = true;
             if (!double.TryParse(gia, out double giaMonAn) || giaMonAn <= 0) {
                 errorGia.SetError(GiaMonAnTextboxs, "Hãy điền giá trị là tiền");
@@ -74,7 +85,11 @@ namespace Bar_Management.FoodForm {
                 ErrorTenMonAn.Clear();
             }
 
-            if (new GenericRepository<LoaiMonAn>().GetAll().First(c => c.Id == loaiMonId) == null) {
+            if (loaiMonId == -1) {
+                errorLoai.SetError(LoaiMonAnComboBox, "Bạn chưa chọn loại món ăn");
+                isValid = false;
+            }
+            else if (new GenericRepository<LoaiMonAn>().GetAll().First(c => c.Id == loaiMonId) == null) {
                 errorLoai.SetError(LoaiMonAnComboBox, "Loại món ăn không còn tồn tại");
                 isValid = false;
             } else {
@@ -94,6 +109,13 @@ namespace Bar_Management.FoodForm {
             } else {
                 errorHinhAnh.Clear();
             }
+
+            if (trangThai=="--Trạng thái--") {
+                errorTrangThai.SetError(comboBoxTranthai, "Hãy chọn trạng thái món ăn");
+                isValid = false;
+            } else {
+                errorTrangThai.Clear();
+            }
             return isValid;
         }
 
@@ -112,12 +134,17 @@ namespace Bar_Management.FoodForm {
             motaText.Text = string.Empty;
             LoaiMonAnComboBox.SelectedIndex = 0;
             pictureBox1.Image = null;
+            comboBoxTranthai.SelectedIndex = 0;
             TenMonAnbox.Focus();
             _mode = "them";
 
         }
 
         private async void LuuBtn_Click(object sender, EventArgs e) {
+            // kiem tra connection internet
+            if (!Internet.IsInternetAvailable()) {
+                MessageBox.Show("Bạn chưa kết nối với internet, hãy kết nối với internet trước khi thực thi các tác vụ");
+            }
             if (dataGridView1.SelectedRows.Count == 0) {
                 errorEdit.SetError(LuuBtn, "Bạn chưa chọn dòng để chỉnh sửa");
                 return;
@@ -127,16 +154,14 @@ namespace Bar_Management.FoodForm {
             string tenMonAn = TenMonAnbox.Text.Trim();
             string gia = GiaMonAnTextboxs.Text.Trim();
             string moTa = motaText.Text.Trim();
-            int tenLoaiMonAnId = (dataGridView1.SelectedRows[0].DataBoundItem as MonAnDto).LoaiMonAn.Id;
+            int tenLoaiMonAnId = (LoaiMonAnComboBox.SelectedItem as LoaiMonAn).Id;
+            string trangThai = comboBoxTranthai.SelectedItem.ToString();
             // validate
-            bool isValid = Validate(tenMonAn, gia,moTa, tenLoaiMonAnId);
+            bool isValid = Validate(tenMonAn, gia,moTa, tenLoaiMonAnId, trangThai);
             if (!isValid)
                 return;
 
-            if(!Internet.IsInternetAvailable()){
-                MessageBox.Show("Bạn chưa kết nối với internet, hãy kết nối với internet trước khi thực thi các tác vụ");
-            }
-
+            new LoadingForm(1).ShowDialog();
             string url = await CloudinaryService.uploadImage(_picturePath);
 
             MonAn monAn = new MonAn(){
@@ -144,7 +169,7 @@ namespace Bar_Management.FoodForm {
                 Gia = decimal.Parse(gia),
                 MoTa = moTa,
                 LoaiMonAnId = tenLoaiMonAnId,
-                IsAvailable = 1,
+                IsAvailable = trangThai == "Còn" ? 1:0,
                 HinhAnh = url
             };
 
@@ -178,7 +203,7 @@ namespace Bar_Management.FoodForm {
                 monAnDto.Id = id;
 
                 if (_logic.Update(monAn)) {
-                    //_table.ResetItem(index);
+                    MessageBox.Show("Sửa thành công");
                     _table.RemoveAt(index);
                     _table.Insert(index, monAnDto);
                     dataGridView1.Rows[index].Selected = true;
@@ -203,6 +228,7 @@ namespace Bar_Management.FoodForm {
                 motaText.Text = string.Empty;
                 LoaiMonAnComboBox.SelectedIndex = 0;
                 pictureBox1.Image = null;
+                comboBoxTranthai.SelectedItem = null;
                 TenMonAnbox.Focus();
                 _mode = "";
             }
@@ -223,6 +249,7 @@ namespace Bar_Management.FoodForm {
                 TenMonAnbox.Text = monAnDto.TenMon;
                 motaText.Text = monAnDto.MoTa;
                 GiaMonAnTextboxs.Text = monAnDto.Gia;
+                comboBoxTranthai.SelectedIndex = monAnDto.TrangThai == "Còn" ? 1 : 2;
 
                 int id = monAnDto.LoaiMonAn.Id;
 
@@ -248,20 +275,22 @@ namespace Bar_Management.FoodForm {
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e) {
-            _table = new BindingList<MonAnDto>(_logic.TimKiem(searchKeytextBox.Text.Trim()));
+            int tenLoaiMonAnId = (LoaiMonAnComboBox.SelectedItem as LoaiMonAn).Id;
+            int trangThaiId = comboBoxTranthai.SelectedIndex;
+            if (trangThaiId == 0) {
+                trangThaiId = -1;
+            } else if(trangThaiId==1){
+                trangThaiId = 1;
+            } else {
+                trangThaiId = 0;
+            }
+            _table = new SortableBindingList<MonAnDto>(_logic.TimKiem(searchKeytextBox.Text.Trim(), tenLoaiMonAnId, trangThaiId));
             dataGridView1.DataSource = _table;
-        }
-
-        private void LoaiMonAnComboBox_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
 
         private void SuaBtn_Click(object sender, EventArgs e) {
             _logic.ExportToExcel(_table);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e) {
-
         }
 
         private void pictureBox1_DragDrop(object sender, DragEventArgs e) {
@@ -279,8 +308,12 @@ namespace Bar_Management.FoodForm {
             e.Effect = DragDropEffects.Copy;    
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+        private void LoaiMonAnComboBox_SelectedIndexChanged(object sender, EventArgs e) {
+            textBox4_TextChanged(sender, e);
+        }
 
+        private void comboBoxTranthai_SelectedIndexChanged(object sender, EventArgs e) {
+            textBox4_TextChanged(sender, e);
         }
     }
 }
