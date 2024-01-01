@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
 using Bar_Management.DAO;
 using Bar_Management.DTO;
+using Bar_Management.TableForm;
 using Bar_Management.Tool;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -82,6 +85,20 @@ namespace Bar_Management.BusinessLogic {
                 Excel.Worksheet worksheet = (Excel.Worksheet)templateWorkbook.Sheets[1];
 
                 // chỉnh sửa file 
+                // Copy the style from the source row
+                if (table.Count > 22) {
+                    Excel.Range sourceRange = worksheet.Rows[3];
+                    sourceRange.Copy();
+
+                    // Paste the style to the target range
+                    Excel.Range targetRange = worksheet.Range[worksheet.Cells[26, 1], worksheet.Cells[table.Count+3, 6]];
+                    targetRange.PasteSpecial(Excel.XlPasteType.xlPasteFormats);
+
+                    // Clear the clipboard after pasting
+                    Clipboard.Clear();
+                }
+                
+                // ghi dữ liệu
                 int rowCount = worksheet.Rows.Count;
                 for (int row = 0; row < table.Count; row++) {
                     worksheet.Cells[row + 3, 1].Value = row + 1;
@@ -104,7 +121,7 @@ namespace Bar_Management.BusinessLogic {
                     // Save the modified workbook to the user's chosen location
                     templateWorkbook.SaveAs(saveFileDialog.FileName);
 
-                    MessageBox.Show("File modified and saved successfully!");
+                   Process.Start(saveFileDialog.FileName);
                 }
 
                 // Close and release resources

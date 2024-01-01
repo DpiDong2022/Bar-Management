@@ -14,5 +14,6 @@
         public string TrangThai { get; set; }
         public string MoTa { get; set; }
         public LoaiMonAn LoaiMonAn { get; set; }
+        public string HinhAnh { get; set; }
     }
 }
