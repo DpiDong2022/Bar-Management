@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
@@ -229,6 +230,10 @@ namespace Bar_Management.FoodForm {
 
         private void LoaiMonAnComboBox_SelectedIndexChanged(object sender, EventArgs e) {
 
+        }
+
+        private void SuaBtn_Click(object sender, EventArgs e) {
+            _logic.ExportToExcel(_table);
         }
     }
 }
