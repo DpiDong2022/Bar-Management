@@ -34,7 +34,7 @@ namespace Bar_Management.DAO {
 
             //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             //optionsBuilder.UseSqlServer("server= DESKTOP-FJ29HTR; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-            optionsBuilder.UseSqlServer("server=.\\DONGSQLSERVER; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("server=.\\DONGSQLSERVER; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
         }
     }
 }

@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMonDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiMonAnDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TenMonAnbox = new System.Windows.Forms.TextBox();
@@ -44,8 +37,6 @@
             this.motaText = new System.Windows.Forms.TextBox();
             this.LoaiMonAnComboBox = new System.Windows.Forms.ComboBox();
             this.loaiMonAnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyBarHaiDataSet = new Bar_Management.QuanLyBarHaiDataSet();
-            this.loaiMonAnsTableAdapter = new Bar_Management.QuanLyBarHaiDataSetTableAdapters.LoaiMonAnsTableAdapter();
             this.ThemBtn = new System.Windows.Forms.Button();
             this.LuuBtn = new System.Windows.Forms.Button();
             this.XoaBtn = new System.Windows.Forms.Button();
@@ -70,9 +61,14 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTranthai = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiMonAnDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.loaiMonAnsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBarHaiDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
@@ -84,83 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorHinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvID,
-            this.TenMonDgv,
-            this.LoaiMonAnDgv,
-            this.GiaDgv,
-            this.TrangThaiDgv,
-            this.moTaDgv});
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 265);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1331, 566);
-            this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
-            // 
-            // dgvID
-            // 
-            this.dgvID.DataPropertyName = "Id";
-            this.dgvID.FillWeight = 30.32747F;
-            this.dgvID.HeaderText = "ID";
-            this.dgvID.MinimumWidth = 6;
-            this.dgvID.Name = "dgvID";
-            // 
-            // TenMonDgv
-            // 
-            this.TenMonDgv.DataPropertyName = "TenMon";
-            this.TenMonDgv.FillWeight = 30.32747F;
-            this.TenMonDgv.HeaderText = "Tên món ăn";
-            this.TenMonDgv.MinimumWidth = 6;
-            this.TenMonDgv.Name = "TenMonDgv";
-            // 
-            // LoaiMonAnDgv
-            // 
-            this.LoaiMonAnDgv.DataPropertyName = "LoaiMonAn";
-            this.LoaiMonAnDgv.FillWeight = 30.32747F;
-            this.LoaiMonAnDgv.HeaderText = "Loại món ăn";
-            this.LoaiMonAnDgv.MinimumWidth = 6;
-            this.LoaiMonAnDgv.Name = "LoaiMonAnDgv";
-            // 
-            // GiaDgv
-            // 
-            this.GiaDgv.DataPropertyName = "Gia";
-            this.GiaDgv.FillWeight = 30.32747F;
-            this.GiaDgv.HeaderText = "Giá";
-            this.GiaDgv.MinimumWidth = 6;
-            this.GiaDgv.Name = "GiaDgv";
-            // 
-            // TrangThaiDgv
-            // 
-            this.TrangThaiDgv.DataPropertyName = "TrangThai";
-            this.TrangThaiDgv.FillWeight = 70F;
-            this.TrangThaiDgv.HeaderText = "Trạng thái";
-            this.TrangThaiDgv.MinimumWidth = 70;
-            this.TrangThaiDgv.Name = "TrangThaiDgv";
-            this.TrangThaiDgv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // moTaDgv
-            // 
-            this.moTaDgv.DataPropertyName = "MoTa";
-            this.moTaDgv.FillWeight = 30.32747F;
-            this.moTaDgv.HeaderText = "Mô tả";
-            this.moTaDgv.MinimumWidth = 6;
-            this.moTaDgv.Name = "moTaDgv";
             // 
             // searchKeytextBox
             // 
@@ -221,16 +142,6 @@
             // loaiMonAnsBindingSource
             // 
             this.loaiMonAnsBindingSource.DataMember = "LoaiMonAns";
-            this.loaiMonAnsBindingSource.DataSource = this.quanLyBarHaiDataSet;
-            // 
-            // quanLyBarHaiDataSet
-            // 
-            this.quanLyBarHaiDataSet.DataSetName = "QuanLyBarHaiDataSet";
-            this.quanLyBarHaiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loaiMonAnsTableAdapter
-            // 
-            this.loaiMonAnsTableAdapter.ClearBeforeFill = true;
             // 
             // ThemBtn
             // 
@@ -424,6 +335,82 @@
             this.comboBoxTranthai.TabIndex = 36;
             this.comboBoxTranthai.SelectedIndexChanged += new System.EventHandler(this.comboBoxTranthai_SelectedIndexChanged);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvID,
+            this.TenMonDgv,
+            this.LoaiMonAnDgv,
+            this.GiaDgv,
+            this.TrangThaiDgv,
+            this.moTaDgv});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 265);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1331, 566);
+            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // moTaDgv
+            // 
+            this.moTaDgv.DataPropertyName = "MoTa";
+            this.moTaDgv.FillWeight = 30.32747F;
+            this.moTaDgv.HeaderText = "Mô tả";
+            this.moTaDgv.MinimumWidth = 6;
+            this.moTaDgv.Name = "moTaDgv";
+            // 
+            // TrangThaiDgv
+            // 
+            this.TrangThaiDgv.DataPropertyName = "TrangThai";
+            this.TrangThaiDgv.FillWeight = 70F;
+            this.TrangThaiDgv.HeaderText = "Trạng thái";
+            this.TrangThaiDgv.MinimumWidth = 70;
+            this.TrangThaiDgv.Name = "TrangThaiDgv";
+            this.TrangThaiDgv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // GiaDgv
+            // 
+            this.GiaDgv.DataPropertyName = "Gia";
+            this.GiaDgv.FillWeight = 30.32747F;
+            this.GiaDgv.HeaderText = "Giá";
+            this.GiaDgv.MinimumWidth = 6;
+            this.GiaDgv.Name = "GiaDgv";
+            // 
+            // LoaiMonAnDgv
+            // 
+            this.LoaiMonAnDgv.DataPropertyName = "LoaiMonAn";
+            this.LoaiMonAnDgv.FillWeight = 30.32747F;
+            this.LoaiMonAnDgv.HeaderText = "Loại món ăn";
+            this.LoaiMonAnDgv.MinimumWidth = 6;
+            this.LoaiMonAnDgv.Name = "LoaiMonAnDgv";
+            // 
+            // TenMonDgv
+            // 
+            this.TenMonDgv.DataPropertyName = "TenMon";
+            this.TenMonDgv.FillWeight = 30.32747F;
+            this.TenMonDgv.HeaderText = "Tên món ăn";
+            this.TenMonDgv.MinimumWidth = 6;
+            this.TenMonDgv.Name = "TenMonDgv";
+            // 
+            // dgvID
+            // 
+            this.dgvID.DataPropertyName = "Id";
+            this.dgvID.FillWeight = 30.32747F;
+            this.dgvID.HeaderText = "ID";
+            this.dgvID.MinimumWidth = 6;
+            this.dgvID.Name = "dgvID";
+            // 
             // Food
             // 
             this.AllowDrop = true;
@@ -457,9 +444,7 @@
             this.Text = "Food";
             this.Load += new System.EventHandler(this.Food_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Food_MouseClick);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiMonAnsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBarHaiDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).EndInit();
@@ -471,13 +456,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorHinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox searchKeytextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
@@ -486,9 +471,7 @@
         private System.Windows.Forms.TextBox GiaMonAnTextboxs;
         private System.Windows.Forms.TextBox motaText;
         private System.Windows.Forms.ComboBox LoaiMonAnComboBox;
-        private QuanLyBarHaiDataSet quanLyBarHaiDataSet;
         private System.Windows.Forms.BindingSource loaiMonAnsBindingSource;
-        private QuanLyBarHaiDataSetTableAdapters.LoaiMonAnsTableAdapter loaiMonAnsTableAdapter;
         private System.Windows.Forms.Button ThemBtn;
         private System.Windows.Forms.Button LuuBtn;
         private System.Windows.Forms.Button XoaBtn;
@@ -501,12 +484,6 @@
         private System.Windows.Forms.ErrorProvider errorGia;
         private System.Windows.Forms.ErrorProvider errorLoai;
         private System.Windows.Forms.ErrorProvider errorEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiMonAnDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
         private System.Windows.Forms.ErrorProvider errorLuu;
         private System.Windows.Forms.ErrorProvider errorXoa;
         private System.Windows.Forms.Button SuaBtn;
@@ -517,5 +494,12 @@
         private System.Windows.Forms.ErrorProvider errorTrangThai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxTranthai;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiMonAnDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
     }
 }

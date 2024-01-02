@@ -20,6 +20,8 @@ namespace Bar_Management.Models {
 
         [DefaultValue(0)]
         public decimal GiaBan { get; set; }
+        [Required]
+        public bool IsDelete { get; set; }
 
     }
 }

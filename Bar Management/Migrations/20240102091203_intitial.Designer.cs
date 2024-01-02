@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bar_Management.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231230053020_initial")]
-    partial class initial
+    [Migration("20240102091203_intitial")]
+    partial class intitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -207,6 +207,9 @@ namespace Bar_Management.Migrations
                     b.Property<int>("IsAvailable")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LoaiMonAnId")
                         .HasColumnType("int");
 
@@ -240,6 +243,9 @@ namespace Bar_Management.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Ten")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -264,6 +270,9 @@ namespace Bar_Management.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Sdt")
                         .IsRequired()

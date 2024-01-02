@@ -229,9 +229,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ban.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="BusinessLogic\BanLogic.cs" />
     <Compile Include="BusinessLogic\ChiTieHoaDonLogic.cs" />
     <Compile Include="BusinessLogic\CongThucLogic.cs" />
@@ -250,24 +247,12 @@
     <Compile Include="BusinessLogic\TrangThaiBanLogic.cs" />
     <Compile Include="BusinessLogic\TrangThaiTonKhoLogic.cs" />
     <Compile Include="BusinessLogic\ValidateTool.cs" />
-    <Compile Include="ChiTietHoaDon.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CongThuc.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAO\AppDbContext.cs" />
     <Compile Include="DAO\AppDbContextSingleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
-    <Compile Include="DatBanTruoc.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\MonAnDto.cs" />
-    <Compile Include="HoaDon.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,9 +337,6 @@
     <Compile Include="Interfaces\WarehouseForm\Warehouse.Designer.cs">
       <DependentUpon>Warehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoaiMonAn.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,9 +379,9 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231230053020_initial.cs" />
-    <Compile Include="Migrations\20231230053020_initial.designer.cs">
-      <DependentUpon>20231230053020_initial.cs</DependentUpon>
+    <Compile Include="Migrations\20240102091203_intitial.cs" />
+    <Compile Include="Migrations\20240102091203_intitial.designer.cs">
+      <DependentUpon>20240102091203_intitial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
@@ -419,18 +401,6 @@
     <Compile Include="Models\TonKho.cs" />
     <Compile Include="Models\TrangThaiBan.cs" />
     <Compile Include="Models\TrangThaiTonKho.cs" />
-    <Compile Include="MonAn.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NguyenLieu.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhaCungCap.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhanVien.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\RevenueForm\Revenue.cs">
@@ -445,52 +415,11 @@
     <Compile Include="Interfaces\TableForm\Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanBar.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanBar.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanBar.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanBar.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanBar.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyBarHaiDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Role.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Setting.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SuKien.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoan.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <None Include="Templates\MonAnExcel.xlsx" />
-    <Compile Include="TonKho.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tool\AutoMapperProfile.cs" />
     <Compile Include="Tool\CloudinaryService.cs" />
     <Compile Include="Tool\Export.cs" />
     <Compile Include="Tool\Internet.cs" />
-    <Compile Include="TrangThaiBan.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TrangThaiTonKho.cs">
-      <DependentUpon>QuanBar.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Interfaces\AccountForm\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,24 +515,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="QuanBar.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanBar.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QuanBar.edmx.diagram">
-      <DependentUpon>QuanBar.edmx</DependentUpon>
-    </None>
-    <None Include="QuanLyBarHaiDataSet.xsc">
-      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyBarHaiDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyBarHaiDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyBarHaiDataSet.xss">
-      <DependentUpon>QuanLyBarHaiDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\working.png" />
   </ItemGroup>
   <ItemGroup>
@@ -687,20 +598,8 @@
   <ItemGroup>
     <None Include="Resources\warehouse.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QuanBar.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuanBar.Context.cs</LastGenOutput>
-      <DependentUpon>QuanBar.edmx</DependentUpon>
-    </Content>
-    <Content Include="QuanBar.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanBar.edmx</DependentUpon>
-      <LastGenOutput>QuanBar.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\excelicon .png" />
     <None Include="Resources\excelIcon.png" />
     <None Include="Resources\xlsx.png" />

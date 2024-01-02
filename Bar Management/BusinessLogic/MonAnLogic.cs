@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bar_Management.DAO;
 using Bar_Management.DTO;
+using Bar_Management.Models;
 using Bar_Management.TableForm;
 using Bar_Management.Tool;
 using Microsoft.Office.Interop.Excel;

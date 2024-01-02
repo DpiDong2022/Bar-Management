@@ -41,5 +41,8 @@ namespace Bar_Management.Models {
 
         [MaxLength(100, ErrorMessage = "Chiều dài của mô tả không lớn hơn 100")]
         public string MoTa { get; set; }
+
+        [Required]
+        public bool IsDelete { get; set; }
     }
 }

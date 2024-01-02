@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bar_Management.Migrations
 {
-    public partial class initial : Migration
+    public partial class intitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,8 @@ namespace Bar_Management.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Ten = table.Column<string>(maxLength: 50, nullable: false),
                     HinhAnh = table.Column<string>(maxLength: 255, nullable: true),
-                    GiaBan = table.Column<decimal>(nullable: false)
+                    GiaBan = table.Column<decimal>(nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +45,8 @@ namespace Bar_Management.Migrations
                     Ten = table.Column<string>(maxLength: 50, nullable: false),
                     DiaChi = table.Column<string>(maxLength: 100, nullable: true),
                     Sdt = table.Column<string>(maxLength: 11, nullable: false),
-                    Email = table.Column<string>(nullable: false)
+                    Email = table.Column<string>(nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,7 +149,8 @@ namespace Bar_Management.Migrations
                     Gia = table.Column<decimal>(nullable: false),
                     IsAvailable = table.Column<int>(nullable: false),
                     HinhAnh = table.Column<string>(maxLength: 255, nullable: true),
-                    MoTa = table.Column<string>(maxLength: 100, nullable: true)
+                    MoTa = table.Column<string>(maxLength: 100, nullable: true),
+                    IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

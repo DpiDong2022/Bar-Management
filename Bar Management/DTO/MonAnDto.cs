@@ -1,4 +1,6 @@
-﻿namespace Bar_Management.DTO {
+﻿using Bar_Management.Models;
+
+namespace Bar_Management.DTO {
      public enum TrangThaiEnum {
         Het = 0,
         Con
