@@ -43,6 +43,6 @@ namespace Bar_Management.Models {
         public string MoTa { get; set; }
 
         [Required]
-        public bool IsDelete { get; set; }
+        public bool IsDelete { get; set; } = false;
     }
 }

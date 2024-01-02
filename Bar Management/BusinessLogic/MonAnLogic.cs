@@ -39,7 +39,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public IEnumerable<MonAn> GetAll() {
-            return _repo.GetAll();
+            return _repo.GetAll().Where(c => !c.IsDelete);
         }
 
         public bool Insert(MonAn obj) {
