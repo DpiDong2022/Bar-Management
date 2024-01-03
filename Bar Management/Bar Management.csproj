@@ -409,11 +409,11 @@
     <Compile Include="Interfaces\RevenueForm\Revenue.Designer.cs">
       <DependentUpon>Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\TableForm\Table.cs">
+    <Compile Include="Interfaces\TableForm\NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\TableForm\Table.Designer.cs">
-      <DependentUpon>Table.cs</DependentUpon>
+    <Compile Include="Interfaces\TableForm\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
     </Compile>
     <None Include="Templates\MonAnExcel.xlsx" />
     <Compile Include="Tool\AutoMapperProfile.cs" />
@@ -496,8 +496,8 @@
     <EmbeddedResource Include="Interfaces\RevenueForm\Revenue.resx">
       <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\TableForm\Table.resx">
-      <DependentUpon>Table.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\TableForm\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Bar_Management.DTO.MonAnDto.datasource" />

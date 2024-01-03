@@ -22,12 +22,14 @@ namespace Bar_Management.BusinessLogic {
 
         public readonly AppDbContext Context;
         private readonly GenericRepository<MonAn> _repo;
+        private readonly LoaiMonAnLogic _loaiMonAnLogic;
         private readonly IMapper _mapper;
 
         public MonAnLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             Context = AppDbContextSingleton.Instance;
             _repo = new GenericRepository<MonAn>();
+            _loaiMonAnLogic = new LoaiMonAnLogic();
         }
 
         public bool Delete(MonAn obj) {
@@ -38,8 +40,10 @@ namespace Bar_Management.BusinessLogic {
             return _repo.Delete(obj);
         }
 
-        public IEnumerable<MonAn> GetAll() {
-            return _repo.GetAll().Where(c => !c.IsDelete);
+        public IEnumerable<MonAnDto> GetAll() {
+            var loaiMonAns = _loaiMonAnLogic.GetAll();
+            var result = _repo.GetAll().Where(c => !c.IsDelete).Select(monAn => _mapper.Map<MonAnDto>(monAn));
+            return result;
         }
 
         public bool Insert(MonAn obj) {
@@ -55,7 +59,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public List<MonAnDto> TimKiem(string searchKey, int loaiMonAnId=-1, int tinhTrang=-1) {
-            IEnumerable<MonAn> monans;
+            IEnumerable<MonAnDto> monans;
             if (string.IsNullOrEmpty(searchKey)) {
                 monans = GetAll();
             } else {
@@ -68,12 +72,13 @@ namespace Bar_Management.BusinessLogic {
                     || monAn.MoTa.ToLower().ToLower().Contains(key)));
             }
             if (loaiMonAnId != -1) {
-                monans = monans.Where(monan => monan.LoaiMonAnId == loaiMonAnId);
+                monans = monans.Where(monan => monan.LoaiMonAn.Id == loaiMonAnId);
             }
             if (tinhTrang != -1) {
-                monans = monans.Where(monan => monan.IsAvailable == tinhTrang);
+                string tinhTrangStr = tinhTrang == 1 ?  "Còn": "Hết";
+                monans = monans.Where(monan => monan.TrangThai == tinhTrangStr);
             }
-            return monans.Select(monan => _mapper.Map<MonAnDto>(monan)).ToList();
+            return monans.ToList();
         }
 
         public void ExportToExcel(BindingList<MonAnDto> table) {

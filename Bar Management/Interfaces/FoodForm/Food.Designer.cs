@@ -55,7 +55,7 @@
             this.errorHinhAnh = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTrangThai = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SuaBtn = new System.Windows.Forms.Button();
+            this.ExcelBtn = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,6 +67,11 @@
             this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LocTrangThaicomboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.LocloaiMAComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
@@ -265,22 +270,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Ảnh món ăn";
             this.pictureBox1.WaitOnLoad = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop);
             this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
             // 
-            // SuaBtn
+            // ExcelBtn
             // 
-            this.SuaBtn.Image = global::Bar_Management.Properties.Resources.excelicon_;
-            this.SuaBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SuaBtn.Location = new System.Drawing.Point(16, 86);
-            this.SuaBtn.Name = "SuaBtn";
-            this.SuaBtn.Size = new System.Drawing.Size(170, 57);
-            this.SuaBtn.TabIndex = 26;
-            this.SuaBtn.Text = "Tải xuống danh sách";
-            this.SuaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SuaBtn.UseVisualStyleBackColor = true;
-            this.SuaBtn.Click += new System.EventHandler(this.SuaBtn_Click);
+            this.ExcelBtn.Image = global::Bar_Management.Properties.Resources.excelicon_;
+            this.ExcelBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExcelBtn.Location = new System.Drawing.Point(16, 86);
+            this.ExcelBtn.Name = "ExcelBtn";
+            this.ExcelBtn.Size = new System.Drawing.Size(170, 57);
+            this.ExcelBtn.TabIndex = 26;
+            this.ExcelBtn.Text = "Tải xuống danh sách";
+            this.ExcelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExcelBtn.UseVisualStyleBackColor = true;
+            this.ExcelBtn.Click += new System.EventHandler(this.ExcelBtn_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -354,6 +358,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1331, 566);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // dgvID
@@ -405,6 +410,59 @@
             this.moTaDgv.MinimumWidth = 6;
             this.moTaDgv.Name = "moTaDgv";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1361, 265);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 16);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Lọc dữ liệu:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1367, 352);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Trạng thái:";
+            // 
+            // LocTrangThaicomboBox
+            // 
+            this.LocTrangThaicomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.LocTrangThaicomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocTrangThaicomboBox.FormattingEnabled = true;
+            this.LocTrangThaicomboBox.ItemHeight = 18;
+            this.LocTrangThaicomboBox.Items.AddRange(new object[] {
+            "--Trạng thái--",
+            "Còn",
+            "Hết"});
+            this.LocTrangThaicomboBox.Location = new System.Drawing.Point(1366, 371);
+            this.LocTrangThaicomboBox.Name = "LocTrangThaicomboBox";
+            this.LocTrangThaicomboBox.Size = new System.Drawing.Size(134, 26);
+            this.LocTrangThaicomboBox.TabIndex = 41;
+            this.LocTrangThaicomboBox.SelectedIndexChanged += new System.EventHandler(this.LocTrangThaicomboBox_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1361, 295);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 16);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Loại:";
+            // 
+            // LocloaiMAComboBox
+            // 
+            this.LocloaiMAComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocloaiMAComboBox.FormattingEnabled = true;
+            this.LocloaiMAComboBox.Location = new System.Drawing.Point(1366, 314);
+            this.LocloaiMAComboBox.Name = "LocloaiMAComboBox";
+            this.LocloaiMAComboBox.Size = new System.Drawing.Size(134, 26);
+            this.LocloaiMAComboBox.TabIndex = 39;
+            this.LocloaiMAComboBox.SelectedIndexChanged += new System.EventHandler(this.LocloaiMAComboBox_SelectedIndexChanged);
+            // 
             // Food
             // 
             this.AllowDrop = true;
@@ -412,6 +470,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1556, 880);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.LocTrangThaicomboBox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.LocloaiMAComboBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxTranthai);
             this.Controls.Add(this.label5);
@@ -422,7 +485,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.XoaBtn);
             this.Controls.Add(this.LuuBtn);
-            this.Controls.Add(this.SuaBtn);
+            this.Controls.Add(this.ExcelBtn);
             this.Controls.Add(this.ThemBtn);
             this.Controls.Add(this.LoaiMonAnComboBox);
             this.Controls.Add(this.motaText);
@@ -478,7 +541,7 @@
         private System.Windows.Forms.ErrorProvider errorEdit;
         private System.Windows.Forms.ErrorProvider errorLuu;
         private System.Windows.Forms.ErrorProvider errorXoa;
-        private System.Windows.Forms.Button SuaBtn;
+        private System.Windows.Forms.Button ExcelBtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
@@ -493,5 +556,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox LocTrangThaicomboBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox LocloaiMAComboBox;
     }
 }

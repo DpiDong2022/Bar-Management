@@ -53,12 +53,15 @@ namespace Bar_Management.MainForm
 
         private void btnFood_Click(object sender, EventArgs e)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Size = new Size() { Height = 800, Width = 1300 };
             addControls(new Food());
         }
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            addControls(new Table());
+            this.Size = new Size() { Height = 800, Width = 1500 };
+            addControls(new NhaCungCap());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
