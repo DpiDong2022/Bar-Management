@@ -20,5 +20,10 @@ namespace Bar_Management.Interfaces.WarehouseForm
         private void Warehouse_Load(object sender, EventArgs e) {
 
         }
+
+        private void btnThemNL_Click(object sender, EventArgs e) {
+            var themNguyenLieuForm = new NguyenLieuF();
+            themNguyenLieuForm.ShowDialog();
+        }
     }
 }

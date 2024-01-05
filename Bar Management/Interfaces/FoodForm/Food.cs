@@ -28,6 +28,7 @@ namespace Bar_Management.FoodForm {
         byte[] _imageDataStart;
         byte[] _imageDataEnd;
         string _urlImage;
+        int _rowHoverIndex;
         public Food() {
             InitializeComponent();
             _logic = new MonAnLogic();
@@ -148,32 +149,33 @@ namespace Bar_Management.FoodForm {
             string trangThai = comboBoxTranthai.SelectedItem.ToString();
             // validate
             bool isValid = Validate(tenMonAn, gia,moTa, tenLoaiMonAnId, trangThai);
-            if (!isValid)
-                return;
-
-            // Loading dialog
-            if (_imageDataStart != _imageDataEnd) {
-                new LoadingForm(2).ShowDialog();
-                _urlImage = await CloudinaryService.uploadImage(_picturePath);
-            }
+            if (!isValid) return;
 
             MonAn monAn = new MonAn(){
                 TenMon = tenMonAn,
                 Gia = decimal.Parse(gia),
                 MoTa = moTa,
                 LoaiMonAnId = tenLoaiMonAnId,
-                IsAvailable = trangThai == "Còn" ? 1:0,
-                HinhAnh = _urlImage
+                IsAvailable = trangThai == "Còn" ? 1:0
             };
-
-            // Mapper from monAn to monAnDto
-            MonAnDto monAnDto = _mapper.Map<MonAnDto>(monAn);
 
             // Them/Sua
             if (dataGridView1.SelectedRows.Count != 0) {
+                // Loading dialog
+                if (_imageDataStart != _imageDataEnd) {
+                    _urlImage = await CloudinaryService.uploadImage(_picturePath);
+                    new LoadingForm(1).ShowDialog();
+                }
+                monAn.HinhAnh = _urlImage;
+                // Mapper from monAn to monAnDto
+                MonAnDto monAnDto = _mapper.Map<MonAnDto>(monAn);
                 update(monAn, monAnDto);
-            } else if (_logic.Insert(monAn)) {
-                LoadTable();
+            } else{
+                monAn.HinhAnh = await CloudinaryService.uploadImage(_picturePath);
+                new LoadingForm(1).ShowDialog();
+                if (_logic.Insert(monAn)) {
+                    LoadTable();
+                }
             }
         }
 
@@ -228,7 +230,6 @@ namespace Bar_Management.FoodForm {
 
             // lấy ra trực tiếp đối tượng hàng từ DataGridView, không cần gọi thuộc tính cell[0], cell[1], cell[2],... để lấy giá trị từng ô;
             MonAnDto monAnDto = selectedRows[0].DataBoundItem as MonAnDto;
-            _urlImage = monAnDto.HinhAnh;
             errorXoa.Clear();
 
             TenMonAnbox.Text = monAnDto.TenMon;
@@ -253,6 +254,8 @@ namespace Bar_Management.FoodForm {
                 pictureBox1.Image = Image.FromStream(ms);
             }
             _imageDataStart = dataImage;
+            _imageDataEnd = dataImage;
+            _urlImage = monAnDto.HinhAnh;
         }
 
         // search
@@ -340,6 +343,27 @@ namespace Bar_Management.FoodForm {
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex > -1) {
+                _rowHoverIndex = e.RowIndex;
+
+                dataGridView1.Rows[_rowHoverIndex].DefaultCellStyle.BackColor = Color.LightGray;
+            }
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex > -1) {
+                dataGridView1.Rows[_rowHoverIndex].DefaultCellStyle.BackColor = Color.White;
+                _rowHoverIndex = -1;
+            }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.RowIndex > -1) {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
+            }
         }
     }
 }
