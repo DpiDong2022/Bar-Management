@@ -365,5 +365,25 @@ namespace Bar_Management.FoodForm {
                 dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
             }
         }
+
+        private void radioSortTenMonAn_CheckedChanged(object sender, EventArgs e) {
+            _table = new SortableBindingList<MonAnDto>(_table.OrderBy(monAn => monAn.TenMon).ToList());
+            dataGridView1.DataSource = _table;
+        }
+
+        private void radioSortLoaiMonAn_CheckedChanged(object sender, EventArgs e) {
+            _table = new SortableBindingList<MonAnDto>(_table.OrderBy(monAn => monAn.LoaiMonAn.TenLoai).ToList());
+            dataGridView1.DataSource = _table;
+        }
+
+        private void radioSortGia_CheckedChanged(object sender, EventArgs e) {
+            _table = new SortableBindingList<MonAnDto>(_table.OrderBy(monAn => decimal.Parse(monAn.Gia.ToString())).ToList());
+            dataGridView1.DataSource = _table;
+        }
+
+        private void radioSortTrangthai_CheckedChanged(object sender, EventArgs e) {
+            _table = new SortableBindingList<MonAnDto>(_table.OrderBy(monAn => monAn.TrangThai).ToList());
+            dataGridView1.DataSource = _table;
+        }
     }
 }

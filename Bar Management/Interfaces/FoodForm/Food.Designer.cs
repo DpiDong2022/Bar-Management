@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TenMonAnbox = new System.Windows.Forms.TextBox();
@@ -74,6 +74,11 @@
             this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioSortTenMonAn = new System.Windows.Forms.RadioButton();
+            this.radioSortLoaiMonAn = new System.Windows.Forms.RadioButton();
+            this.radioSortGia = new System.Windows.Forms.RadioButton();
+            this.radioSortTrangthai = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
@@ -86,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchKeytextBox
@@ -340,20 +346,20 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvID,
@@ -362,14 +368,14 @@
             this.GiaDgv,
             this.TrangThaiDgv,
             this.moTaDgv});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(13, 296);
@@ -499,6 +505,67 @@
             this.moTaDgv.MinimumWidth = 6;
             this.moTaDgv.Name = "moTaDgv";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioSortTrangthai);
+            this.groupBox1.Controls.Add(this.radioSortGia);
+            this.groupBox1.Controls.Add(this.radioSortLoaiMonAn);
+            this.groupBox1.Controls.Add(this.radioSortTenMonAn);
+            this.groupBox1.Location = new System.Drawing.Point(1144, 95);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 158);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sắp xếp bảng";
+            // 
+            // radioSortTenMonAn
+            // 
+            this.radioSortTenMonAn.AutoSize = true;
+            this.radioSortTenMonAn.Location = new System.Drawing.Point(27, 28);
+            this.radioSortTenMonAn.Name = "radioSortTenMonAn";
+            this.radioSortTenMonAn.Size = new System.Drawing.Size(99, 20);
+            this.radioSortTenMonAn.TabIndex = 0;
+            this.radioSortTenMonAn.TabStop = true;
+            this.radioSortTenMonAn.Text = "Tên món ăn";
+            this.radioSortTenMonAn.UseVisualStyleBackColor = true;
+            this.radioSortTenMonAn.CheckedChanged += new System.EventHandler(this.radioSortTenMonAn_CheckedChanged);
+            // 
+            // radioSortLoaiMonAn
+            // 
+            this.radioSortLoaiMonAn.AutoSize = true;
+            this.radioSortLoaiMonAn.Location = new System.Drawing.Point(27, 54);
+            this.radioSortLoaiMonAn.Name = "radioSortLoaiMonAn";
+            this.radioSortLoaiMonAn.Size = new System.Drawing.Size(101, 20);
+            this.radioSortLoaiMonAn.TabIndex = 1;
+            this.radioSortLoaiMonAn.TabStop = true;
+            this.radioSortLoaiMonAn.Text = "Loại món ăn";
+            this.radioSortLoaiMonAn.UseVisualStyleBackColor = true;
+            this.radioSortLoaiMonAn.CheckedChanged += new System.EventHandler(this.radioSortLoaiMonAn_CheckedChanged);
+            // 
+            // radioSortGia
+            // 
+            this.radioSortGia.AutoSize = true;
+            this.radioSortGia.Location = new System.Drawing.Point(27, 84);
+            this.radioSortGia.Name = "radioSortGia";
+            this.radioSortGia.Size = new System.Drawing.Size(49, 20);
+            this.radioSortGia.TabIndex = 2;
+            this.radioSortGia.TabStop = true;
+            this.radioSortGia.Text = "Giá";
+            this.radioSortGia.UseVisualStyleBackColor = true;
+            this.radioSortGia.CheckedChanged += new System.EventHandler(this.radioSortGia_CheckedChanged);
+            // 
+            // radioSortTrangthai
+            // 
+            this.radioSortTrangthai.AutoSize = true;
+            this.radioSortTrangthai.Location = new System.Drawing.Point(27, 110);
+            this.radioSortTrangthai.Name = "radioSortTrangthai";
+            this.radioSortTrangthai.Size = new System.Drawing.Size(88, 20);
+            this.radioSortTrangthai.TabIndex = 3;
+            this.radioSortTrangthai.TabStop = true;
+            this.radioSortTrangthai.Text = "Trạng thái";
+            this.radioSortTrangthai.UseVisualStyleBackColor = true;
+            this.radioSortTrangthai.CheckedChanged += new System.EventHandler(this.radioSortTrangthai_CheckedChanged);
+            // 
             // Food
             // 
             this.AllowDrop = true;
@@ -506,6 +573,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1556, 880);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.LocTrangThaicomboBox);
             this.Controls.Add(this.label10);
@@ -549,6 +617,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorTrangThai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,5 +667,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioSortTrangthai;
+        private System.Windows.Forms.RadioButton radioSortGia;
+        private System.Windows.Forms.RadioButton radioSortLoaiMonAn;
+        private System.Windows.Forms.RadioButton radioSortTenMonAn;
     }
 }
