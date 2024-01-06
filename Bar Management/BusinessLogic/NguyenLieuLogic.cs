@@ -10,27 +10,35 @@ namespace Bar_Management.BusinessLogic {
     public class NguyenLieuLogic {
 
         private readonly AppDbContext _context;
-        private readonly GenericRepository<LoaiMonAn> _repo;
+        private readonly GenericRepository<NguyenLieu> _repo;
 
         public NguyenLieuLogic() {
 
             _context = AppDbContextSingleton.Instance;
-            _repo = new GenericRepository<LoaiMonAn>();
+            _repo = new GenericRepository<NguyenLieu>();
         }
 
-        public bool Delete(LoaiMonAn obj) {
+        public bool Delete(NguyenLieu obj) {
+            var existedObj = _context.Set<NguyenLieu>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
-        public IEnumerable<LoaiMonAn> GetAll() {
-            return _repo.GetAll();
+        public IEnumerable<NguyenLieu> GetAll() {
+            return _repo.GetAll().Where(c => !c.IsDelete);
         }
 
-        public bool Insert(LoaiMonAn obj) {
+        public bool Insert(NguyenLieu obj) {
             return _repo.Insert(obj);
         }
 
-        public bool Update(LoaiMonAn obj) {
+        public bool Update(NguyenLieu obj) {
+            var existedObj = _context.Set<NguyenLieu>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

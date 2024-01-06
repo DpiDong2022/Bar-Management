@@ -26,7 +26,10 @@ namespace Bar_Management.Models {
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        public bool IsDelete { get; set; }
+        public bool IsDelete { get; set; } = false;
 
+        public override string ToString() {
+            return Ten;
+        }
     }
 }

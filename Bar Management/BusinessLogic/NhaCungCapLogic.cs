@@ -20,11 +20,15 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(NhaCungCap obj) {
+            var existedObj = _context.Set<NhaCungCap>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
         public IEnumerable<NhaCungCap> GetAll() {
-            return _repo.GetAll();
+            return _repo.GetAll().Where(c => !c.IsDelete);
         }
 
         public bool Insert(NhaCungCap obj) {
@@ -32,6 +36,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(NhaCungCap obj) {
+            var existedObj = _context.Set<NhaCungCap>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

@@ -43,6 +43,39 @@ namespace Bar_Management.Models {
 
         [Required]
         public DateTime NgayHetHan { get; set; }
+
+        public TonKho(TonKho tonKho) {
+            Id = tonKho.Id;
+            NguyenLieuId = tonKho.NguyenLieuId;
+            NguyenLieu = tonKho.NguyenLieu;
+            SoLuong = tonKho.SoLuong;
+            DonVi = tonKho.DonVi;
+            GiaNhap = tonKho.GiaNhap;
+            TrangThaiId = tonKho.TrangThaiId;
+            TrangThai = tonKho.TrangThai;
+            NhaCungCapId = tonKho.NhaCungCapId;
+            NhaCungCap = tonKho.NhaCungCap;
+            NgayNhap = tonKho.NgayNhap;
+            NgayHetHan = tonKho.NgayHetHan;
+        }
+
+        public TonKho(int id, int nguyenLieuId, NguyenLieu nguyenLieu, int soLuong, string donVi, decimal giaNhap, int trangThaiId, TrangThaiTonKho trangThai, int nhaCungCapId, NhaCungCap nhaCungCap, DateTime ngayNhap, DateTime ngayHetHan) {
+            Id = id;
+            NguyenLieuId = nguyenLieuId;
+            NguyenLieu = nguyenLieu;
+            SoLuong = soLuong;
+            DonVi = donVi;
+            GiaNhap = giaNhap;
+            TrangThaiId = trangThaiId;
+            TrangThai = trangThai;
+            NhaCungCapId = nhaCungCapId;
+            NhaCungCap = nhaCungCap;
+            NgayNhap = ngayNhap;
+            NgayHetHan = ngayHetHan;
+        }
+
+        public TonKho() {
+        }
     }
 }
 

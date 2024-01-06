@@ -19,6 +19,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(TrangThaiTonKho obj) {
+            var existedObj = _context.Set<TrangThaiTonKho>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
@@ -31,6 +35,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(TrangThaiTonKho obj) {
+            var existedObj = _context.Set<TrangThaiTonKho>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedObj != null) {
+                _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

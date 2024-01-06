@@ -137,7 +137,7 @@ namespace Bar_Management.FoodForm {
 
         // click lưu
         private async void LuuBtn_Click(object sender, EventArgs e) {
-            // kiem tra connection internet
+             // kiem tra connection internet
             if (!Internet.IsInternetAvailable()) {
                 MessageBox.Show("Bạn chưa kết nối với internet, hãy kết nối với internet trước khi thực thi các tác vụ");
             }

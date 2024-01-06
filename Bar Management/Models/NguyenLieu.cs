@@ -23,5 +23,8 @@ namespace Bar_Management.Models {
         [Required]
         public bool IsDelete { get; set; }
 
+        public override string ToString() {
+            return Ten;
+        }
     }
 }

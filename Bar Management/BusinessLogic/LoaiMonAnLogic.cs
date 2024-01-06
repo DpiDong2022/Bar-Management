@@ -19,6 +19,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(LoaiMonAn obj) {
+            var existedMonan = this._context.Set<LoaiMonAn>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
@@ -31,6 +35,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(LoaiMonAn obj) {
+            var existedMonan = this._context.Set<LoaiMonAn>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

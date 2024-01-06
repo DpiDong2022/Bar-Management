@@ -253,6 +253,7 @@
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
     <Compile Include="DTO\MonAnDto.cs" />
+    <Compile Include="DTO\TonKhoDto.cs" />
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +426,7 @@
     <Compile Include="Tool\AutoMapperProfile.cs" />
     <Compile Include="Tool\CloudinaryService.cs" />
     <Compile Include="Tool\Export.cs" />
+    <Compile Include="Tool\GenerateData.cs" />
     <Compile Include="Tool\Internet.cs" />
     <EmbeddedResource Include="Interfaces\AccountForm\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>

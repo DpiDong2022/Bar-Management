@@ -2,13 +2,10 @@
 using Bar_Management.DAO;
 using Bar_Management.DTO;
 using Bar_Management.Models;
-using Bar_Management.TableForm;
 using Bar_Management.Tool;
-using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -42,7 +39,23 @@ namespace Bar_Management.BusinessLogic {
 
         public IEnumerable<MonAnDto> GetAll() {
             var loaiMonAns = _loaiMonAnLogic.GetAll();
-            var result = _repo.GetAll().Where(c => !c.IsDelete).Select(monAn => _mapper.Map<MonAnDto>(monAn));
+            IEnumerable<MonAnDto> result = _repo.GetAll()
+                .Where(c => !c.IsDelete)
+                .Join(loaiMonAns,
+                    monAn => monAn.LoaiMonAnId,
+                    loaiMonAn => loaiMonAn.Id,
+                    (monAn, LoaiMonAn) => new MonAn(){
+                        Id = monAn.Id,
+                        Gia = monAn.Gia,
+                        HinhAnh =  monAn.HinhAnh,
+                        IsAvailable = monAn.IsAvailable,
+                        TenMon = monAn.TenMon,
+                        LoaiMonAnId = monAn.LoaiMonAnId,
+                        IsDelete = monAn.IsDelete,
+                        MoTa = monAn.MoTa,
+                        LoaiMonAn = LoaiMonAn
+                    })
+                .Select(monAn => _mapper.Map<MonAnDto>(monAn));
             return result;
         }
 
@@ -58,7 +71,7 @@ namespace Bar_Management.BusinessLogic {
             return _repo.Update(obj);
         }
 
-        public List<MonAnDto> TimKiem(string searchKey, int loaiMonAnId=-1, int tinhTrang=-1) {
+        public List<MonAnDto> TimKiem(string searchKey, int loaiMonAnId = -1, int tinhTrang = -1) {
             IEnumerable<MonAnDto> monans;
             if (string.IsNullOrEmpty(searchKey)) {
                 monans = GetAll();
@@ -113,7 +126,7 @@ namespace Bar_Management.BusinessLogic {
                     // Clear the clipboard after pasting
                     Clipboard.Clear();
                 }
-                
+
                 // ghi dữ liệu
                 int rowCount = worksheet.Rows.Count;
                 for (int row = 0; row < table.Count; row++) {
@@ -137,7 +150,7 @@ namespace Bar_Management.BusinessLogic {
                     // Save the modified workbook to the user's chosen location
                     templateWorkbook.SaveAs(saveFileDialog.FileName);
 
-                   Process.Start(saveFileDialog.FileName);
+                    Process.Start(saveFileDialog.FileName);
                 }
 
                 // Close and release resources

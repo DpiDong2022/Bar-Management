@@ -1,5 +1,6 @@
 ﻿using Bar_Management.FoodForm;
 using Bar_Management.Interfaces;
+using Bar_Management.Tool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace Bar_Management
         [STAThread]
         static void Main()
         {
+            // tạo dữ liệu khởi tạo cho bảng trạng thái tồn kho, khách hàng, nguyên liệu
+            GenerateData.Render();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm.Main());
