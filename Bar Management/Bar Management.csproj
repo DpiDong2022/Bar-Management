@@ -185,6 +185,11 @@
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="DTO\MonAnDto.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +207,12 @@
     </Compile>
     <Compile Include="Interfaces\CategoryForm\CategoryAdd.Designer.cs">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\EmployeeForm\Employ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\EmployeeForm\Employ.Designer.cs">
+      <DependentUpon>Employ.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\EmployeeForm\Employee.cs">
       <SubType>Form</SubType>
@@ -305,9 +316,15 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Migrations\20231231101441_initial.cs" />
     <Compile Include="Migrations\20231231101441_initial.designer.cs">
       <DependentUpon>20231231101441_initial.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\20240106072713_initial.cs" />
+    <Compile Include="Migrations\20240106072713_initial.designer.cs">
+      <DependentUpon>20240106072713_initial.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
@@ -349,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\CategoryForm\CategoryAdd.resx">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\EmployeeForm\Employ.resx">
+      <DependentUpon>Employ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\EmployeeForm\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
