@@ -13,6 +13,7 @@ namespace Bar_Management.Tool{
             
             var config = new MapperConfiguration(cfg =>
             {
+                //Món ăn
                 cfg.CreateMap<MonAn, MonAnDto>()
                 .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.IsAvailable));
 
@@ -21,9 +22,24 @@ namespace Bar_Management.Tool{
                 .ForMember(dest => dest.LoaiMonAnId, opt => opt.MapFrom(src => src.LoaiMonAn.Id))
                 .ForMember(dest => dest.Gia, opt => opt.MapFrom(src => decimal.Parse(((string)src.Gia).Replace(",",""))));
 
+
+                //Tồn kho
                 cfg.CreateMap<TonKho, TonKhoDto>();
                 cfg.CreateMap<TonKhoDto, TonKho>();
+
+
+                //Nhân viên
+                cfg.CreateMap<NhanVien, NhanVienDTO>();
+                cfg.CreateMap<NhanVienDTO, NhanVien>()
+                .ForMember(dest => dest.Luong, opt => opt.MapFrom(src => decimal.Parse(((string)src.Luong).Replace(",", ""))));
                 
+
+                //Tài khoản
+                cfg.CreateMap<TaiKhoan, TaiKhoanDTO>();
+                cfg.CreateMap<TaiKhoanDTO, TaiKhoan>()
+                .ForMember(dest => dest.RoleId, opt => opt.MapFrom(src => src.Role.Id))
+                .ForMember(dest => dest.NhanVienId, opt => opt.MapFrom(src => src.NhanVien.Id))
+                .ForMember(dest => dest.SettingId, opt => opt.MapFrom(src => src.Setting.Id));
                /* cfg.CreateMap<UserInformation, User>()
                     .ForMember(dest => dest.CreateAt, opt => opt.MapFrom(src => DateTime.Now))
                     .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => CommonFunctions.NameFormat(src.UserName)));*/

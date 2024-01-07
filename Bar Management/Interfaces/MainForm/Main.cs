@@ -4,7 +4,6 @@ using Bar_Management.HomeForm;
 using Bar_Management.OrderForm;
 using Bar_Management.TableForm;
 using Bar_Management.CategoryForm;
-using Bar_Management.EmployeeForm;
 using Bar_Management.RevenueForm;
 using System;
 using System.Collections.Generic;
@@ -16,8 +15,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bar_Management.OrderHistoryForm;
-using Bar_Management.AccountForm;
+using Bar_Management.Interfaces.AccountForm;
 using Bar_Management.Interfaces.WarehouseForm;
+using Bar_Management.Interfaces.EmployeeForm;
 
 namespace Bar_Management.MainForm
 {
@@ -71,7 +71,7 @@ namespace Bar_Management.MainForm
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            addControls(new Employee());
+            addControls(new Employ());
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)

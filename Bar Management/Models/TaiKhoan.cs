@@ -34,5 +34,6 @@ namespace Bar_Management.Models {
 
         [ForeignKey("SettingId")]
         public Setting Setting { get; set; }
+        public bool IsDelete { get; set; } = false;
     }
 }

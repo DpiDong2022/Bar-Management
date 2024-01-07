@@ -20,6 +20,11 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(Role obj) {
+            var existedRole = this._context.Set<Role>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedRole != null)
+            {
+                this._context.Entry(existedRole).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
@@ -32,6 +37,11 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(Role obj) {
+            var existedRole = this._context.Set<Role>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedRole != null)
+            {
+                this._context.Entry(existedRole).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

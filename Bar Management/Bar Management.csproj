@@ -253,6 +253,8 @@
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
     <Compile Include="DTO\MonAnDto.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\TonKhoDto.cs" />
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
@@ -272,17 +274,11 @@
     <Compile Include="Interfaces\CategoryForm\CategoryAdd.Designer.cs">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\EmployeeForm\Employee.cs">
+    <Compile Include="Interfaces\EmployeeForm\Employ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\EmployeeForm\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\EmployeeForm\EmployeeAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\EmployeeForm\EmployeeAdd.Designer.cs">
-      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    <Compile Include="Interfaces\EmployeeForm\Employ.Designer.cs">
+      <DependentUpon>Employ.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\FoodForm\Food.cs">
       <SubType>Form</SubType>
@@ -386,9 +382,21 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240102091203_intitial.cs" />
-    <Compile Include="Migrations\20240102091203_intitial.designer.cs">
-      <DependentUpon>20240102091203_intitial.cs</DependentUpon>
+    <Compile Include="Migrations\20240106120143_initial.cs" />
+    <Compile Include="Migrations\20240106120143_initial.designer.cs">
+      <DependentUpon>20240106120143_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240106162759_update.cs" />
+    <Compile Include="Migrations\20240106162759_update.designer.cs">
+      <DependentUpon>20240106162759_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240107050523_updateTaiKhoan.cs" />
+    <Compile Include="Migrations\20240107050523_updateTaiKhoan.designer.cs">
+      <DependentUpon>20240107050523_updateTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240107160200_updateNhanVien.cs" />
+    <Compile Include="Migrations\20240107160200_updateNhanVien.designer.cs">
+      <DependentUpon>20240107160200_updateNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
@@ -437,11 +445,8 @@
     <EmbeddedResource Include="Interfaces\CategoryForm\CategoryAdd.resx">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\EmployeeForm\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\EmployeeForm\EmployeeAdd.resx">
-      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\EmployeeForm\Employ.resx">
+      <DependentUpon>Employ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FoodForm\Food.resx">
       <DependentUpon>Food.cs</DependentUpon>
