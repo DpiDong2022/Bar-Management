@@ -22,8 +22,10 @@ namespace Bar_Management.Tool{
                 .ForMember(dest => dest.Gia, opt => opt.MapFrom(src => decimal.Parse(((string)src.Gia).Replace(",",""))));
 
                 cfg.CreateMap<TonKho, TonKhoDto>();
-                cfg.CreateMap<TonKhoDto, TonKho>();
-                
+                cfg.CreateMap<TonKhoDto, TonKho>()
+                 .ForMember(dest => dest.GiaNhap, opt => opt.MapFrom(src => decimal.Parse(src.GiaNhap.ToString().Replace(",",""))))
+                 .ForMember(dest => dest.NgayNhap, opt => opt.MapFrom(src => DateTime.ParseExact(src.NgayNhap.ToString(), "dd-MM-yyyy",null)))
+                 .ForMember(dest => dest.NgayHetHan, opt => opt.MapFrom(src => DateTime.ParseExact(src.NgayHetHan.ToString(), "dd-MM-yyyy",null)));
                /* cfg.CreateMap<UserInformation, User>()
                     .ForMember(dest => dest.CreateAt, opt => opt.MapFrom(src => DateTime.Now))
                     .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => CommonFunctions.NameFormat(src.UserName)));*/

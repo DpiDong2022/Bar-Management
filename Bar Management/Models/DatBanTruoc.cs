@@ -39,5 +39,6 @@ namespace Bar_Management.Models {
 
         [MaxLength(100)]
         public string MoTa { get; set; }
+        public int MyProperty { get; set; }
     }
 }

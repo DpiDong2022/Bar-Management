@@ -1,12 +1,5 @@
 ﻿using Bar_Management.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bar_Management.DTO {
     public class TonKhoDto {
@@ -25,7 +18,7 @@ namespace Bar_Management.DTO {
             }
             set {
                 _gia = string.Format("{0:#,##0}", decimal.Parse(value.ToString()));
-            } 
+            }
         }
         public TrangThaiTonKho TrangThai { get; set; }
         public NhaCungCap NhaCungCap { get; set; }
@@ -33,15 +26,15 @@ namespace Bar_Management.DTO {
             get {
                 return _ngayNhap;
             }
-            private set { 
+            private set {
                 _ngayNhap = ((DateTime)value).ToString("dd-MM-yyyy");
-            } 
+            }
         }
         public object NgayHetHan {
             get {
                 return _ngayHetHan;
             }
-            private set {
+            set {
                 _ngayHetHan = ((DateTime)value).ToString("dd-MM-yyyy");
             }
         }

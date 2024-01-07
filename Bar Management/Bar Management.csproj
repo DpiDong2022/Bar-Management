@@ -392,9 +392,11 @@
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
+    <Compile Include="Models\baseClass.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\CongThuc.cs" />
     <Compile Include="Models\DatBanTruoc.cs" />
+    <Compile Include="Models\ExportInfor.cs" />
     <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\LoaiMonAn.cs" />
     <Compile Include="Models\MonAn.cs" />

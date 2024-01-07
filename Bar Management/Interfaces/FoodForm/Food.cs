@@ -184,13 +184,13 @@ namespace Bar_Management.FoodForm {
             int index = dataGridView1.SelectedRows[0].Index;
             int id = (int)(dataGridView1.Rows[index].Cells[0].Value);
             monAn.Id = id;
-            monAnDto.Id = id;
+            monAnDto.Id = id; 
 
             if (_logic.Update(monAn)) {
                 MessageBox.Show("Sửa thành công");
                 _table.RemoveAt(index);
                 _table.Insert(0, monAnDto);
-                dataGridView1.Rows[index].Selected = true;
+                dataGridView1.Rows[0].Selected = true;
             }
         }
 
@@ -198,7 +198,7 @@ namespace Bar_Management.FoodForm {
         }
 
         // Xóa click
-        private void XoaBtn_Click(object sender, EventArgs e) {
+        private async void XoaBtn_Click(object sender, EventArgs e) {
             var selectedRows = dataGridView1.SelectedRows;
             if (selectedRows.Count == 0) {
 

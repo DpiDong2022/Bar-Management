@@ -31,6 +31,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.errAnh = new System.Windows.Forms.ErrorProvider(this.components);
             this.errTenNL = new System.Windows.Forms.ErrorProvider(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errTenNL)).BeginInit();
@@ -42,8 +43,10 @@
             this.pictureBox.Location = new System.Drawing.Point(12, 12);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(513, 431);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            this.pictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
             // 
             // tboxTenNguyenLieu
             // 
@@ -65,6 +68,7 @@
             this.btnChonAnh.TabIndex = 3;
             this.btnChonAnh.Text = "Chọn ảnh";
             this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // btnCancel
             // 
@@ -78,13 +82,13 @@
             // 
             // btnOk
             // 
-            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(12, 507);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(157, 39);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "Lưu";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // errAnh
             // 
@@ -93,6 +97,12 @@
             // errTenNL
             // 
             this.errTenNL.ContainerControl = this;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "\"Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files|*.*\"";
+            this.openFileDialog1.Title = "Chọn một hình ảnh";
             // 
             // NguyenLieuF
             // 
@@ -112,6 +122,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm loại nguyên liệu";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NguyenLieuF_MouseClick);
+            this.MouseHover += new System.EventHandler(this.NguyenLieuF_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errTenNL)).EndInit();
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.ErrorProvider errAnh;
         private System.Windows.Forms.ErrorProvider errTenNL;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
