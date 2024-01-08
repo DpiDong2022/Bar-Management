@@ -37,6 +37,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(TonKho obj) {
+            var existedMonan = _context.Set<TonKho>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                _context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
@@ -72,6 +76,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(TonKho obj) {
+            var existedMonan = _context.Set<TonKho>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                _context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
 
@@ -166,6 +174,106 @@ namespace Bar_Management.BusinessLogic {
                 // Quit Excel application
                 excelApp.Quit();
                 Marshal.ReleaseComObject(excelApp);
+            }
+        }
+
+        public void PhieuXuatKho(SortableBindingList<ExportInfor> table) {
+            // lấy vị trí path templete
+            string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            int binIndex = currentPath.LastIndexOf("bin");
+            string templatepath = currentPath.Substring(0, binIndex)+"Templates\\PhieuXuatKho.xlsx";
+            if (!File.Exists(templatepath)) {
+                return;
+            }
+            // Create a new Excel Application
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = false; // Set to true for debugging
+
+            try {
+                // Open the template workbook
+                Excel.Workbook templateWorkbook = excelApp.Workbooks.Open(templatepath);
+
+                // Access the first worksheet
+                Excel.Worksheet worksheet = (Excel.Worksheet)templateWorkbook.Sheets[1];
+
+                // chỉnh sửa file 
+                // Copy the style from the source row
+                if (table.Count > 14) {
+                    Excel.Range sourceRange = worksheet.Rows[10];
+                    sourceRange.Copy();
+
+                    // Paste the style to the target range
+                    Excel.Range targetRange = worksheet.Range[worksheet.Cells[26, 1], worksheet.Cells[table.Count+3, 6]];
+                    targetRange.PasteSpecial(Excel.XlPasteType.xlPasteFormats);
+
+                    // Clear the clipboard after pasting
+                    Clipboard.Clear();
+                }
+
+                // ghi dữ liệu
+                decimal Tong = 0;
+                decimal thanhTien;
+                int protectedRow = 24;
+                int numberOfRow = 8;
+
+                /*Excel.Range range = worksheet.Rows[1 + 1, Type.Missing];
+                range.Insert(Excel.XlInsertShiftDirection.xlShiftDown, Type.Missing);*/
+                for (int row = 0; row < table.Count; row++) {
+                    if (row+10 == protectedRow) {
+                        InsertRows(worksheet, protectedRow);
+                        protectedRow++;
+                    }
+                    thanhTien = decimal.Parse(table[row].DonGia) * table[row].SoLuong;
+
+                    worksheet.Cells[row + 10, 1].Value = row + 1;
+                    worksheet.Cells[row + 10, 2].Value = table[row].TenNguyenLieu;
+                    worksheet.Cells[row + 10, 3].Value = table[row].DonVi;
+                    worksheet.Cells[row + 10, 4].Value = table[row].SoLuong;
+                    worksheet.Cells[row + 10, 5].Value = table[row].DonGia;
+                    worksheet.Cells[row + 10, 6].Value = string.Format("{0:#,##0}", thanhTien);
+                    Tong += thanhTien;
+                }
+
+                worksheet.Cells[protectedRow, 6].Value = string.Format("{0:#,##0}", Tong);
+
+                // Allow the user to choose where to save the modified file
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                    Filter = "Excel Files|*.xlsx",
+                    Title = "Save Modified File",
+                    FileName = "MonAnBaoCao.xlsx"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                    // Save the modified workbook to the user's chosen location
+                    templateWorkbook.SaveAs(saveFileDialog.FileName);
+
+                    Process.Start(saveFileDialog.FileName);
+                }
+
+                // Close and release resources
+                templateWorkbook.Close(false, Missing.Value, Missing.Value);
+                Marshal.ReleaseComObject(templateWorkbook);
+            } catch (Exception ex) {
+                MessageBox.Show($"Error: {ex.Message}");
+            } finally {
+                // Quit Excel application
+                excelApp.Quit();
+                Marshal.ReleaseComObject(excelApp);
+            }
+        }
+
+        static void InsertRows(Excel.Worksheet worksheet, int startRow) {
+            Excel.Range range = worksheet.Rows[startRow, Type.Missing];
+            range.Insert(Excel.XlInsertShiftDirection.xlShiftDown, Type.Missing);
+        }
+
+        public void UpdateOutOfDate() {
+            foreach (TonKho nguyelieu in _repo.GetAll()) {
+                if (nguyelieu.NgayHetHan <= DateTime.Now || nguyelieu.NgayHetHan.ToShortDateString() == DateTime.Now.ToShortDateString()) {
+                    nguyelieu.TrangThaiId = 3;
+                    Update(nguyelieu);
+                }
             }
         }
     }

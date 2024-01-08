@@ -75,6 +75,11 @@
             this.locNhaCc = new System.Windows.Forms.ComboBox();
             this.capNhatBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numSoLuongXuat = new System.Windows.Forms.NumericUpDown();
             this.btnChon = new System.Windows.Forms.Button();
             this.boChonBtn = new System.Windows.Forms.Button();
@@ -88,11 +93,6 @@
             this.errGiaNhap = new System.Windows.Forms.ErrorProvider(this.components);
             this.errNgayHethan = new System.Windows.Forms.ErrorProvider(this.components);
             this.errExcel = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -531,6 +531,7 @@
             this.xuatBtn.TabIndex = 99;
             this.xuatBtn.Text = "Xuất nguyên liệu";
             this.xuatBtn.UseVisualStyleBackColor = true;
+            this.xuatBtn.Click += new System.EventHandler(this.xuatBtn_Click);
             // 
             // label2
             // 
@@ -606,6 +607,51 @@
             this.dataGridView2.Size = new System.Drawing.Size(682, 313);
             this.dataGridView2.TabIndex = 103;
             // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // tenNguyenLieu
+            // 
+            this.tenNguyenLieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNguyenLieu.DataPropertyName = "TenNguyenLieu";
+            this.tenNguyenLieu.HeaderText = "Tên nguyên liệu";
+            this.tenNguyenLieu.MinimumWidth = 6;
+            this.tenNguyenLieu.Name = "tenNguyenLieu";
+            this.tenNguyenLieu.ReadOnly = true;
+            // 
+            // DonVi
+            // 
+            this.DonVi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DonVi.DataPropertyName = "DonVi";
+            this.DonVi.HeaderText = "Đơn vị";
+            this.DonVi.MinimumWidth = 6;
+            this.DonVi.Name = "DonVi";
+            this.DonVi.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // DonGia
+            // 
+            this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn giá";
+            this.DonGia.MinimumWidth = 6;
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
             // numSoLuongXuat
             // 
             this.numSoLuongXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -629,6 +675,7 @@
             0,
             0});
             this.numSoLuongXuat.ValueChanged += new System.EventHandler(this.numSoLuongXuat_ValueChanged);
+            this.numSoLuongXuat.Leave += new System.EventHandler(this.numSoLuongXuat_Leave);
             // 
             // btnChon
             // 
@@ -648,6 +695,7 @@
             this.boChonBtn.TabIndex = 106;
             this.boChonBtn.Text = "Bỏ chọn";
             this.boChonBtn.UseVisualStyleBackColor = true;
+            this.boChonBtn.Click += new System.EventHandler(this.boChonBtn_Click);
             // 
             // label3
             // 
@@ -700,51 +748,6 @@
             // errExcel
             // 
             this.errExcel.ContainerControl = this;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // tenNguyenLieu
-            // 
-            this.tenNguyenLieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNguyenLieu.DataPropertyName = "TenNguyenLieu";
-            this.tenNguyenLieu.HeaderText = "Tên nguyên liệu";
-            this.tenNguyenLieu.MinimumWidth = 6;
-            this.tenNguyenLieu.Name = "tenNguyenLieu";
-            this.tenNguyenLieu.ReadOnly = true;
-            // 
-            // DonVi
-            // 
-            this.DonVi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonVi.DataPropertyName = "DonVi";
-            this.DonVi.HeaderText = "Đơn vị";
-            this.DonVi.MinimumWidth = 6;
-            this.DonVi.Name = "DonVi";
-            this.DonVi.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // DonGia
-            // 
-            this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn giá";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
             // 
             // Warehouse
             // 

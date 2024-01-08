@@ -12,7 +12,6 @@ namespace Bar_Management.DAO {
 
         public DbSet<Ban> Bans { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public DbSet<CongThuc> CongThucs { get; set; }
         public DbSet<DatBanTruoc> DatBanTruocs { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<LoaiMonAn> LoaiMonAns { get; set; }
@@ -21,7 +20,6 @@ namespace Bar_Management.DAO {
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<SuKien> SuKiens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
         public DbSet<TonKho> TonKhos { get; set; }
         public DbSet<TrangThaiBan> TrangThaiBans { get; set; }

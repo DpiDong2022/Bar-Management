@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Bar_Management.BusinessLogic;
+using Bar_Management.DAO;
 using Bar_Management.DTO;
 using Bar_Management.Models;
 using Bar_Management.Tool;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
-using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -249,7 +249,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             }
 
             TonKhoDto tonKhoDto = dataGridView1.SelectedRows[0].DataBoundItem as TonKhoDto;
-            if (_tonKhoLogic.Delete(new TonKho() { Id = tonKhoDto.Id})) {
+            if (_tonKhoLogic.Delete(new TonKho() { Id = tonKhoDto.Id })) {
                 MessageBox.Show("Xóa thành công");
                 _table.Remove(tonKhoDto);
             }
@@ -344,7 +344,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
 
             NguyenLieu nguyenLieu = cboxNguyenLieu.SelectedItem as NguyenLieu;
             Models.NhaCungCap nhaCungCap = cboxNhaCC.SelectedItem as Models.NhaCungCap;
-            TrangThaiTonKho trangThaiTonKho = cboxTrangthai.SelectedItem as TrangThaiTonKho;
+            TrangThaiTonKho trangThaiTonKho = cboxTrangthai.Items[1] as TrangThaiTonKho;
             string soLuong = tbSoLuong.Text;
             string donVi = tbDonVi.Text;
             string giaNhap = tbGiaNhap.Text;
@@ -353,7 +353,25 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             if (!IsValidate(soLuong, donVi, giaNhap, ngayHetHan, nguyenLieu.Id, nhaCungCap.Id, trangThaiTonKho.Id))
                 return;
 
+
+
+            if (MessageBox.Show("Lưu thông tin tồn kho?", "Thông tin tồn kho", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.OK) {
+                return;
+            }
+
             TonKho tonKhoMoi = new TonKho(){
+                NguyenLieuId = nhaCungCap.Id,
+                NhaCungCapId = nhaCungCap.Id,
+                TrangThaiId = trangThaiTonKho.Id,
+                SoLuong = int.Parse(soLuong),
+                DonVi = donVi,
+                GiaNhap = decimal.Parse(giaNhap),
+                NgayHetHan = ngayHetHan,
+                NgayNhap = DateTime.Now
+            };
+
+            TonKhoDto tonKhoDto = new TonKhoDto(){
                 NguyenLieu = nguyenLieu,
                 NhaCungCap = nhaCungCap,
                 TrangThai = trangThaiTonKho,
@@ -363,24 +381,17 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                 NgayHetHan = ngayHetHan,
                 NgayNhap = DateTime.Now
             };
-
-            if (MessageBox.Show("Lưu thông tin tồn kho?", "Thông tin tồn kho", MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.OK) {
-                return;
-            }
-
-            TonKhoDto tonKhoDto = _mapper.Map<TonKhoDto>(tonKhoMoi);
             // lấy id của dòng chùng thông tin nhà cung cấp nguyên liệu ngày nhập
             int id = KiemTraThongTinDaTonTai(tonKhoDto);
             if (id == -1) {
                 // nếu không chùng thì thêm mới
                 if (_tonKhoLogic.Insert(tonKhoMoi)) {
                     MessageBox.Show("Lưu thành công");
-                    _table.Insert(0, tonKhoDto);
+                    Loc();
                 }
 
             } else {
-                MessageBox.Show("Thêm không thành công do đang có một dòng thông tin cùng nhà cung cấp, nguyên liệu, đơn vị",
+                MessageBox.Show("Thêm không thành công do đang có một dòng thông tin cùng nhà cung cấp, nguyên liệu, đơn vị, ngày nhập",
                     "Cảnh báo", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
@@ -437,7 +448,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e) {
-            if (dataGridView1.SelectedRows.Count==0) {
+            if (dataGridView1.SelectedRows.Count == 0) {
                 return;
             }
 
@@ -457,6 +468,14 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             }
 
             TonKhoDto tonKhoDto = dataGridView1.SelectedRows[0].DataBoundItem as TonKhoDto;
+
+            for (int index = 0; index < _tableExportInfor.Count; index++) {
+                ExportInfor infor = _tableExportInfor.ToList()[index];
+                if (infor.Id == tonKhoDto.Id.ToString()) {
+                    return;
+                }
+            }
+
             ExportInfor exportInfor = new ExportInfor(){
                 Id = tonKhoDto.Id.ToString(),
                 SoLuong = 1,
@@ -465,23 +484,83 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                 DonVi = tonKhoDto.DonVi
             };
 
-            foreach (var item in _tableExportInfor)
-            {
-                if () {
-
-                }
-            }
-
             _tableExportInfor.Insert(0, exportInfor);
-            numSoLuongXuat.Focus(); 
+            numSoLuongXuat.Focus();
         }
 
         private void numSoLuongXuat_ValueChanged(object sender, EventArgs e) {
-            if (dataGridView2.SelectedRows.Count==0) {
+            if (dataGridView2.SelectedRows.Count == 0) {
                 return;
             }
 
             dataGridView2.SelectedRows[0].Cells[3].Value = numSoLuongXuat.Value;
+        }
+
+        private void boChonBtn_Click(object sender, EventArgs e) {
+            if (dataGridView2.SelectedRows.Count == 0) {
+                return;
+            }
+
+            _tableExportInfor.RemoveAt(dataGridView2.SelectedRows[0].Index);
+        }
+
+        private void numSoLuongXuat_Leave(object sender, EventArgs e) {
+            if (dataGridView2.SelectedRows.Count == 0) {
+                return;
+            }
+
+            ExportInfor exportInfor = dataGridView2.SelectedRows[0].DataBoundItem as ExportInfor;
+            if (_table.Any(tk => tk.Id.ToString() == exportInfor.Id && tk.SoLuong < exportInfor.SoLuong)) {
+                MessageBox.Show("Số lượng nguyên liệu muốn xuất vượt quá số lượng hiện tại đang có");
+                numSoLuongXuat.Value = 1;
+            }
+        }
+
+        private void xuatBtn_Click(object sender, EventArgs e) {
+
+            if (dataGridView2.Rows.Count == 0) {
+                MessageBox.Show("Hãy chọn nguyên liệu");
+                return;
+            }
+
+            using (var transaction = new AppDbContext().Database.BeginTransaction()) {
+                try {
+                    for (int index = 0; index < dataGridView2.Rows.Count; index++) {
+                        ExportInfor exportInfor = dataGridView2.Rows[index].DataBoundItem as ExportInfor;
+                        TonKhoDto tonKhoDto = _table.First(c => c.Id.ToString() == exportInfor.Id);
+
+                        tonKhoDto.SoLuong -= exportInfor.SoLuong;
+                        if (tonKhoDto.SoLuong == 0) {
+                            tonKhoDto.TrangThai = _tableTrangThai.First(c => c.Ten == "Hết");
+                        }
+
+                        TonKho tonKho = new TonKho(){
+                            Id = tonKhoDto.Id,
+                            SoLuong = tonKhoDto.SoLuong,
+                            DonVi = tonKhoDto.DonVi,
+                            NguyenLieuId = tonKhoDto.NguyenLieu.Id,
+                            NhaCungCapId = tonKhoDto.NhaCungCap.Id,
+                            TrangThaiId = tonKhoDto.TrangThai.Id,
+                            GiaNhap = decimal.Parse(((string)tonKhoDto.GiaNhap).Replace(",","")),
+                            NgayNhap = DateTime.ParseExact(tonKhoDto.NgayNhap.ToString(), "dd-MM-yyyy",null),
+                            NgayHetHan = DateTime.ParseExact(tonKhoDto.NgayHetHan.ToString(), "dd-MM-yyyy", null)
+                        };
+                        _tonKhoLogic.Update(tonKho);
+
+
+                    }
+                    transaction.Commit();
+                    Loc();
+                    if (MessageBox.Show("Cập nhật thông tin xuất kho thành công, bạn có muốn in phiếu xuất kho?", "Thông báo", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK) {
+
+                        _tonKhoLogic.PhieuXuatKho(_tableExportInfor);
+                    }
+                } catch (Exception ex) {
+                    transaction.Rollback();
+                    MessageBox.Show("Xuất không thành công do: " + ex.Message);
+                }
+            }
         }
     }
 }

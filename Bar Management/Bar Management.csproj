@@ -231,7 +231,6 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\BanLogic.cs" />
     <Compile Include="BusinessLogic\ChiTieHoaDonLogic.cs" />
-    <Compile Include="BusinessLogic\CongThucLogic.cs" />
     <Compile Include="BusinessLogic\DatBanTruocLogic.cs" />
     <Compile Include="BusinessLogic\HoaDonLogic.cs" />
     <Compile Include="BusinessLogic\LoaiMonAnLogic.cs" />
@@ -241,7 +240,6 @@
     <Compile Include="BusinessLogic\NhanVienLogic.cs" />
     <Compile Include="BusinessLogic\RoleLogic.cs" />
     <Compile Include="BusinessLogic\SettingLogic.cs" />
-    <Compile Include="BusinessLogic\SukienLogic.cs" />
     <Compile Include="BusinessLogic\TaiKhoanLogic.cs" />
     <Compile Include="BusinessLogic\TonKhoLogic.cs" />
     <Compile Include="BusinessLogic\TrangThaiBanLogic.cs" />
@@ -320,18 +318,6 @@
     <Compile Include="Interfaces\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\test1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\test1.Designer.cs">
-      <DependentUpon>test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\testSukien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\testSukien.Designer.cs">
-      <DependentUpon>testSukien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\WarehouseForm\NguyenLieuF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,15 +372,14 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240102091203_intitial.cs" />
-    <Compile Include="Migrations\20240102091203_intitial.designer.cs">
-      <DependentUpon>20240102091203_intitial.cs</DependentUpon>
+    <Compile Include="Migrations\20240108090935_initial.cs" />
+    <Compile Include="Migrations\20240108090935_initial.designer.cs">
+      <DependentUpon>20240108090935_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\baseClass.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
-    <Compile Include="Models\CongThuc.cs" />
     <Compile Include="Models\DatBanTruoc.cs" />
     <Compile Include="Models\ExportInfor.cs" />
     <Compile Include="Models\HoaDon.cs" />
@@ -405,7 +390,6 @@
     <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Setting.cs" />
-    <Compile Include="Models\SuKien.cs" />
     <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Models\TonKho.cs" />
     <Compile Include="Models\TrangThaiBan.cs" />
@@ -462,12 +446,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\test1.resx">
-      <DependentUpon>test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\testSukien.resx">
-      <DependentUpon>testSukien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\WarehouseForm\NguyenLieuF.resx">
       <DependentUpon>NguyenLieuF.cs</DependentUpon>

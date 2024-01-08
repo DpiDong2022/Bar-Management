@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bar_Management.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240102091203_intitial")]
-    partial class intitial
+    [Migration("20240108090935_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -75,36 +75,6 @@ namespace Bar_Management.Migrations
                     b.ToTable("ChiTietHoaDons");
                 });
 
-            modelBuilder.Entity("Bar_Management.Models.CongThuc", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DonVi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("MonAnId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NguyenLieuId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SoLuong")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MonAnId");
-
-                    b.HasIndex("NguyenLieuId");
-
-                    b.ToTable("CongThucs");
-                });
-
             modelBuilder.Entity("Bar_Management.Models.DatBanTruoc", b =>
                 {
                     b.Property<int>("Id")
@@ -118,6 +88,9 @@ namespace Bar_Management.Migrations
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<int>("MyProperty")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("NgayDat")
                         .HasColumnType("datetime2");
@@ -154,6 +127,9 @@ namespace Bar_Management.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BanId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("NgayTao")
                         .HasColumnType("datetime2");
 
@@ -167,6 +143,8 @@ namespace Bar_Management.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BanId");
 
                     b.HasIndex("TaiKhoanTaoId");
 
@@ -201,8 +179,7 @@ namespace Bar_Management.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("HinhAnh")
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IsAvailable")
                         .HasColumnType("int");
@@ -214,8 +191,8 @@ namespace Bar_Management.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("MoTa")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("TenMon")
                         .IsRequired()
@@ -240,8 +217,7 @@ namespace Bar_Management.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("HinhAnh")
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -301,8 +277,10 @@ namespace Bar_Management.Migrations
                         .HasMaxLength(256);
 
                     b.Property<string>("HinhAnh")
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Luong")
                         .HasColumnType("decimal(18,2)");
@@ -358,36 +336,15 @@ namespace Bar_Management.Migrations
                     b.ToTable("Settings");
                 });
 
-            modelBuilder.Entity("Bar_Management.Models.SuKien", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("MoTa")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<DateTime>("NgayDienRa")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TenSuKien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SuKiens");
-                });
-
             modelBuilder.Entity("Bar_Management.Models.TaiKhoan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("MatKhau")
                         .IsRequired()
@@ -523,21 +480,6 @@ namespace Bar_Management.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Bar_Management.Models.CongThuc", b =>
-                {
-                    b.HasOne("Bar_Management.Models.MonAn", "MonAn")
-                        .WithMany()
-                        .HasForeignKey("MonAnId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Bar_Management.Models.NguyenLieu", "NguyenLieu")
-                        .WithMany()
-                        .HasForeignKey("NguyenLieuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Bar_Management.Models.DatBanTruoc", b =>
                 {
                     b.HasOne("Bar_Management.Models.Ban", "Ban")
@@ -555,6 +497,12 @@ namespace Bar_Management.Migrations
 
             modelBuilder.Entity("Bar_Management.Models.HoaDon", b =>
                 {
+                    b.HasOne("Bar_Management.Models.Ban", "Ban")
+                        .WithMany()
+                        .HasForeignKey("BanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Bar_Management.Models.TaiKhoan", "TaiKhoanTao")
                         .WithMany()
                         .HasForeignKey("TaiKhoanTaoId")

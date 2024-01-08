@@ -41,5 +41,7 @@ namespace Bar_Management.BusinessLogic {
             }
             return _repo.Update(obj);
         }
+
+       
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bar_Management.Migrations
 {
-    public partial class intitial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,7 @@ namespace Bar_Management.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Ten = table.Column<string>(maxLength: 50, nullable: false),
-                    HinhAnh = table.Column<string>(maxLength: 255, nullable: true),
+                    HinhAnh = table.Column<string>(nullable: true),
                     GiaBan = table.Column<decimal>(nullable: false),
                     IsDelete = table.Column<bool>(nullable: false)
                 },
@@ -63,8 +63,9 @@ namespace Bar_Management.Migrations
                     NgaySinh = table.Column<DateTime>(nullable: false),
                     SDT = table.Column<string>(maxLength: 11, nullable: false),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
-                    HinhAnh = table.Column<string>(maxLength: 255, nullable: true),
-                    Luong = table.Column<decimal>(nullable: false)
+                    HinhAnh = table.Column<string>(nullable: true),
+                    Luong = table.Column<decimal>(nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,21 +96,6 @@ namespace Bar_Management.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Settings", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SuKiens",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TenSuKien = table.Column<string>(maxLength: 50, nullable: false),
-                    NgayDienRa = table.Column<DateTime>(nullable: false),
-                    MoTa = table.Column<string>(maxLength: 100, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SuKiens", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -148,8 +134,8 @@ namespace Bar_Management.Migrations
                     LoaiMonAnId = table.Column<int>(nullable: false),
                     Gia = table.Column<decimal>(nullable: false),
                     IsAvailable = table.Column<int>(nullable: false),
-                    HinhAnh = table.Column<string>(maxLength: 255, nullable: true),
-                    MoTa = table.Column<string>(maxLength: 100, nullable: true),
+                    HinhAnh = table.Column<string>(nullable: true),
+                    MoTa = table.Column<string>(maxLength: 255, nullable: true),
                     IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -173,7 +159,8 @@ namespace Bar_Management.Migrations
                     MatKhau = table.Column<string>(maxLength: 50, nullable: false),
                     RoleId = table.Column<int>(nullable: false),
                     NhanVienId = table.Column<int>(nullable: true),
-                    SettingId = table.Column<int>(nullable: true)
+                    SettingId = table.Column<int>(nullable: true),
+                    IsDelete = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -258,56 +245,6 @@ namespace Bar_Management.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CongThucs",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MonAnId = table.Column<int>(nullable: false),
-                    NguyenLieuId = table.Column<int>(nullable: false),
-                    DonVi = table.Column<string>(maxLength: 20, nullable: false),
-                    SoLuong = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CongThucs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CongThucs_MonAns_MonAnId",
-                        column: x => x.MonAnId,
-                        principalTable: "MonAns",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CongThucs_NguyenLieus_NguyenLieuId",
-                        column: x => x.NguyenLieuId,
-                        principalTable: "NguyenLieus",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HoaDons",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NgayTao = table.Column<DateTime>(nullable: false),
-                    TaiKhoanTaoId = table.Column<int>(nullable: false),
-                    TongGia = table.Column<decimal>(nullable: false),
-                    TrangThai = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HoaDons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_HoaDons_TaiKhoans_TaiKhoanTaoId",
-                        column: x => x.TaiKhoanTaoId,
-                        principalTable: "TaiKhoans",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DatBanTruocs",
                 columns: table => new
                 {
@@ -319,7 +256,8 @@ namespace Bar_Management.Migrations
                     SDT = table.Column<string>(maxLength: 11, nullable: false),
                     NgayDat = table.Column<DateTime>(nullable: false),
                     NgaySuDung = table.Column<DateTime>(nullable: false),
-                    MoTa = table.Column<string>(maxLength: 100, nullable: true)
+                    MoTa = table.Column<string>(maxLength: 100, nullable: true),
+                    MyProperty = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -333,6 +271,35 @@ namespace Bar_Management.Migrations
                     table.ForeignKey(
                         name: "FK_DatBanTruocs_TaiKhoans_TaiKhoanDatId",
                         column: x => x.TaiKhoanDatId,
+                        principalTable: "TaiKhoans",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HoaDons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NgayTao = table.Column<DateTime>(nullable: false),
+                    TaiKhoanTaoId = table.Column<int>(nullable: false),
+                    TongGia = table.Column<decimal>(nullable: false),
+                    TrangThai = table.Column<int>(nullable: false),
+                    BanId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HoaDons", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_HoaDons_Bans_BanId",
+                        column: x => x.BanId,
+                        principalTable: "Bans",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HoaDons_TaiKhoans_TaiKhoanTaoId",
+                        column: x => x.TaiKhoanTaoId,
                         principalTable: "TaiKhoans",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -382,16 +349,6 @@ namespace Bar_Management.Migrations
                 column: "MonAnId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CongThucs_MonAnId",
-                table: "CongThucs",
-                column: "MonAnId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CongThucs_NguyenLieuId",
-                table: "CongThucs",
-                column: "NguyenLieuId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DatBanTruocs_BanId",
                 table: "DatBanTruocs",
                 column: "BanId");
@@ -400,6 +357,11 @@ namespace Bar_Management.Migrations
                 name: "IX_DatBanTruocs_TaiKhoanDatId",
                 table: "DatBanTruocs",
                 column: "TaiKhoanDatId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDons_BanId",
+                table: "HoaDons",
+                column: "BanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HoaDons_TaiKhoanTaoId",
@@ -450,13 +412,7 @@ namespace Bar_Management.Migrations
                 name: "ChiTietHoaDons");
 
             migrationBuilder.DropTable(
-                name: "CongThucs");
-
-            migrationBuilder.DropTable(
                 name: "DatBanTruocs");
-
-            migrationBuilder.DropTable(
-                name: "SuKiens");
 
             migrationBuilder.DropTable(
                 name: "TonKhos");
@@ -468,9 +424,6 @@ namespace Bar_Management.Migrations
                 name: "MonAns");
 
             migrationBuilder.DropTable(
-                name: "Bans");
-
-            migrationBuilder.DropTable(
                 name: "NguyenLieus");
 
             migrationBuilder.DropTable(
@@ -478,6 +431,9 @@ namespace Bar_Management.Migrations
 
             migrationBuilder.DropTable(
                 name: "TrangThaiTonKhos");
+
+            migrationBuilder.DropTable(
+                name: "Bans");
 
             migrationBuilder.DropTable(
                 name: "TaiKhoans");
