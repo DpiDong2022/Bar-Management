@@ -40,9 +40,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public IEnumerable<NhanVienDTO> GetAll() {
+            IEnumerable<NhanVien> result4 = _repo.GetAll();
 
             IEnumerable<NhanVienDTO> result = _repo.GetAll()
-                .Where(c => !c.isDeleted)                                
+                //.Where(c => !c.isDeleted)
                 .Select(nhanvien => _mapper.Map<NhanVienDTO>(nhanvien));
             return result;
         }

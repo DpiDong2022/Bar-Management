@@ -22,7 +22,7 @@ namespace Bar_Management.Interfaces.AccountForm
         private SortableBindingList<Role> _tableRole1;
         private SortableBindingList<Role> _tableRole2;
 
-        private SortableBindingList<NhanVien> _tableNhanvien;
+        private SortableBindingList<NhanVienDTO> _tableNhanvien;
         private readonly IMapper _mapper;
         int _rowHoverIndex;
         public Account()
@@ -169,7 +169,13 @@ namespace Bar_Management.Interfaces.AccountForm
             _tableRole2.Insert(0, new Role() { Id = -1, Ten = "--Role--" });
             //cbRole.DataSource = _tableRole2;
             cbRole.DataSource = _tableRole1;
+            //combobox ten nhan vien
+            cbTennhanvien.ValueMember = "Id";
+            cbTennhanvien.DisplayMember = "Ten";
 
+            _tableNhanvien = new SortableBindingList<NhanVienDTO>(_nhanVienLogic.GetAll().ToList());
+            _tableNhanvien.Insert(0, new NhanVienDTO() { Id = -1, Ten = "--Nhân viên--" });
+            cbTennhanvien.DataSource = _tableNhanvien;
             // ép chỉ đọc các dropdown
             cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTennhanvien.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -301,7 +307,7 @@ namespace Bar_Management.Interfaces.AccountForm
             int RoleID = taiKhoanDTO.Role.Id;
             foreach (var item in cbRole.Items)
             {
-                if (((Role)item).Id == RoleID)
+                if (((Role)item).Id == RoleID) 
                 {
                     cbRole.SelectedIndex = cbRole.Items.IndexOf(item);
                     break;
@@ -311,7 +317,7 @@ namespace Bar_Management.Interfaces.AccountForm
             int NhanvienID = taiKhoanDTO.NhanVien.Id;
             foreach (var item in cbTennhanvien.Items)
             {
-                if (((NhanVien)item).Id == NhanvienID)
+                if (((NhanVienDTO)item).Id == NhanvienID)
                 {
                     cbTennhanvien.SelectedIndex = cbTennhanvien.Items.IndexOf(item);
                     break;

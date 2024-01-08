@@ -44,6 +44,11 @@
             this.ThemBtn = new System.Windows.Forms.Button();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ExcelBtn = new System.Windows.Forms.Button();
@@ -56,11 +61,6 @@
             this.cbTennhanvien = new System.Windows.Forms.ComboBox();
             this.errorNhanvien = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorXoa = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTen)).BeginInit();
@@ -122,9 +122,7 @@
             this.cbRole.FormattingEnabled = true;
             this.cbRole.ItemHeight = 18;
             this.cbRole.Items.AddRange(new object[] {
-            "--Trạng thái--",
-            "Còn",
-            "Hết"});
+            "--Role--"});
             this.cbRole.Location = new System.Drawing.Point(918, 265);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(203, 26);
@@ -247,6 +245,41 @@
             this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "Ten";
+            this.Ten.HeaderText = "Tên tài khoản";
+            this.Ten.MinimumWidth = 6;
+            this.Ten.Name = "Ten";
+            // 
+            // DOB
+            // 
+            this.DOB.DataPropertyName = "MatKhau";
+            this.DOB.HeaderText = "Mật khẩu";
+            this.DOB.MinimumWidth = 6;
+            this.DOB.Name = "DOB";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "NhanVien";
+            this.SDT.HeaderText = "Nhân viên";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Role";
+            this.Email.HeaderText = "Role";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            // 
             // searchKeytextBox
             // 
             this.searchKeytextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,9 +355,7 @@
             this.cbTennhanvien.FormattingEnabled = true;
             this.cbTennhanvien.ItemHeight = 18;
             this.cbTennhanvien.Items.AddRange(new object[] {
-            "--Trạng thái--",
-            "Còn",
-            "Hết"});
+            "--Tên người dùng--"});
             this.cbTennhanvien.Location = new System.Drawing.Point(918, 215);
             this.cbTennhanvien.Name = "cbTennhanvien";
             this.cbTennhanvien.Size = new System.Drawing.Size(203, 26);
@@ -337,41 +368,6 @@
             // errorXoa
             // 
             this.errorXoa.ContainerControl = this;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "Ten";
-            this.Ten.HeaderText = "Tên tài khoản";
-            this.Ten.MinimumWidth = 6;
-            this.Ten.Name = "Ten";
-            // 
-            // DOB
-            // 
-            this.DOB.DataPropertyName = "MatKhau";
-            this.DOB.HeaderText = "Mật khẩu";
-            this.DOB.MinimumWidth = 6;
-            this.DOB.Name = "DOB";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "NhanVien";
-            this.SDT.HeaderText = "Nhân viên";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Role";
-            this.Email.HeaderText = "Role";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
             // 
             // Account
             // 

@@ -398,6 +398,10 @@
     <Compile Include="Migrations\20240107160200_updateNhanVien.designer.cs">
       <DependentUpon>20240107160200_updateNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20240107165317_renew.cs" />
+    <Compile Include="Migrations\20240107165317_renew.designer.cs">
+      <DependentUpon>20240107165317_renew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />

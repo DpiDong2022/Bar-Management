@@ -3,6 +3,7 @@ using Bar_Management.DAO;
 using Bar_Management.DTO;
 using Bar_Management.Models;
 using Bar_Management.Tool;
+using CloudinaryDotNet.Actions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,7 @@ namespace Bar_Management.BusinessLogic {
         public IEnumerable<TaiKhoanDTO> GetAll() {
             var Roles = _roleLogic.GetAll();
             var nhanViens = _nhanvienLogic.GetAll();
+
             IEnumerable<TaiKhoanDTO> result = _repo.GetAll()
                 .Where(c => !c.IsDelete)
                 
@@ -57,6 +59,7 @@ namespace Bar_Management.BusinessLogic {
                         Ten = taiKhoan.Ten,
                         MatKhau = taiKhoan.MatKhau,
                         RoleId = taiKhoan.RoleId,
+                        Role = role,
                         NhanVienId = taiKhoan.NhanVienId,
                         SettingId = taiKhoan.SettingId
                     })
@@ -70,6 +73,8 @@ namespace Bar_Management.BusinessLogic {
                           Ten = taiKhoan.Ten,
                           MatKhau = taiKhoan.MatKhau,
                           RoleId = taiKhoan.RoleId,
+                          Role = taiKhoan.Role,
+                          NhanVien = _mapper.Map<NhanVien>(nhanVien),
                           NhanVienId = taiKhoan.NhanVienId,
                           SettingId = taiKhoan.SettingId
                       })
@@ -100,7 +105,7 @@ namespace Bar_Management.BusinessLogic {
             {
                 searchKey = searchKey.ToLower();
                 string[] keys = searchKey.Split(' ');
-                IEnumerable<Role> roles = new GenericRepository<Role>().GetAll();
+                IEnumerable<Models.Role> roles = new GenericRepository<Models.Role>().GetAll();
 
                 taiKhoans = GetAll().Where(taiKhoan => keys.Any(
                     key => taiKhoan.Ten.ToLower().Contains(key)));

@@ -13,5 +13,9 @@ namespace Bar_Management.Models {
         [Required]
         [MaxLength(20)]
         public string Ten { get; set; }
+        public override string ToString()
+        {
+            return Ten;
+        }
     }
 }

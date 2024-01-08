@@ -45,6 +45,7 @@ namespace Bar_Management.DTO
 
         public string HinhAnh { get; set; }
 
+
         public object Luong {
             get
             {
