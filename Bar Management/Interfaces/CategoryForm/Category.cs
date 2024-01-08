@@ -23,7 +23,8 @@ namespace Bar_Management.CategoryForm
             _logic = new LoaiMonAnLogic();
             _table = new BindingList<LoaiMonAn>(_logic.GetAll().ToList());
 
-            dataGridView1.DataSource = _table;
+            dataGridView2.DataSource = _table;
+            dataGridView2.Columns[0].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

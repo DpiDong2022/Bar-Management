@@ -562,5 +562,9 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                 }
             }
         }
+
+        private void label9_Click(object sender, EventArgs e) {
+
+        }
     }
 }

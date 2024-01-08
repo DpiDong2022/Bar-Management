@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bar_Management.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
@@ -6,36 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bar_Management.Models {
-    public class TaiKhoan {
-        [Key]
+namespace Bar_Management.DTO
+{
+    public class TaiKhoanDTO
+    {
+        //#region fiels
+        //private string _trangThai;
+        //private string _gia;
+        //# endregion
         public int Id { get; set; }
-
-        [Required]
-        [MaxLength(50)]
         public string Ten { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         public string MatKhau { get; set; }
 
-        [Required]
-        public int RoleId { get; set; }
-
-        [ForeignKey("RoleId")]
         public Role Role { get; set; }
 
-        public int? NhanVienId { get; set; }
-
-        [ForeignKey("NhanVienId")]
         public NhanVien NhanVien { get; set; }
-
-        public int? SettingId { get; set; }
-
-        [ForeignKey("SettingId")]
         public Setting Setting { get; set; }
-        [Required]
-        public bool IsDelete { get; set; } = false;
 
         public override string ToString() {
             return Ten;

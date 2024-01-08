@@ -4,7 +4,7 @@ using Bar_Management.HomeForm;
 using Bar_Management.OrderForm;
 using Bar_Management.TableForm;
 using Bar_Management.CategoryForm;
-using Bar_Management.EmployeeForm;
+using Bar_Management.Interfaces.EmployeeForm;
 using Bar_Management.RevenueForm;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bar_Management.OrderHistoryForm;
-using Bar_Management.AccountForm;
+using Bar_Management.Interfaces.AccountForm;
 using Bar_Management.Interfaces.WarehouseForm;
 
 namespace Bar_Management.MainForm
@@ -26,6 +26,10 @@ namespace Bar_Management.MainForm
         public Main()
         {
             InitializeComponent();
+            this.Size = new Size() { Height = MaximumSize.Height, Width = MaximumSize.Width };
+            this.MinimumSize = new Size() { Height = MaximumSize.Height, Width = MaximumSize.Width };
+            this.StartPosition = FormStartPosition.CenterParent;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         public void addControls(Form f)
@@ -53,14 +57,11 @@ namespace Bar_Management.MainForm
 
         private void btnFood_Click(object sender, EventArgs e)
         {
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Size = new Size() { Height = 800, Width = 1300 };
             addControls(new Food());
         }
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            this.Size = new Size() { Height = 800, Width = 1500 };
             addControls(new NhaCungCap());
         }
 
@@ -71,7 +72,7 @@ namespace Bar_Management.MainForm
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            addControls(new Employee());
+            addControls(new Employ());
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)

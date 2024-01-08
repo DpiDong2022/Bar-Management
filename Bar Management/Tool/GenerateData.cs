@@ -128,13 +128,13 @@ namespace Bar_Management.Tool {
         };
 
         static List<NhanVien> nhanViens = new List<NhanVien>(){
-            new NhanVien(){ Ten="Nguyễn văn A", Email="",SDT="0998867545", NgaySinh=new DateTime(1999,3,12), 
+            new NhanVien(){ Ten="Nguyễn văn A", Email="nguyenvana@gmail.com",SDT="0998867545", NgaySinh=new DateTime(1999,3,12), 
                 Luong=6000000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false},
-            new NhanVien(){ Ten="Nguyễn văn B", Email="",SDT="0998867546", NgaySinh=new DateTime(1998,4,13),
+            new NhanVien(){ Ten="Nguyễn văn B", Email="nguyenvanb@gmail.com",SDT="0998867546", NgaySinh=new DateTime(1998,4,13),
                 Luong=6500000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false},
-            new NhanVien(){ Ten="Phùng Đại C", Email="",SDT="0998867547", NgaySinh=new DateTime(1997,5,14), 
+            new NhanVien(){ Ten="Phùng Đại C", Email="phungdaic@gmail.com",SDT="0998867547", NgaySinh=new DateTime(1997,5,14), 
                 Luong=7500000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false},
-            new NhanVien(){ Ten="Phùng văn D", Email="",SDT="0998867548", NgaySinh=new DateTime(1996,6,15), 
+            new NhanVien(){ Ten="Phùng văn D", Email="phungvand@gmail.com",SDT="0998867548", NgaySinh=new DateTime(1996,6,15), 
                 Luong=8000000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false}
         };
 

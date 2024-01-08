@@ -263,8 +263,8 @@ namespace Bar_Management.BusinessLogic {
             }
         }
 
-        static void InsertRows(Excel.Worksheet worksheet, int startRow) {
-            Excel.Range range = worksheet.Rows[startRow, Type.Missing];
+        static void InsertRows(Excel.Worksheet worksheet, int protectedRowIndex) {
+            Excel.Range range = worksheet.Rows[protectedRowIndex, Type.Missing];
             range.Insert(Excel.XlInsertShiftDirection.xlShiftDown, Type.Missing);
         }
 

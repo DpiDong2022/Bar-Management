@@ -2,12 +2,11 @@
 using Bar_Management.DTO;
 using Bar_Management.Models;
 using System;
-using System.Runtime.Remoting.Messaging;
 
 namespace Bar_Management.Tool {
     public class AutoMapperProfile {
         public static IMapper InitializeAutoMapper() {
-        var config = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<MonAn, MonAnDto>()
             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.IsAvailable));
@@ -28,10 +27,23 @@ namespace Bar_Management.Tool {
                 /* cfg.CreateMap<UserInformation, User>()
                         .ForMember(dest => dest.CreateAt, opt => opt.MapFrom(src => DateTime.Now))
                         .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => CommonFunctions.NameFormat(src.UserName)));*/
+
+                //Nhân viên
+                cfg.CreateMap<NhanVien, NhanVienDTO>();
+                cfg.CreateMap<NhanVienDTO, NhanVien>()
+                .ForMember(dest => dest.Luong, opt => opt.MapFrom(src => decimal.Parse(((string)src.Luong).Replace(",", ""))));
+                
+
+                //Tài khoản
+                cfg.CreateMap<TaiKhoan, TaiKhoanDTO>();
+                cfg.CreateMap<TaiKhoanDTO, TaiKhoan>()
+                .ForMember(dest => dest.RoleId, opt => opt.MapFrom(src => src.Role.Id))
+                .ForMember(dest => dest.NhanVienId, opt => opt.MapFrom(src => src.NhanVien.Id))
+                .ForMember(dest => dest.SettingId, opt => opt.MapFrom(src => src.Setting.Id));
             });
 
             return config.CreateMapper();
         }
-        
+
     }
 }

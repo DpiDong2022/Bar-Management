@@ -34,5 +34,9 @@ namespace Bar_Management.Models {
         public TaiKhoan TaiKhoan { get; set; }
         [Required]
         public bool IsDelete { get; set; } = false;
+
+        public override string ToString() {
+            return Ten;
+        }
     }
 }
