@@ -413,6 +413,12 @@
     <Compile Include="Models\NguyenLieu.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\SuKien.cs" />
@@ -502,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\OrderHistoryForm\OrderHistory.resx">
       <DependentUpon>OrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
