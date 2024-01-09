@@ -2,7 +2,7 @@
 using Bar_Management.DTO;
 using Bar_Management.Models;
 using System;
-
+using Bar_Management.OrderForm;
 namespace Bar_Management.Tool {
     public class AutoMapperProfile {
         public static IMapper InitializeAutoMapper() {
@@ -10,6 +10,15 @@ namespace Bar_Management.Tool {
             {
                 cfg.CreateMap<MonAn, MonAnDto>()
             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.IsAvailable));
+                cfg.CreateMap<MonAn, MonAnOrderDTO>()
+            .ForMember(dest => dest.TenMon, opt => opt.MapFrom(src => src.TenMon))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Gia, opt => opt.MapFrom(src => src.Gia))
+            .ForMember(dest => dest.HinhAnh, opt => opt.MapFrom(src => src.HinhAnh))
+            .ForMember(dest => dest.LoaiMonAn, opt => opt.MapFrom(src => src.LoaiMonAn));
+
+
+
 
                 cfg.CreateMap<MonAnDto, MonAn>()
             .ForMember(dest => dest.IsAvailable, opt => opt.MapFrom(src => src.TrangThai == "Còn" ? 1:0))

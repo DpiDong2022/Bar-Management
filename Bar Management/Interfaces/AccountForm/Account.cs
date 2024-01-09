@@ -32,6 +32,7 @@ namespace Bar_Management.Interfaces.AccountForm
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             _nhanVienLogic = new NhanVienLogic();
             _roleLogic = new RoleLogic();
+            
         }
 
         private void LoadTable()
