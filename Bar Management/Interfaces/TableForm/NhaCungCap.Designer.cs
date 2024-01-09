@@ -43,13 +43,12 @@
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.searchKeytextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errTen = new System.Windows.Forms.ErrorProvider(this.components);
@@ -57,6 +56,7 @@
             this.errSdt = new System.Windows.Forms.ErrorProvider(this.components);
             this.errEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.clearbtn = new System.Windows.Forms.Button();
+            this.searchkey = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errTen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errDiaChi)).BeginInit();
@@ -145,7 +145,7 @@
             this.txtSdt.Location = new System.Drawing.Point(1237, 117);
             this.txtSdt.Multiline = true;
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(247, 38);
+            this.txtSdt.Size = new System.Drawing.Size(328, 38);
             this.txtSdt.TabIndex = 75;
             // 
             // txtDiaChi
@@ -225,27 +225,6 @@
             this.dataGridView1.Enter += new System.EventHandler(this.dataGridView1_Enter);
             this.dataGridView1.MouseHover += new System.EventHandler(this.dataGridView1_MouseHover);
             // 
-            // searchKeytextBox
-            // 
-            this.searchKeytextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchKeytextBox.Location = new System.Drawing.Point(48, 173);
-            this.searchKeytextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.searchKeytextBox.Multiline = true;
-            this.searchKeytextBox.Name = "searchKeytextBox";
-            this.searchKeytextBox.Size = new System.Drawing.Size(252, 40);
-            this.searchKeytextBox.TabIndex = 71;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 143);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 26);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "Search";
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
@@ -281,13 +260,24 @@
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(43, 143);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 26);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "Search";
+            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(1237, 176);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(247, 38);
+            this.txtEmail.Size = new System.Drawing.Size(328, 38);
             this.txtEmail.TabIndex = 76;
             // 
             // label3
@@ -327,12 +317,24 @@
             this.clearbtn.UseVisualStyleBackColor = true;
             this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
+            // searchkey
+            // 
+            this.searchkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchkey.Location = new System.Drawing.Point(48, 173);
+            this.searchkey.Margin = new System.Windows.Forms.Padding(4);
+            this.searchkey.Multiline = true;
+            this.searchkey.Name = "searchkey";
+            this.searchkey.Size = new System.Drawing.Size(252, 42);
+            this.searchkey.TabIndex = 87;
+            this.searchkey.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.searchkey);
             this.Controls.Add(this.clearbtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -346,7 +348,6 @@
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.searchKeytextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -378,7 +379,6 @@
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox searchKeytextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
@@ -392,5 +392,6 @@
         private System.Windows.Forms.ErrorProvider errSdt;
         private System.Windows.Forms.ErrorProvider errEmail;
         private System.Windows.Forms.Button clearbtn;
+        private System.Windows.Forms.TextBox searchkey;
     }
 }

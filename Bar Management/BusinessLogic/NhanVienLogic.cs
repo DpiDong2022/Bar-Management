@@ -40,7 +40,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public IEnumerable<NhanVienDTO> GetAll() {
-            IEnumerable<NhanVien> result4 = _repo.GetAll();
+            IEnumerable<NhanVien> result4 = _repo.GetAll().OrderByDescending(nv => nv.Luong.ToString().Replace(",",""));
 
             IEnumerable<NhanVienDTO> result = _repo.GetAll()
                 //.Where(c => !c.isDeleted)

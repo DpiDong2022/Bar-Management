@@ -7,6 +7,7 @@ using Bar_Management.Models;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization;
 using System.Drawing;
+using Bar_Management.DTO;
 
 namespace Bar_Management.TableForm
 {
@@ -111,9 +112,9 @@ namespace Bar_Management.TableForm
 
                 errEmail.SetError(txtEmail, "email không đúng định dạng");
                 validate = false;
-            } else if (_logic.GetAll().Any(ncc => ncc.Id != IdUpdated && ncc.Email == email)) {
+            } else if (_logic.GetAll().Any(ncc => ncc.Id != IdUpdated && ncc.Email.ToLower() == email)) {
 
-                errSdt.SetError(txtEmail, "Đia chỉ email này đã tồn tại");
+                errSdt.SetError(txtEmail, "Địa chỉ email này đã tồn tại");
                 validate = false;
             } else {
                 errEmail.Clear();
@@ -182,6 +183,11 @@ namespace Bar_Management.TableForm
 
                 dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            _table = new SortableBindingList<Models.NhaCungCap>(_logic.TimKiem(searchkey.Text.Trim().ToLower()));
+            dataGridView1.DataSource = _table;
         }
     }
 }

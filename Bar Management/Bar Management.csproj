@@ -362,11 +362,6 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240108090935_initial.cs" />
-    <Compile Include="Migrations\20240108090935_initial.designer.cs">
-      <DependentUpon>20240108090935_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\baseClass.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />

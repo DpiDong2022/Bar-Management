@@ -34,7 +34,6 @@ namespace Bar_Management.FoodForm {
             _logic = new MonAnLogic();
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             _loaiMonAnLogic = new LoaiMonAnLogic();
-            
         }
 
         private void LoadTable() {
