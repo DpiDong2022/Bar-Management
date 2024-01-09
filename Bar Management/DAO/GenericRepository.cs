@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Bar_Management.DAO {
+
     internal class GenericRepository<T>: IGenericRepository<T> where T : class{
         private readonly DbSet<T> _set;
         private readonly AppDbContext _context;

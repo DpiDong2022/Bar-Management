@@ -34,7 +34,6 @@ namespace Bar_Management.FoodForm {
             _logic = new MonAnLogic();
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             _loaiMonAnLogic = new LoaiMonAnLogic();
-            
         }
 
         private void LoadTable() {
@@ -78,8 +77,8 @@ namespace Bar_Management.FoodForm {
                 errorLoai.Clear();
             }
 
-            if (moTa.Length > 100) {
-                errorMota.SetError(motaText, "Chiều dài mô tả không vượt quá 100");
+            if (moTa.Length > 255) {
+                errorMota.SetError(motaText, "Chiều dài mô tả không vượt quá 255");
                 isValid = false;
             } else {
                 errorMota.Clear();
@@ -145,17 +144,18 @@ namespace Bar_Management.FoodForm {
             string tenMonAn = TenMonAnbox.Text.Trim();
             string gia = GiaMonAnTextboxs.Text.Trim();
             string moTa = motaText.Text.Trim();
-            int tenLoaiMonAnId = (LoaiMonAnComboBox.SelectedItem as LoaiMonAn).Id;
+            LoaiMonAn loaiMonAn = LoaiMonAnComboBox.SelectedItem as LoaiMonAn;
             string trangThai = comboBoxTranthai.SelectedItem.ToString();
             // validate
-            bool isValid = Validate(tenMonAn, gia,moTa, tenLoaiMonAnId, trangThai);
+            bool isValid = Validate(tenMonAn, gia,moTa, loaiMonAn.Id, trangThai);
             if (!isValid) return;
 
             MonAn monAn = new MonAn(){
                 TenMon = tenMonAn,
                 Gia = decimal.Parse(gia),
                 MoTa = moTa,
-                LoaiMonAnId = tenLoaiMonAnId,
+                LoaiMonAnId = loaiMonAn.Id,
+                LoaiMonAn = loaiMonAn,
                 IsAvailable = trangThai == "Còn" ? 1:0
             };
 
@@ -184,13 +184,13 @@ namespace Bar_Management.FoodForm {
             int index = dataGridView1.SelectedRows[0].Index;
             int id = (int)(dataGridView1.Rows[index].Cells[0].Value);
             monAn.Id = id;
-            monAnDto.Id = id;
+            monAnDto.Id = id; 
 
             if (_logic.Update(monAn)) {
                 MessageBox.Show("Sửa thành công");
                 _table.RemoveAt(index);
                 _table.Insert(0, monAnDto);
-                dataGridView1.Rows[index].Selected = true;
+                dataGridView1.Rows[0].Selected = true;
             }
         }
 
@@ -198,7 +198,7 @@ namespace Bar_Management.FoodForm {
         }
 
         // Xóa click
-        private void XoaBtn_Click(object sender, EventArgs e) {
+        private async void XoaBtn_Click(object sender, EventArgs e) {
             var selectedRows = dataGridView1.SelectedRows;
             if (selectedRows.Count == 0) {
 
@@ -249,10 +249,22 @@ namespace Bar_Management.FoodForm {
             if (string.IsNullOrEmpty(monAnDto.HinhAnh)) {
                 monAnDto.HinhAnh = "https://res.cloudinary.com/dift2vpcj/image/upload/v1704122978/download_n07iy6.jpg";
             }
-            byte[] dataImage = Internet.LoadImageFromUrl(monAnDto.HinhAnh);
-            using (MemoryStream ms = new MemoryStream(dataImage)) {
-                pictureBox1.Image = Image.FromStream(ms);
+            byte[] dataImage;
+            try {
+                dataImage = Internet.LoadImageFromUrl(monAnDto.HinhAnh);
+                using (MemoryStream ms = new MemoryStream(dataImage)) {
+
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+            } catch (Exception) {
+
+                dataImage = Internet.LoadImageFromUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXctqNvh3iZX3GK7QJV_cTXbB1Dntc_QkJjzDidc32h3_ZsWQvTmiJcOuexrVT_zlq3L4&usqp=CAU");
+                using (MemoryStream ms = new MemoryStream(dataImage)) {
+
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
             }
+            
             _imageDataStart = dataImage;
             _imageDataEnd = dataImage;
             _urlImage = monAnDto.HinhAnh;
@@ -384,6 +396,10 @@ namespace Bar_Management.FoodForm {
         private void radioSortTrangthai_CheckedChanged(object sender, EventArgs e) {
             _table = new SortableBindingList<MonAnDto>(_table.OrderBy(monAn => monAn.TrangThai).ToList());
             dataGridView1.DataSource = _table;
+        }
+
+        private void label9_Click(object sender, EventArgs e) {
+
         }
     }
 }

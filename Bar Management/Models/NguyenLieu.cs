@@ -15,7 +15,7 @@ namespace Bar_Management.Models {
         [MaxLength(50)]
         public string Ten { get; set; }
 
-        [MaxLength(255)]
+        [DataType("text")]
         public string HinhAnh { get; set; }
 
         [DefaultValue(0)]

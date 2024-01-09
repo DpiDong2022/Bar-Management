@@ -1,12 +1,5 @@
 ﻿using Bar_Management.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bar_Management.DTO {
     public class TonKhoDto {
@@ -24,8 +17,14 @@ namespace Bar_Management.DTO {
                 return _gia;
             }
             set {
-                _gia = string.Format("{0:#,##0}", decimal.Parse(value.ToString()));
-            } 
+                try {
+                    _gia = string.Format("{0:#,##0}", decimal.Parse(value.ToString()));
+                } catch (Exception) {
+
+                    throw;
+                }
+                
+            }
         }
         public TrangThaiTonKho TrangThai { get; set; }
         public NhaCungCap NhaCungCap { get; set; }
@@ -33,17 +32,33 @@ namespace Bar_Management.DTO {
             get {
                 return _ngayNhap;
             }
-            private set { 
+            set {
                 _ngayNhap = ((DateTime)value).ToString("dd-MM-yyyy");
-            } 
+            }
         }
         public object NgayHetHan {
             get {
                 return _ngayHetHan;
             }
-            private set {
+            set {
                 _ngayHetHan = ((DateTime)value).ToString("dd-MM-yyyy");
             }
         }
+
+        public TonKhoDto(int id, NguyenLieu nguyenLieu, int soLuong, string donVi, object giaNhap, TrangThaiTonKho trangThai, NhaCungCap nhaCungCap, object ngayNhap, object ngayHetHan) {
+            Id = id;
+            NguyenLieu = nguyenLieu;
+            SoLuong = soLuong;
+            DonVi = donVi;
+            GiaNhap = giaNhap;
+            TrangThai = trangThai;
+            NhaCungCap = nhaCungCap;
+            NgayNhap = ngayNhap;
+            NgayHetHan = ngayHetHan;
+        }
+
+        public TonKhoDto() {
+        }
+
     }
 }

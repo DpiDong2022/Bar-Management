@@ -96,16 +96,16 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 832);
+            this.panel1.Size = new System.Drawing.Size(259, 1055);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = global::Bar_Management.Properties.Resources.warehouse;
             this.pictureBox12.Location = new System.Drawing.Point(39, 609);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(43, 37);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,7 +116,7 @@
             // 
             this.btnWarehouse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnWarehouse.Location = new System.Drawing.Point(32, 602);
-            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(4);
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(188, 49);
             this.btnWarehouse.TabIndex = 19;
@@ -128,7 +128,7 @@
             // 
             this.pictureBox11.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130531;
             this.pictureBox11.Location = new System.Drawing.Point(39, 665);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(43, 37);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +139,7 @@
             // 
             this.pictureBox10.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130415;
             this.pictureBox10.Location = new System.Drawing.Point(39, 550);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(43, 37);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +150,7 @@
             // 
             this.pictureBox9.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130322;
             this.pictureBox9.Location = new System.Drawing.Point(39, 494);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(43, 37);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +161,7 @@
             // 
             this.pictureBox8.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130233;
             this.pictureBox8.Location = new System.Drawing.Point(39, 437);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(43, 37);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +172,7 @@
             // 
             this.pictureBox7.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130117;
             this.pictureBox7.Location = new System.Drawing.Point(39, 380);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(43, 37);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +183,7 @@
             // 
             this.pictureBox6.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_130038;
             this.pictureBox6.Location = new System.Drawing.Point(39, 326);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(43, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -194,7 +194,7 @@
             // 
             this.pictureBox5.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_125948;
             this.pictureBox5.Location = new System.Drawing.Point(39, 270);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(43, 37);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -205,7 +205,7 @@
             // 
             this.pictureBox4.Image = global::Bar_Management.Properties.Resources.Screenshot_2023_12_18_125749;
             this.pictureBox4.Location = new System.Drawing.Point(39, 213);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(43, 37);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,7 +216,7 @@
             // 
             this.pictureBox3.Image = global::Bar_Management.Properties.Resources.apartment;
             this.pictureBox3.Location = new System.Drawing.Point(39, 155);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(43, 37);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,7 +227,7 @@
             // 
             this.btnAccount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAccount.Location = new System.Drawing.Point(32, 658);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(188, 49);
             this.btnAccount.TabIndex = 9;
@@ -239,7 +239,7 @@
             // 
             this.btnOrderHistory.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnOrderHistory.Location = new System.Drawing.Point(32, 544);
-            this.btnOrderHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderHistory.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrderHistory.Name = "btnOrderHistory";
             this.btnOrderHistory.Size = new System.Drawing.Size(188, 49);
             this.btnOrderHistory.TabIndex = 8;
@@ -251,7 +251,7 @@
             // 
             this.btnRevenue.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRevenue.Location = new System.Drawing.Point(32, 487);
-            this.btnRevenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(188, 49);
             this.btnRevenue.TabIndex = 7;
@@ -263,7 +263,7 @@
             // 
             this.btnEmployee.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnEmployee.Location = new System.Drawing.Point(32, 431);
-            this.btnEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(188, 49);
             this.btnEmployee.TabIndex = 6;
@@ -275,7 +275,7 @@
             // 
             this.btnCategory.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCategory.Location = new System.Drawing.Point(32, 374);
-            this.btnCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(188, 49);
             this.btnCategory.TabIndex = 5;
@@ -287,7 +287,7 @@
             // 
             this.btnNhaCungCap.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnNhaCungCap.Location = new System.Drawing.Point(32, 320);
-            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(188, 49);
             this.btnNhaCungCap.TabIndex = 4;
@@ -299,7 +299,7 @@
             // 
             this.btnFood.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnFood.Location = new System.Drawing.Point(32, 263);
-            this.btnFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFood.Margin = new System.Windows.Forms.Padding(4);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(188, 49);
             this.btnFood.TabIndex = 3;
@@ -311,7 +311,7 @@
             // 
             this.btnOrder.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnOrder.Location = new System.Drawing.Point(32, 207);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(188, 49);
             this.btnOrder.TabIndex = 2;
@@ -323,7 +323,7 @@
             // 
             this.btnHome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnHome.Location = new System.Drawing.Point(32, 150);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(188, 49);
             this.btnHome.TabIndex = 1;
@@ -335,7 +335,7 @@
             // 
             this.pictureBox1.Image = global::Bar_Management.Properties.Resources.bar_counter1;
             this.pictureBox1.Location = new System.Drawing.Point(55, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(149, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -346,9 +346,9 @@
             // 
             this.ControlsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlsPanel.Location = new System.Drawing.Point(259, 0);
-            this.ControlsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ControlsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ControlsPanel.Name = "ControlsPanel";
-            this.ControlsPanel.Size = new System.Drawing.Size(1500, 832);
+            this.ControlsPanel.Size = new System.Drawing.Size(1665, 1055);
             this.ControlsPanel.TabIndex = 1;
             // 
             // panel3
@@ -358,9 +358,9 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(259, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1500, 73);
+            this.panel3.Size = new System.Drawing.Size(1665, 73);
             this.panel3.TabIndex = 1;
             // 
             // label1
@@ -378,7 +378,7 @@
             // 
             this.pictureBox2.Image = global::Bar_Management.Properties.Resources.cocktail_drink;
             this.pictureBox2.Location = new System.Drawing.Point(21, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(59, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -389,11 +389,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1759, 832);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.ControlsPanel);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(200000, 20000);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1918, 1028);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

@@ -1,6 +1,7 @@
 ﻿
 using Bar_Management.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Office.Interop.Excel;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
@@ -12,7 +13,6 @@ namespace Bar_Management.DAO {
 
         public DbSet<Ban> Bans { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public DbSet<CongThuc> CongThucs { get; set; }
         public DbSet<DatBanTruoc> DatBanTruocs { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<LoaiMonAn> LoaiMonAns { get; set; }
@@ -21,7 +21,6 @@ namespace Bar_Management.DAO {
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<SuKien> SuKiens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
         public DbSet<TonKho> TonKhos { get; set; }
         public DbSet<TrangThaiBan> TrangThaiBans { get; set; }
@@ -34,7 +33,8 @@ namespace Bar_Management.DAO {
 
             //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             //optionsBuilder.UseSqlServer("server= DESKTOP-FJ29HTR; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-            optionsBuilder.UseSqlServer("server=.\\DONGSQLSERVER; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
+            //optionsBuilder.UseSqlServer("server=DONG-LAPTOP\\DONGSQLSERVER; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server=192.168.1.9, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
         }
     }
 }

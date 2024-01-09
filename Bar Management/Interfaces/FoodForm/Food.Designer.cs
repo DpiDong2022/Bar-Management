@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TenMonAnbox = new System.Windows.Forms.TextBox();
@@ -79,6 +79,7 @@
             this.radioSortGia = new System.Windows.Forms.RadioButton();
             this.radioSortLoaiMonAn = new System.Windows.Forms.RadioButton();
             this.radioSortTenMonAn = new System.Windows.Forms.RadioButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
@@ -97,61 +98,68 @@
             // searchKeytextBox
             // 
             this.searchKeytextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchKeytextBox.Location = new System.Drawing.Point(13, 227);
+            this.searchKeytextBox.Location = new System.Drawing.Point(47, 262);
             this.searchKeytextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchKeytextBox.Multiline = true;
             this.searchKeytextBox.Name = "searchKeytextBox";
-            this.searchKeytextBox.Size = new System.Drawing.Size(252, 30);
+            this.searchKeytextBox.Size = new System.Drawing.Size(252, 37);
             this.searchKeytextBox.TabIndex = 18;
             this.searchKeytextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 200);
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(45, 226);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 23);
+            this.label7.Size = new System.Drawing.Size(75, 26);
             this.label7.TabIndex = 17;
             this.label7.Text = "Search";
             // 
             // TenMonAnbox
             // 
-            this.TenMonAnbox.Location = new System.Drawing.Point(384, 173);
+            this.TenMonAnbox.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenMonAnbox.Location = new System.Drawing.Point(708, 101);
+            this.TenMonAnbox.Multiline = true;
             this.TenMonAnbox.Name = "TenMonAnbox";
-            this.TenMonAnbox.Size = new System.Drawing.Size(134, 22);
+            this.TenMonAnbox.Size = new System.Drawing.Size(165, 51);
             this.TenMonAnbox.TabIndex = 21;
             // 
             // GiaMonAnTextboxs
             // 
-            this.GiaMonAnTextboxs.Location = new System.Drawing.Point(384, 201);
+            this.GiaMonAnTextboxs.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GiaMonAnTextboxs.Location = new System.Drawing.Point(708, 171);
+            this.GiaMonAnTextboxs.Multiline = true;
             this.GiaMonAnTextboxs.Name = "GiaMonAnTextboxs";
-            this.GiaMonAnTextboxs.Size = new System.Drawing.Size(134, 22);
+            this.GiaMonAnTextboxs.Size = new System.Drawing.Size(165, 38);
             this.GiaMonAnTextboxs.TabIndex = 22;
             // 
             // motaText
             // 
             this.motaText.CausesValidation = false;
-            this.motaText.Location = new System.Drawing.Point(623, 139);
+            this.motaText.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.motaText.Location = new System.Drawing.Point(959, 98);
             this.motaText.MaxLength = 100;
             this.motaText.Multiline = true;
             this.motaText.Name = "motaText";
-            this.motaText.Size = new System.Drawing.Size(249, 84);
+            this.motaText.Size = new System.Drawing.Size(249, 201);
             this.motaText.TabIndex = 24;
             // 
             // LoaiMonAnComboBox
             // 
-            this.LoaiMonAnComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoaiMonAnComboBox.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoaiMonAnComboBox.FormattingEnabled = true;
-            this.LoaiMonAnComboBox.Location = new System.Drawing.Point(384, 233);
+            this.LoaiMonAnComboBox.Location = new System.Drawing.Point(708, 269);
             this.LoaiMonAnComboBox.Name = "LoaiMonAnComboBox";
-            this.LoaiMonAnComboBox.Size = new System.Drawing.Size(134, 26);
+            this.LoaiMonAnComboBox.Size = new System.Drawing.Size(165, 27);
             this.LoaiMonAnComboBox.TabIndex = 23;
             this.LoaiMonAnComboBox.SelectedIndexChanged += new System.EventHandler(this.LoaiMonAnComboBox_SelectedIndexChanged);
             // 
             // ThemBtn
             // 
-            this.ThemBtn.Location = new System.Drawing.Point(190, 87);
+            this.ThemBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemBtn.Location = new System.Drawing.Point(224, 98);
             this.ThemBtn.Name = "ThemBtn";
             this.ThemBtn.Size = new System.Drawing.Size(115, 55);
             this.ThemBtn.TabIndex = 25;
@@ -161,7 +169,8 @@
             // 
             // LuuBtn
             // 
-            this.LuuBtn.Location = new System.Drawing.Point(431, 86);
+            this.LuuBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuuBtn.Location = new System.Drawing.Point(465, 97);
             this.LuuBtn.Name = "LuuBtn";
             this.LuuBtn.Size = new System.Drawing.Size(115, 55);
             this.LuuBtn.TabIndex = 28;
@@ -171,7 +180,8 @@
             // 
             // XoaBtn
             // 
-            this.XoaBtn.Location = new System.Drawing.Point(310, 86);
+            this.XoaBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaBtn.Location = new System.Drawing.Point(344, 97);
             this.XoaBtn.Name = "XoaBtn";
             this.XoaBtn.Size = new System.Drawing.Size(115, 55);
             this.XoaBtn.TabIndex = 27;
@@ -182,36 +192,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 179);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(603, 133);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(92, 19);
             this.label1.TabIndex = 29;
             this.label1.Text = "Tên món ăn:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(569, 142);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(899, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
+            this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 31;
             this.label3.Text = "Mô tả:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(291, 205);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(603, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 16);
+            this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 32;
             this.label4.Text = "Giá:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(291, 237);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(603, 277);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(45, 19);
             this.label2.TabIndex = 33;
             this.label2.Text = "Loại:";
             // 
@@ -250,9 +264,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(830, 91);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1229, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 16);
+            this.label5.Size = new System.Drawing.Size(74, 19);
             this.label5.TabIndex = 35;
             this.label5.Text = "Hình ảnh:";
             // 
@@ -270,9 +285,9 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.pictureBox1.Location = new System.Drawing.Point(898, 95);
+            this.pictureBox1.Location = new System.Drawing.Point(1318, 98);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(245, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
@@ -283,9 +298,10 @@
             // 
             // ExcelBtn
             // 
+            this.ExcelBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExcelBtn.Image = global::Bar_Management.Properties.Resources.excelicon_;
             this.ExcelBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ExcelBtn.Location = new System.Drawing.Point(16, 86);
+            this.ExcelBtn.Location = new System.Drawing.Point(50, 97);
             this.ExcelBtn.Name = "ExcelBtn";
             this.ExcelBtn.Size = new System.Drawing.Size(170, 57);
             this.ExcelBtn.TabIndex = 26;
@@ -319,25 +335,26 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(543, 240);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(603, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.Size = new System.Drawing.Size(80, 19);
             this.label6.TabIndex = 37;
             this.label6.Text = "Trạng thái:";
             // 
             // comboBoxTranthai
             // 
             this.comboBoxTranthai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxTranthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTranthai.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTranthai.FormattingEnabled = true;
-            this.comboBoxTranthai.ItemHeight = 18;
+            this.comboBoxTranthai.ItemHeight = 19;
             this.comboBoxTranthai.Items.AddRange(new object[] {
             "--Trạng thái--",
             "Còn",
             "Hết"});
-            this.comboBoxTranthai.Location = new System.Drawing.Point(623, 233);
+            this.comboBoxTranthai.Location = new System.Drawing.Point(708, 225);
             this.comboBoxTranthai.Name = "comboBoxTranthai";
-            this.comboBoxTranthai.Size = new System.Drawing.Size(134, 26);
+            this.comboBoxTranthai.Size = new System.Drawing.Size(165, 27);
             this.comboBoxTranthai.TabIndex = 36;
             this.comboBoxTranthai.SelectedIndexChanged += new System.EventHandler(this.comboBoxTranthai_SelectedIndexChanged);
             // 
@@ -346,20 +363,20 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvID,
@@ -368,17 +385,17 @@
             this.GiaDgv,
             this.TrangThaiDgv,
             this.moTaDgv});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 296);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 307);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -389,12 +406,12 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.MistyRose;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Navy;
             this.dataGridView1.RowTemplate.Height = 44;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1331, 539);
+            this.dataGridView1.Size = new System.Drawing.Size(1516, 697);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
@@ -455,53 +472,57 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1361, 265);
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1587, 307);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 16);
+            this.label8.Size = new System.Drawing.Size(99, 19);
             this.label8.TabIndex = 38;
-            this.label8.Text = "Lọc dữ liệu:";
+            this.label8.Text = "(Lọc dữ liệu)";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1367, 352);
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1607, 406);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.Size = new System.Drawing.Size(80, 19);
             this.label9.TabIndex = 42;
             this.label9.Text = "Trạng thái:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // LocTrangThaicomboBox
             // 
             this.LocTrangThaicomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.LocTrangThaicomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocTrangThaicomboBox.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocTrangThaicomboBox.FormattingEnabled = true;
-            this.LocTrangThaicomboBox.ItemHeight = 18;
+            this.LocTrangThaicomboBox.ItemHeight = 19;
             this.LocTrangThaicomboBox.Items.AddRange(new object[] {
             "--Trạng thái--",
             "Còn",
             "Hết"});
-            this.LocTrangThaicomboBox.Location = new System.Drawing.Point(1366, 371);
+            this.LocTrangThaicomboBox.Location = new System.Drawing.Point(1611, 428);
             this.LocTrangThaicomboBox.Name = "LocTrangThaicomboBox";
-            this.LocTrangThaicomboBox.Size = new System.Drawing.Size(134, 26);
+            this.LocTrangThaicomboBox.Size = new System.Drawing.Size(143, 27);
             this.LocTrangThaicomboBox.TabIndex = 41;
             this.LocTrangThaicomboBox.SelectedIndexChanged += new System.EventHandler(this.LocTrangThaicomboBox_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1361, 295);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1607, 338);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 16);
+            this.label10.Size = new System.Drawing.Size(45, 19);
             this.label10.TabIndex = 40;
             this.label10.Text = "Loại:";
             // 
             // LocloaiMAComboBox
             // 
-            this.LocloaiMAComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocloaiMAComboBox.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocloaiMAComboBox.FormattingEnabled = true;
-            this.LocloaiMAComboBox.Location = new System.Drawing.Point(1366, 314);
+            this.LocloaiMAComboBox.Location = new System.Drawing.Point(1611, 360);
             this.LocloaiMAComboBox.Name = "LocloaiMAComboBox";
-            this.LocloaiMAComboBox.Size = new System.Drawing.Size(134, 26);
+            this.LocloaiMAComboBox.Size = new System.Drawing.Size(143, 27);
             this.LocloaiMAComboBox.TabIndex = 39;
             this.LocloaiMAComboBox.SelectedIndexChanged += new System.EventHandler(this.LocloaiMAComboBox_SelectedIndexChanged);
             // 
@@ -511,19 +532,20 @@
             this.groupBox1.Controls.Add(this.radioSortGia);
             this.groupBox1.Controls.Add(this.radioSortLoaiMonAn);
             this.groupBox1.Controls.Add(this.radioSortTenMonAn);
-            this.groupBox1.Location = new System.Drawing.Point(1144, 95);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(1591, 480);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 158);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sắp xếp bảng";
+            this.groupBox1.Text = "(Sắp xếp bảng)";
             // 
             // radioSortTrangthai
             // 
             this.radioSortTrangthai.AutoSize = true;
             this.radioSortTrangthai.Location = new System.Drawing.Point(27, 110);
             this.radioSortTrangthai.Name = "radioSortTrangthai";
-            this.radioSortTrangthai.Size = new System.Drawing.Size(88, 20);
+            this.radioSortTrangthai.Size = new System.Drawing.Size(96, 23);
             this.radioSortTrangthai.TabIndex = 3;
             this.radioSortTrangthai.TabStop = true;
             this.radioSortTrangthai.Text = "Trạng thái";
@@ -535,7 +557,7 @@
             this.radioSortGia.AutoSize = true;
             this.radioSortGia.Location = new System.Drawing.Point(27, 84);
             this.radioSortGia.Name = "radioSortGia";
-            this.radioSortGia.Size = new System.Drawing.Size(49, 20);
+            this.radioSortGia.Size = new System.Drawing.Size(54, 23);
             this.radioSortGia.TabIndex = 2;
             this.radioSortGia.TabStop = true;
             this.radioSortGia.Text = "Giá";
@@ -547,7 +569,7 @@
             this.radioSortLoaiMonAn.AutoSize = true;
             this.radioSortLoaiMonAn.Location = new System.Drawing.Point(27, 54);
             this.radioSortLoaiMonAn.Name = "radioSortLoaiMonAn";
-            this.radioSortLoaiMonAn.Size = new System.Drawing.Size(101, 20);
+            this.radioSortLoaiMonAn.Size = new System.Drawing.Size(114, 23);
             this.radioSortLoaiMonAn.TabIndex = 1;
             this.radioSortLoaiMonAn.TabStop = true;
             this.radioSortLoaiMonAn.Text = "Loại món ăn";
@@ -559,12 +581,16 @@
             this.radioSortTenMonAn.AutoSize = true;
             this.radioSortTenMonAn.Location = new System.Drawing.Point(27, 28);
             this.radioSortTenMonAn.Name = "radioSortTenMonAn";
-            this.radioSortTenMonAn.Size = new System.Drawing.Size(99, 20);
+            this.radioSortTenMonAn.Size = new System.Drawing.Size(108, 23);
             this.radioSortTenMonAn.TabIndex = 0;
             this.radioSortTenMonAn.TabStop = true;
             this.radioSortTenMonAn.Text = "Tên món ăn";
             this.radioSortTenMonAn.UseVisualStyleBackColor = true;
             this.radioSortTenMonAn.CheckedChanged += new System.EventHandler(this.radioSortTenMonAn_CheckedChanged);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Food
             // 
@@ -572,7 +598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1556, 880);
+            this.ClientSize = new System.Drawing.Size(1918, 1028);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.LocTrangThaicomboBox);
@@ -600,6 +626,8 @@
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(200000, 2000000);
+            this.MinimumSize = new System.Drawing.Size(1918, 1028);
             this.Name = "Food";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Food";
@@ -672,5 +700,6 @@
         private System.Windows.Forms.RadioButton radioSortGia;
         private System.Windows.Forms.RadioButton radioSortLoaiMonAn;
         private System.Windows.Forms.RadioButton radioSortTenMonAn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

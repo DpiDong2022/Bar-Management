@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 688);
             this.panel1.TabIndex = 0;
@@ -90,7 +90,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(53, 373);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(149, 52);
             this.button4.TabIndex = 6;
@@ -100,7 +100,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(53, 314);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 52);
             this.button3.TabIndex = 5;
@@ -110,7 +110,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(53, 255);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 52);
             this.button2.TabIndex = 4;
@@ -120,7 +120,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(53, 191);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 52);
             this.button1.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             this.pictureBox1.Image = global::Bar_Management.Properties.Resources.bar_counter1;
             this.pictureBox1.Location = new System.Drawing.Point(53, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(149, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(267, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1190, 96);
             this.panel2.TabIndex = 1;
@@ -156,7 +156,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(415, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 74);
             this.button7.TabIndex = 4;
@@ -166,7 +166,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(283, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 74);
             this.button6.TabIndex = 3;
@@ -177,7 +177,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(157, 10);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 74);
             this.button5.TabIndex = 2;
@@ -189,7 +189,7 @@
             // 
             this.pictureBox2.Image = global::Bar_Management.Properties.Resources.cocktail_drink;
             this.pictureBox2.Location = new System.Drawing.Point(8, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(101, 74);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -199,7 +199,7 @@
             // panel4
             // 
             this.panel4.Location = new System.Drawing.Point(0, 96);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(780, 468);
             this.panel4.TabIndex = 0;
@@ -214,7 +214,7 @@
             this.panel3.Controls.Add(this.ucProduct1);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Location = new System.Drawing.Point(271, 149);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(556, 505);
             this.panel3.TabIndex = 1;
@@ -223,7 +223,7 @@
             // 
             this.ucProduct5.id = 0;
             this.ucProduct5.Location = new System.Drawing.Point(364, 165);
-            this.ucProduct5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct5.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct5.Name = "ucProduct5";
             this.ucProduct5.Pcategory = null;
             this.ucProduct5.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct5.PImage")));
@@ -236,7 +236,7 @@
             // 
             this.ucProduct6.id = 0;
             this.ucProduct6.Location = new System.Drawing.Point(187, 165);
-            this.ucProduct6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct6.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct6.Name = "ucProduct6";
             this.ucProduct6.Pcategory = null;
             this.ucProduct6.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct6.PImage")));
@@ -249,7 +249,7 @@
             // 
             this.ucProduct4.id = 0;
             this.ucProduct4.Location = new System.Drawing.Point(4, 165);
-            this.ucProduct4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct4.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct4.Name = "ucProduct4";
             this.ucProduct4.Pcategory = null;
             this.ucProduct4.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct4.PImage")));
@@ -262,7 +262,7 @@
             // 
             this.ucProduct3.id = 0;
             this.ucProduct3.Location = new System.Drawing.Point(364, 7);
-            this.ucProduct3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct3.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct3.Name = "ucProduct3";
             this.ucProduct3.Pcategory = null;
             this.ucProduct3.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.PImage")));
@@ -275,7 +275,7 @@
             // 
             this.ucProduct2.id = 0;
             this.ucProduct2.Location = new System.Drawing.Point(187, 7);
-            this.ucProduct2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct2.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct2.Name = "ucProduct2";
             this.ucProduct2.Pcategory = null;
             this.ucProduct2.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.PImage")));
@@ -288,7 +288,7 @@
             // 
             this.ucProduct1.id = 0;
             this.ucProduct1.Location = new System.Drawing.Point(4, 7);
-            this.ucProduct1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucProduct1.Margin = new System.Windows.Forms.Padding(5);
             this.ucProduct1.Name = "ucProduct1";
             this.ucProduct1.Pcategory = null;
             this.ucProduct1.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.PImage")));
@@ -301,7 +301,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(855, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
@@ -317,7 +317,7 @@
             this.dgvAmount,
             this.dgvDelete});
             this.dataGridView2.Location = new System.Drawing.Point(835, 96);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(619, 464);
@@ -375,7 +375,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(384, 111);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 29);
             this.textBox1.TabIndex = 4;
@@ -383,7 +383,7 @@
             // button28
             // 
             this.button28.Location = new System.Drawing.Point(1324, 613);
-            this.button28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button28.Margin = new System.Windows.Forms.Padding(4);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(125, 41);
             this.button28.TabIndex = 16;
@@ -393,7 +393,7 @@
             // button27
             // 
             this.button27.Location = new System.Drawing.Point(1009, 618);
-            this.button27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button27.Margin = new System.Windows.Forms.Padding(4);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(125, 41);
             this.button27.TabIndex = 15;
@@ -405,7 +405,7 @@
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(847, 618);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(135, 38);
             this.comboBox4.TabIndex = 14;
@@ -414,7 +414,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(1032, 567);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(420, 37);
             this.textBox2.TabIndex = 13;
@@ -456,7 +456,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Payment";
             this.Text = "Payment";
             this.panel1.ResumeLayout(false);

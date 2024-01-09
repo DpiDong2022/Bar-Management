@@ -26,11 +26,17 @@ namespace Bar_Management.Models {
         [MaxLength(256)]
         public string Email { get; set; }
 
-        [MaxLength(255)]
+        [DataType("text")]
         public string HinhAnh { get; set; }
 
         [DefaultValue(0)]
         public decimal Luong { get; set; }
         public TaiKhoan TaiKhoan { get; set; }
+        [Required]
+        public bool IsDelete { get; set; } = false;
+
+        public override string ToString() {
+            return Ten;
+        }
     }
 }

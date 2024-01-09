@@ -231,7 +231,6 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\BanLogic.cs" />
     <Compile Include="BusinessLogic\ChiTieHoaDonLogic.cs" />
-    <Compile Include="BusinessLogic\CongThucLogic.cs" />
     <Compile Include="BusinessLogic\DatBanTruocLogic.cs" />
     <Compile Include="BusinessLogic\HoaDonLogic.cs" />
     <Compile Include="BusinessLogic\LoaiMonAnLogic.cs" />
@@ -241,7 +240,6 @@
     <Compile Include="BusinessLogic\NhanVienLogic.cs" />
     <Compile Include="BusinessLogic\RoleLogic.cs" />
     <Compile Include="BusinessLogic\SettingLogic.cs" />
-    <Compile Include="BusinessLogic\SukienLogic.cs" />
     <Compile Include="BusinessLogic\TaiKhoanLogic.cs" />
     <Compile Include="BusinessLogic\TonKhoLogic.cs" />
     <Compile Include="BusinessLogic\TrangThaiBanLogic.cs" />
@@ -253,6 +251,8 @@
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
     <Compile Include="DTO\MonAnDto.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\TonKhoDto.cs" />
     <Compile Include="Interfaces\AccountForm\Account.cs">
       <SubType>Form</SubType>
@@ -272,17 +272,11 @@
     <Compile Include="Interfaces\CategoryForm\CategoryAdd.Designer.cs">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\EmployeeForm\Employee.cs">
+    <Compile Include="Interfaces\EmployeeForm\Employ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\EmployeeForm\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\EmployeeForm\EmployeeAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\EmployeeForm\EmployeeAdd.Designer.cs">
-      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    <Compile Include="Interfaces\EmployeeForm\Employ.designer.cs">
+      <DependentUpon>Employ.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\FoodForm\Food.cs">
       <SubType>Form</SubType>
@@ -295,12 +289,6 @@
     </Compile>
     <Compile Include="Interfaces\FoodForm\FoodAdd.Designer.cs">
       <DependentUpon>FoodAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\FoodForm\FoodF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\FoodForm\FoodF.Designer.cs">
-      <DependentUpon>FoodF.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\HomeForm\ChangePassword.cs">
       <SubType>Form</SubType>
@@ -319,18 +307,6 @@
     </Compile>
     <Compile Include="Interfaces\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\test1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\test1.Designer.cs">
-      <DependentUpon>test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\testSukien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\testSukien.Designer.cs">
-      <DependentUpon>testSukien.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\WarehouseForm\NguyenLieuF.cs">
       <SubType>Form</SubType>
@@ -386,15 +362,11 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240102091203_intitial.cs" />
-    <Compile Include="Migrations\20240102091203_intitial.designer.cs">
-      <DependentUpon>20240102091203_intitial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Ban.cs" />
+    <Compile Include="Models\baseClass.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
-    <Compile Include="Models\CongThuc.cs" />
     <Compile Include="Models\DatBanTruoc.cs" />
+    <Compile Include="Models\ExportInfor.cs" />
     <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\LoaiMonAn.cs" />
     <Compile Include="Models\MonAn.cs" />
@@ -403,7 +375,6 @@
     <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Setting.cs" />
-    <Compile Include="Models\SuKien.cs" />
     <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Models\TonKho.cs" />
     <Compile Include="Models\TrangThaiBan.cs" />
@@ -437,20 +408,14 @@
     <EmbeddedResource Include="Interfaces\CategoryForm\CategoryAdd.resx">
       <DependentUpon>CategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\EmployeeForm\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\EmployeeForm\EmployeeAdd.resx">
-      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\EmployeeForm\Employ.resx">
+      <DependentUpon>Employ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FoodForm\Food.resx">
       <DependentUpon>Food.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FoodForm\FoodAdd.resx">
       <DependentUpon>FoodAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FoodForm\FoodF.resx">
-      <DependentUpon>FoodF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\HomeForm\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
@@ -460,12 +425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\test1.resx">
-      <DependentUpon>test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\testSukien.resx">
-      <DependentUpon>testSukien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\WarehouseForm\NguyenLieuF.resx">
       <DependentUpon>NguyenLieuF.cs</DependentUpon>

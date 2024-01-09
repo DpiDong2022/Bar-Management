@@ -1,4 +1,5 @@
 ﻿using Bar_Management.DAO;
+using Bar_Management.DTO;
 using Bar_Management.Models;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,20 @@ namespace Bar_Management.BusinessLogic {
                 _context.Entry(existedObj).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
             }
             return _repo.Update(obj);
+        }
+
+        public List<NhaCungCap> TimKiem(string searchKey) {
+            List<NhaCungCap> nhaCungCaps;
+            if (string.IsNullOrEmpty(searchKey)) {
+                return GetAll().ToList();
+            } else {
+                searchKey = searchKey.ToLower();
+                string[] keys = searchKey.Split(' ');
+
+                return nhaCungCaps = GetAll().Where(nhanVien => keys.Any(
+                    key => nhanVien.Ten.ToLower().Contains(key)
+                    || nhanVien.Email.ToLower().Contains(key))).ToList();
+            }
         }
     }
 }

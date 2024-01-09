@@ -36,10 +36,10 @@ namespace Bar_Management.Models {
         [DefaultValue(1)]
         public int IsAvailable { get; set; } = 1;
 
-        [MaxLength(255)]
+        [DataType("text")]
         public string HinhAnh { get; set; }
 
-        [MaxLength(100, ErrorMessage = "Chiều dài của mô tả không lớn hơn 100")]
+        [MaxLength(255, ErrorMessage = "Chiều dài của mô tả không lớn hơn 100")]
         public string MoTa { get; set; }
 
         [Required]
