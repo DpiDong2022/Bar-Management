@@ -3,12 +3,14 @@ using Bar_Management.DTO;
 using Bar_Management.Models;
 using Bar_Management.Tool;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bar_Management.OrderForm
@@ -25,8 +27,9 @@ namespace Bar_Management.OrderForm
             InitializeComponent();
             _logicLoaimonan = new LoaiMonAnLogic();
 
-
+            
             _logicMonan = new MonAnLogic();
+            
 
         }
         private void LoadTable()
@@ -99,7 +102,7 @@ namespace Bar_Management.OrderForm
                     b.Size = new Size(168, 54);
                     b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
                     b.Text = row["TenLoai"].ToString();
-                    b.TextAlign = HorizontalAlignment.Center;
+                    b.TextAlign = HorizontalAlignment.Left;
 
                     //event for click
                     b.Click += new EventHandler(_Click);
@@ -172,37 +175,81 @@ namespace Bar_Management.OrderForm
                 }
                 // Thêm sản phẩm mới
                 gunaDataGridView1.Rows.Add(new object[] { 0, wdg.Id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
-                GetTotal();
+                
             };
 
         }
-        public Image LoadImageFromUrl(string url)
+        //public Image LoadImageFromUrl(string url)
+        //{
+
+        //    byte[] dataImage;
+        //    try
+        //    {
+        //        dataImage = Internet.LoadImageFromUrl(url);
+        //        using (MemoryStream ms = new MemoryStream(dataImage))
+        //        {
+
+        //            return Image.FromStream(ms);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        dataImage = Internet.LoadImageFromUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXctqNvh3iZX3GK7QJV_cTXbB1Dntc_QkJjzDidc32h3_ZsWQvTmiJcOuexrVT_zlq3L4&usqp=CAU");
+        //        using (MemoryStream ms = new MemoryStream(dataImage))
+        //        {
+
+        //            return Image.FromStream(ms);
+        //        }
+        //    }
+        //}
+
+        //// lấy sản phẩm từ data base
+        //private void LoadProduct()
+        //{
+        //    DataTable dt = new DataTable();
+        //    LoadTable();
+        //    dt = ConvertToDataTable<MonAnOrderDTO>(_tableMonan);
+
+        //    foreach (DataRow row in dt.Rows)
+        //    {
+        //        string data = row["HinhAnh"].ToString();
+        //        var image = LoadImageFromUrl(data);
+        //        AddItems(row["Id"].ToString(), row["TenMon"].ToString(), row["LoaiMonAn"].ToString(),
+        //                row["Gia"].ToString(), image);
+
+        //    }
+
+        //}
+        MemoryCache memoryCache = new MemoryCache(new MemoryCacheOptions());
+        public async Task<Image> LoadImageFromUrlAsync(string url)
         {
-
+            Image image = memoryCache.Get(url) as Image;
             byte[] dataImage;
-            try
+            if (image == null)
             {
-                dataImage = Internet.LoadImageFromUrl(url);
-                using (MemoryStream ms = new MemoryStream(dataImage))
+                try
                 {
-
-                    return Image.FromStream(ms);
+                    dataImage = await Task.Run(() => Internet.LoadImageFromUrl(url));
+                    using (MemoryStream ms = new MemoryStream(dataImage))
+                    {
+                        image =  Image.FromStream(ms);
+                    }
                 }
-            }
-            catch (Exception)
-            {
-
-                dataImage = Internet.LoadImageFromUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXctqNvh3iZX3GK7QJV_cTXbB1Dntc_QkJjzDidc32h3_ZsWQvTmiJcOuexrVT_zlq3L4&usqp=CAU");
-                using (MemoryStream ms = new MemoryStream(dataImage))
+                catch (Exception)
                 {
-
-                    return Image.FromStream(ms);
+                    dataImage = await Task.Run(() => Internet.LoadImageFromUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXctqNvh3iZX3GK7QJV_cTXbB1Dntc_QkJjzDidc32h3_ZsWQvTmiJcOuexrVT_zlq3L4&usqp=CAU"));
+                    using (MemoryStream ms = new MemoryStream(dataImage))
+                    {
+                        image = Image.FromStream(ms);
+                    }
                 }
+                memoryCache.Set(url, image,DateTimeOffset.MaxValue);
             }
+            return image;
         }
 
-        // lấy sản phẩm từ data base
-        private void LoadProduct()
+        private async void LoadProduct()
         {
             DataTable dt = new DataTable();
             LoadTable();
@@ -211,13 +258,12 @@ namespace Bar_Management.OrderForm
             foreach (DataRow row in dt.Rows)
             {
                 string data = row["HinhAnh"].ToString();
-                var image = LoadImageFromUrl(data);
+                var image = await LoadImageFromUrlAsync(data);
                 AddItems(row["Id"].ToString(), row["TenMon"].ToString(), row["LoaiMonAn"].ToString(),
                         row["Gia"].ToString(), image);
-
             }
-
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -244,7 +290,7 @@ namespace Bar_Management.OrderForm
             txtTotal.Text = "";
             foreach (DataGridViewRow row in gunaDataGridView1.Rows)
             {
-                if (int.Parse(row.Cells["dgvStt"].Value.ToString()) < gunaDataGridView1.Rows.Count -1 )
+                if (int.Parse(row.Cells["dgvStt"].Value.ToString()) < gunaDataGridView1.Rows.Count  )
                 {
                     tot += double.Parse(row.Cells["dgvThanhtien"].Value.ToString());
                 }
@@ -261,6 +307,16 @@ namespace Bar_Management.OrderForm
         private void gunaDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThanhtoan_Click(object sender, EventArgs e)
+        {
+            GetTotal();
         }
     }
 }

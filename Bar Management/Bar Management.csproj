@@ -260,6 +260,8 @@
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
+    <Compile Include="DTO\ChiTietHoaDonDto.cs" />
+    <Compile Include="DTO\HoaDonDto.cs" />
     <Compile Include="DTO\MonAnDto.cs" />
     <Compile Include="DTO\MonAnOrderDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
