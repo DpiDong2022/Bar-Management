@@ -44,7 +44,7 @@ namespace Bar_Management.Interfaces.EmployeeForm
             {
                 _table = null;
             }
-            _table = new SortableBindingList<NhanVienDTO>(_logic.GetAll().ToList());
+            _table = new SortableBindingList<NhanVienDTO>(_logic.GetAllDto().ToList());
             dataGridView1.DataSource = _table;
             dataGridView1.Columns["HinhAnh"].Visible = false;
         }

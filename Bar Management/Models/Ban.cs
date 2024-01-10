@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Bar_Management.Models {
     public class Ban {
@@ -23,5 +24,9 @@ namespace Bar_Management.Models {
 
         [MaxLength(100)]
         public string GhiChu { get; set; }
+
+        public override string ToString() {
+            return TenBan;
+        }
     }
 }

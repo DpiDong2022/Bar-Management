@@ -145,6 +145,15 @@ namespace Bar_Management.Tool {
             new TaiKhoan(){ NhanVienId=4, MatKhau="123123", RoleId=3, SettingId=1, Ten="ha nghiem", IsDelete=false},
         };
 
+        static List<HoaDon> hoaDons = new List<HoaDon>(){
+            new HoaDon(){BanId=1, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,3,5), TongGia = 10000},
+            new HoaDon(){BanId=1, TaiKhoanTaoId = 5, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 10000},
+            new HoaDon(){BanId=2, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,5,7), TongGia = 10000},
+            new HoaDon(){BanId=3, TaiKhoanTaoId = 1, TrangThai = true, NgayTao = new DateTime(2024,5,8), TongGia = 10000},
+            new HoaDon(){BanId=3, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,6,9), TongGia = 10000},
+            new HoaDon(){BanId=4, TaiKhoanTaoId = 5, TrangThai = true, NgayTao = new DateTime(2024,7,10), TongGia = 10000},
+        };
+
         public static void Render() {
             ThemTrangThaiTonKho();
             ThemNhaCungCap();
@@ -158,6 +167,7 @@ namespace Bar_Management.Tool {
             ThemBan();
             ThemNhanVien();
             ThemTaiKhoan();
+            ThemHoaDon();
             new TonKhoLogic().UpdateOutOfDate();
         }
 
@@ -268,6 +278,15 @@ namespace Bar_Management.Tool {
             TaiKhoanLogic logic = new TaiKhoanLogic ();
             if (logic.GetAll().Count() == 0) {
                 foreach (var item in taiKhoans) {
+                    logic.Insert(item);
+                }
+            }
+        }
+
+        public static void ThemHoaDon() {
+            HoaDonLogic logic = new HoaDonLogic();
+            if (logic.GetAll().Count() == 0) {
+                foreach (var item in hoaDons) {
                     logic.Insert(item);
                 }
             }

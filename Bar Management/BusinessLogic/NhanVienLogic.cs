@@ -39,13 +39,17 @@ namespace Bar_Management.BusinessLogic {
             return _repo.Delete(obj);
         }
 
-        public IEnumerable<NhanVienDTO> GetAll() {
-            IEnumerable<NhanVien> result4 = _repo.GetAll().OrderByDescending(nv => nv.Luong.ToString().Replace(",",""));
+        public IEnumerable<NhanVienDTO> GetAllDto() {
+            //IEnumerable<NhanVien> result4 = _repo.GetAll().OrderByDescending(nv => nv.Luong.ToString().Replace(",",""));
 
             IEnumerable<NhanVienDTO> result = _repo.GetAll()
                 //.Where(c => !c.isDeleted)
                 .Select(nhanvien => _mapper.Map<NhanVienDTO>(nhanvien));
             return result;
+        }
+
+        public IEnumerable<NhanVien> GetAll() {
+            return _repo.GetAll();
         }
 
         public bool Insert(NhanVien obj) {
@@ -65,14 +69,14 @@ namespace Bar_Management.BusinessLogic {
             IEnumerable<NhanVienDTO> nhanviens;
             if (string.IsNullOrEmpty(searchKey))
             {
-                nhanviens = GetAll();
+                nhanviens = GetAllDto();
             }
             else
             {
                 searchKey = searchKey.ToLower();
                 string[] keys = searchKey.Split(' ');
 
-                nhanviens = GetAll().Where(nhanVien => keys.Any(
+                nhanviens = GetAllDto().Where(nhanVien => keys.Any(
                     key => nhanVien.Ten.ToLower().Contains(key)
                     || nhanVien.Email.ToLower().ToLower().Contains(key)));
             }

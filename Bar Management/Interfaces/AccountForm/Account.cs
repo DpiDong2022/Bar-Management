@@ -173,7 +173,7 @@ namespace Bar_Management.Interfaces.AccountForm
             cbTennhanvien.ValueMember = "Id";
             cbTennhanvien.DisplayMember = "Ten";
 
-            _tableNhanvien = new SortableBindingList<NhanVienDTO>(_nhanVienLogic.GetAll().ToList());
+            _tableNhanvien = new SortableBindingList<NhanVienDTO>(_nhanVienLogic.GetAllDto().ToList());
             _tableNhanvien.Insert(0, new NhanVienDTO() { Id = -1, Ten = "--Nhân viên--" });
             cbTennhanvien.DataSource = _tableNhanvien;
             // ép chỉ đọc các dropdown

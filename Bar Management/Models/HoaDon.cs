@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace Bar_Management.Models {
     public class HoaDon {
@@ -24,7 +25,7 @@ namespace Bar_Management.Models {
         public decimal TongGia { get; set; }
 
         [Required]
-        public int TrangThai { get; set; }
+        public bool TrangThai { get; set; } = false;
         [Required]
         public int BanId { get; set; }
 
