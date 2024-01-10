@@ -22,7 +22,7 @@ namespace Bar_Management.DTO {
                 return _thanhTien;
             }
             set {
-                _thanhTien = string.Format((string)value, "{0:#,##0}");
+                _thanhTien = string.Format("{0:#,##0}", float.Parse(value.ToString()));
             } 
         }
 

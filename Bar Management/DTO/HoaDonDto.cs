@@ -23,16 +23,16 @@ namespace Bar_Management.DTO {
             set {
                 _thoiGianTao = ((DateTime)value).ToString("dd-MM-yyyy");
             } 
-        }
+        } // date created
         public TaiKhoan TaiKhoanTao { get; set; }
         public object TongGia {
             get {
                 return _tongGia;
             }
             set {
-                _tongGia = string.Format((string)value, "{0:#,##0}");
+                _tongGia = string.Format("{0:#,##0}", float.Parse(value.ToString()));
             }
-        }
+        }  // total price
         public object TrangThai 
         {
             get {
@@ -42,5 +42,14 @@ namespace Bar_Management.DTO {
                 _trangThai = ((bool)value) == true ? "Đã thanh toán" : "Chưa thanh toán";
             }
         }
+
+/*        public HoaDonDto(int id, Ban ban, object ngayTao, TaiKhoan taiKhoanTao, object tongGia, object trangThai) {
+            Id = id;
+            Ban = ban;
+            NgayTao = ngayTao;
+            TaiKhoanTao = taiKhoanTao;
+            TongGia = tongGia;
+            TrangThai = trangThai;
+        }*/
     }
 }

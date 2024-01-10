@@ -86,7 +86,7 @@ namespace Bar_Management.BusinessLogic {
         public void ExportToExcel(BindingList<NhanVienDTO> table)
         {
             // lấy vị trí path templete
-            string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string currentPath = Assembly.GetExecutingAssembly().Location;
             int binIndex = currentPath.LastIndexOf("bin");
             string templatepath = currentPath.Substring(0, binIndex) + "Templates\\NhanVienExcel.xlsx";
             if (!File.Exists(templatepath))

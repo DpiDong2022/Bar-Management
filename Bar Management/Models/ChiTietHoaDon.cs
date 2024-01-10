@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Bar_Management.Models {
-    public class ChiTietHoaDon : baseClass{
+    public class ChiTietHoaDon{
         [Key]
         public int Id { get; set; }
 

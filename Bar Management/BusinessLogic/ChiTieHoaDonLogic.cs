@@ -23,6 +23,8 @@ namespace Bar_Management.BusinessLogic {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
             _context = AppDbContextSingleton.Instance;
             _repo = new GenericRepository<ChiTietHoaDon>();
+            _repoHoaDon = new GenericRepository<HoaDon> { };
+            _repoMonAn = new GenericRepository<MonAn> { };
         }
 
         public bool Delete(ChiTietHoaDon obj) {
@@ -50,17 +52,18 @@ namespace Bar_Management.BusinessLogic {
         public IEnumerable<ChiTietHoaDon> GetByHoaDonId(int id) {
             var monAns = _repoMonAn.GetAll();
             var hoaDons = _repoHoaDon.GetAll();
-            return _repo.GetAll()
+            var result = _repo.GetAll()
                 .Where(chitiet => chitiet.HoaDonId == id)
                 .Select(chitiet => new ChiTietHoaDon() {
-                Id = chitiet.Id,
-                HoaDonId = chitiet.HoaDonId,
-                ThanhTien = chitiet.ThanhTien,
-                MonAnId = chitiet.MonAnId,
-                SoLuong = chitiet.SoLuong,
-                MonAn = monAns.FirstOrDefault(c => c.Id == chitiet.MonAnId),
-                HoaDon = hoaDons.FirstOrDefault(c => c.Id == chitiet.HoaDonId)
-            });
+                    Id = chitiet.Id,
+                    HoaDonId = chitiet.HoaDonId,
+                    ThanhTien = chitiet.ThanhTien,
+                    MonAnId = chitiet.MonAnId,
+                    SoLuong = chitiet.SoLuong,
+                    MonAn = monAns.FirstOrDefault(c => c.Id == chitiet.MonAnId),
+                    HoaDon = hoaDons.FirstOrDefault(c => c.Id == chitiet.HoaDonId)
+                });
+            return result;
         }
 
         public bool Insert(ChiTietHoaDon obj) {

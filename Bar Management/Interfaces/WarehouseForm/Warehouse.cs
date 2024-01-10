@@ -361,7 +361,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             }
 
             TonKho tonKhoMoi = new TonKho(){
-                NguyenLieuId = nhaCungCap.Id,
+                NguyenLieuId = nguyenLieu.Id,
                 NhaCungCapId = nhaCungCap.Id,
                 TrangThaiId = trangThaiTonKho.Id,
                 SoLuong = int.Parse(soLuong),
@@ -398,7 +398,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
         }
 
         private int KiemTraThongTinDaTonTai(TonKhoDto tonKhoDto) {
-            foreach (var item in _table) {
+            foreach (var item in _tonKhoLogic.GetAll()) {
                 if (item.NhaCungCap.Id == tonKhoDto.NhaCungCap.Id
                     && item.NguyenLieu.Id == tonKhoDto.NguyenLieu.Id
                     && item.NgayNhap.ToString() == tonKhoDto.NgayNhap.ToString()) {

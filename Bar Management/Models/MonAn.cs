@@ -44,5 +44,9 @@ namespace Bar_Management.Models {
 
         [Required]
         public bool IsDelete { get; set; } = false;
+
+        public override string ToString() {
+            return TenMon;
+        }
     }
 }

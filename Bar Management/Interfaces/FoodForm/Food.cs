@@ -401,5 +401,9 @@ namespace Bar_Management.FoodForm {
         private void label9_Click(object sender, EventArgs e) {
 
         }
+
+        private void motaText_TextChanged(object sender, EventArgs e) {
+
+        }
     }
 }

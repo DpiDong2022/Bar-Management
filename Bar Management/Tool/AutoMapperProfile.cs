@@ -43,7 +43,9 @@ namespace Bar_Management.Tool {
                 .ForMember(dest => dest.SettingId, opt => opt.MapFrom(src => src.Setting.Id));
 
                 // Hóa đơn
-                cfg.CreateMap<HoaDon, HoaDonDto>();
+                cfg.CreateMap<HoaDon, HoaDonDto>()
+            .ForMember(dest => dest.TaiKhoanTao, opt => opt.MapFrom(src => src.TaiKhoanTao))
+            .ForMember(dest => dest.Ban, opt => opt.MapFrom(src => src.Ban));
                 cfg.CreateMap<HoaDonDto, HoaDon>()
             .ForMember(dest => dest.TongGia, opt => opt.MapFrom(src => decimal.Parse(((string)src.TongGia).Replace(",",""))))
             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai == "Đã thanh toán" ? true:false))

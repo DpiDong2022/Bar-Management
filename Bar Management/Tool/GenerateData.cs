@@ -146,12 +146,21 @@ namespace Bar_Management.Tool {
         };
 
         static List<HoaDon> hoaDons = new List<HoaDon>(){
-            new HoaDon(){BanId=1, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,3,5), TongGia = 10000},
-            new HoaDon(){BanId=1, TaiKhoanTaoId = 5, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 10000},
-            new HoaDon(){BanId=2, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,5,7), TongGia = 10000},
-            new HoaDon(){BanId=3, TaiKhoanTaoId = 1, TrangThai = true, NgayTao = new DateTime(2024,5,8), TongGia = 10000},
-            new HoaDon(){BanId=3, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,6,9), TongGia = 10000},
-            new HoaDon(){BanId=4, TaiKhoanTaoId = 5, TrangThai = true, NgayTao = new DateTime(2024,7,10), TongGia = 10000},
+            new HoaDon(){BanId=1, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,3,5), TongGia = 110000},
+            new HoaDon(){BanId=1, TaiKhoanTaoId = 3, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 150000},
+            new HoaDon(){BanId=2, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 130000}
+        };
+
+        static List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>(){
+            new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=1, SoLuong=2, ThanhTien= 20000},
+            new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=2, SoLuong=2, ThanhTien= 30000},
+            new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=3, SoLuong=2, ThanhTien= 60000},
+            new ChiTietHoaDon(){ HoaDonId = 2, MonAnId=1, SoLuong=3, ThanhTien= 30000},
+            new ChiTietHoaDon(){ HoaDonId = 2, MonAnId=2, SoLuong=2, ThanhTien= 30000},
+            new ChiTietHoaDon(){ HoaDonId = 2, MonAnId=3, SoLuong=3, ThanhTien= 90000},
+            new ChiTietHoaDon(){ HoaDonId = 3, MonAnId=4, SoLuong=1, ThanhTien= 40000},
+            new ChiTietHoaDon(){ HoaDonId = 3, MonAnId=2, SoLuong=2, ThanhTien= 30000},
+            new ChiTietHoaDon(){ HoaDonId = 3, MonAnId=5, SoLuong=3, ThanhTien= 60000},
         };
 
         public static void Render() {
@@ -168,6 +177,7 @@ namespace Bar_Management.Tool {
             ThemNhanVien();
             ThemTaiKhoan();
             ThemHoaDon();
+            ThemChiTietHoaDon();
             new TonKhoLogic().UpdateOutOfDate();
         }
 
@@ -287,6 +297,15 @@ namespace Bar_Management.Tool {
             HoaDonLogic logic = new HoaDonLogic();
             if (logic.GetAll().Count() == 0) {
                 foreach (var item in hoaDons) {
+                    logic.Insert(item);
+                }
+            }
+        }
+
+        public static void ThemChiTietHoaDon() {
+            ChiTieHoaDonLogic logic = new ChiTieHoaDonLogic();
+            if (logic.GetAll().Count() == 0) {
+                foreach (var item in chiTietHoaDons) {
                     logic.Insert(item);
                 }
             }
