@@ -408,7 +408,7 @@ namespace Bar_Management.FoodForm {
 
         private void openDialogimage_Click(object sender, EventArgs e) {
             if (openFileDialog2.ShowDialog() == DialogResult.OK) {
-                if (Helper.IsImageFile(pictureBox1.ImageLocation)) {
+                if (Helper.IsImageFile(openFileDialog2.FileName)) {
                     pictureBox1.ImageLocation = openFileDialog2.FileName;
                 } else {
                     MessageBox.Show("Hãy chọn một ảnh đúng định dạng");

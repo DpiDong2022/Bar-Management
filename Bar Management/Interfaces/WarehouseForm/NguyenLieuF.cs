@@ -33,14 +33,14 @@ namespace Bar_Management.Interfaces.WarehouseForm {
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e) {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
-                if (Helper.IsImageFile(pictureBox.ImageLocation)) {
-                    pictureBox.ImageLocation = openFileDialog1.FileName;
-                } else {
-                    MessageBox.Show("Hãy chọn một ảnh đúng định dạng");
-                }
+            //if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+            //    if (Helper.IsImageFile(pictureBox.ImageLocation)) {
+            //        pictureBox.ImageLocation = openFileDialog1.FileName;
+            //    } else {
+            //        MessageBox.Show("Hãy chọn một ảnh đúng định dạng");
+            //    }
                
-            }
+            //}
         }
 
         private void NguyenLieuF_MouseClick(object sender, MouseEventArgs e) {
@@ -68,15 +68,15 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                 errTenNL.Clear();
             }
 
-            if (string.IsNullOrEmpty(pictureBox.ImageLocation)) {
-                errAnh.SetError(btnChonAnh, "Bạn chưa chọn ảnh");
-                isValid = false;
-            } else if(!File.Exists(pictureBox.ImageLocation)){
-                isValid = false;
-                errAnh.SetError(btnChonAnh, "Ảnh không tồn tại");
-            } else {
-                errAnh.Clear();
-            }
+            //if (string.IsNullOrEmpty(pictureBox.ImageLocation)) {
+            //    errAnh.SetError(btnChonAnh, "Bạn chưa chọn ảnh");
+            //    isValid = false;
+            //} else if(!File.Exists(pictureBox.ImageLocation)){
+            //    isValid = false;
+            //    errAnh.SetError(btnChonAnh, "Ảnh không tồn tại");
+            //} else {
+            //    errAnh.Clear();
+            //}
 
             if (_nguyenLieuLogic.GetAll().Any(nl => nl.Ten.ToLower()== tboxTenNguyenLieu.Text.ToLower())) {
                 isValid = false;
