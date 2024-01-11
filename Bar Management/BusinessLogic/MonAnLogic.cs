@@ -44,6 +44,29 @@ namespace Bar_Management.BusinessLogic {
             return _repo.Delete(obj);
         }
 
+        public IEnumerable<MonAnOrderDTO> GetAllMonAnOrder() {
+            var loaiMonAns = _loaiMonAnLogic.GetAll();
+            IEnumerable<MonAnOrderDTO> result = _repo.GetAll()
+                .Where(c => !c.IsDelete)
+                .Join(loaiMonAns,
+                    monAn => monAn.LoaiMonAnId,
+                    loaiMonAn => loaiMonAn.Id,
+                    (monAn, LoaiMonAn) => new MonAn()
+                    {
+                        Id = monAn.Id,
+                        Gia = monAn.Gia,
+                        HinhAnh = monAn.HinhAnh,
+                        IsAvailable = monAn.IsAvailable,
+                        TenMon = monAn.TenMon,
+                        LoaiMonAnId = monAn.LoaiMonAnId,
+                        IsDelete = monAn.IsDelete,
+                        MoTa = monAn.MoTa,
+                        LoaiMonAn = LoaiMonAn
+                    })
+                .Select(monAn => _mapper.Map<MonAnOrderDTO>(monAn));
+            return result;
+        }
+
         public IEnumerable<MonAnDto> GetAll() {
             var loaiMonAns = _loaiMonAnLogic.GetAll();
             IEnumerable<MonAnDto> result = _repo.GetAll()

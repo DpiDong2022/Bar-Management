@@ -21,7 +21,8 @@ namespace Bar_Management
             GenerateData.Render();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm.Main());
+            Application.Run(new Login());
+            
         }
     }
 }

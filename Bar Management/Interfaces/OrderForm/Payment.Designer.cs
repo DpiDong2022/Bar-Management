@@ -29,103 +29,82 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CategoryPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.ucProduct5 = new Bar_Management.OrderForm.ucProduct();
-            this.ucProduct6 = new Bar_Management.OrderForm.ucProduct();
-            this.ucProduct4 = new Bar_Management.OrderForm.ucProduct();
-            this.ucProduct3 = new Bar_Management.OrderForm.ucProduct();
-            this.ucProduct2 = new Bar_Management.OrderForm.ucProduct();
-            this.ucProduct1 = new Bar_Management.OrderForm.ucProduct();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.Label();
+            this.ProductPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.product1 = new Bar_Management.Models.Product();
+            this.product2 = new Bar_Management.Models.Product();
+            this.product3 = new Bar_Management.Models.Product();
+            this.product4 = new Bar_Management.Models.Product();
+            this.gunaDataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvStt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvThanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTru = new System.Windows.Forms.Button();
+            this.btnTInhTien = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnBochon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.CategoryPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.ProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.CategoryPanel);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 688);
+            this.panel1.Size = new System.Drawing.Size(244, 1055);
             this.panel1.TabIndex = 0;
             // 
-            // button4
+            // CategoryPanel
             // 
-            this.button4.Location = new System.Drawing.Point(53, 373);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 52);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Fruit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.CategoryPanel.Controls.Add(this.guna2Button1);
+            this.CategoryPanel.Location = new System.Drawing.Point(41, 149);
+            this.CategoryPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CategoryPanel.Name = "CategoryPanel";
+            this.CategoryPanel.Size = new System.Drawing.Size(171, 633);
+            this.CategoryPanel.TabIndex = 3;
             // 
-            // button3
+            // guna2Button1
             // 
-            this.button3.Location = new System.Drawing.Point(53, 314);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 52);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Food";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(53, 255);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 52);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Drink";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(53, 191);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 52);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "All Categories";
-            this.button1.UseVisualStyleBackColor = true;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(3, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(168, 54);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // pictureBox1
             // 
@@ -141,49 +120,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PapayaWhip;
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(267, 0);
+            this.panel2.Location = new System.Drawing.Point(244, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1190, 96);
+            this.panel2.Size = new System.Drawing.Size(1680, 96);
             this.panel2.TabIndex = 1;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(415, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 74);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "MAR";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(283, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 74);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Bill List";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(157, 10);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 74);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Table";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
@@ -204,162 +149,6 @@
             this.panel4.Size = new System.Drawing.Size(780, 468);
             this.panel4.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.ucProduct5);
-            this.panel3.Controls.Add(this.ucProduct6);
-            this.panel3.Controls.Add(this.ucProduct4);
-            this.panel3.Controls.Add(this.ucProduct3);
-            this.panel3.Controls.Add(this.ucProduct2);
-            this.panel3.Controls.Add(this.ucProduct1);
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(271, 149);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(556, 505);
-            this.panel3.TabIndex = 1;
-            // 
-            // ucProduct5
-            // 
-            this.ucProduct5.id = 0;
-            this.ucProduct5.Location = new System.Drawing.Point(364, 165);
-            this.ucProduct5.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct5.Name = "ucProduct5";
-            this.ucProduct5.Pcategory = null;
-            this.ucProduct5.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct5.PImage")));
-            this.ucProduct5.PName = "Product Name";
-            this.ucProduct5.PPrice = null;
-            this.ucProduct5.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct5.TabIndex = 6;
-            // 
-            // ucProduct6
-            // 
-            this.ucProduct6.id = 0;
-            this.ucProduct6.Location = new System.Drawing.Point(187, 165);
-            this.ucProduct6.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct6.Name = "ucProduct6";
-            this.ucProduct6.Pcategory = null;
-            this.ucProduct6.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct6.PImage")));
-            this.ucProduct6.PName = "Product Name";
-            this.ucProduct6.PPrice = null;
-            this.ucProduct6.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct6.TabIndex = 5;
-            // 
-            // ucProduct4
-            // 
-            this.ucProduct4.id = 0;
-            this.ucProduct4.Location = new System.Drawing.Point(4, 165);
-            this.ucProduct4.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct4.Name = "ucProduct4";
-            this.ucProduct4.Pcategory = null;
-            this.ucProduct4.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct4.PImage")));
-            this.ucProduct4.PName = "Product Name";
-            this.ucProduct4.PPrice = null;
-            this.ucProduct4.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct4.TabIndex = 4;
-            // 
-            // ucProduct3
-            // 
-            this.ucProduct3.id = 0;
-            this.ucProduct3.Location = new System.Drawing.Point(364, 7);
-            this.ucProduct3.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct3.Name = "ucProduct3";
-            this.ucProduct3.Pcategory = null;
-            this.ucProduct3.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.PImage")));
-            this.ucProduct3.PName = "Product Name";
-            this.ucProduct3.PPrice = null;
-            this.ucProduct3.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct3.TabIndex = 3;
-            // 
-            // ucProduct2
-            // 
-            this.ucProduct2.id = 0;
-            this.ucProduct2.Location = new System.Drawing.Point(187, 7);
-            this.ucProduct2.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct2.Name = "ucProduct2";
-            this.ucProduct2.Pcategory = null;
-            this.ucProduct2.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.PImage")));
-            this.ucProduct2.PName = "Product Name";
-            this.ucProduct2.PPrice = null;
-            this.ucProduct2.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct2.TabIndex = 2;
-            // 
-            // ucProduct1
-            // 
-            this.ucProduct1.id = 0;
-            this.ucProduct1.Location = new System.Drawing.Point(4, 7);
-            this.ucProduct1.Margin = new System.Windows.Forms.Padding(5);
-            this.ucProduct1.Name = "ucProduct1";
-            this.ucProduct1.Pcategory = null;
-            this.ucProduct1.PImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.PImage")));
-            this.ucProduct1.PName = "Product Name";
-            this.ucProduct1.PPrice = null;
-            this.ucProduct1.Size = new System.Drawing.Size(192, 150);
-            this.ucProduct1.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(855, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvname,
-            this.dgvCount,
-            this.dgvPrice,
-            this.dgvAmount,
-            this.dgvDelete});
-            this.dataGridView2.Location = new System.Drawing.Point(835, 96);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(619, 464);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // dgvname
-            // 
-            this.dgvname.HeaderText = "FoodName";
-            this.dgvname.MinimumWidth = 6;
-            this.dgvname.Name = "dgvname";
-            this.dgvname.Width = 125;
-            // 
-            // dgvCount
-            // 
-            this.dgvCount.HeaderText = "Count";
-            this.dgvCount.MinimumWidth = 6;
-            this.dgvCount.Name = "dgvCount";
-            this.dgvCount.Width = 50;
-            // 
-            // dgvPrice
-            // 
-            this.dgvPrice.HeaderText = "Price";
-            this.dgvPrice.MinimumWidth = 6;
-            this.dgvPrice.Name = "dgvPrice";
-            this.dgvPrice.Width = 125;
-            // 
-            // dgvAmount
-            // 
-            this.dgvAmount.HeaderText = "Amount";
-            this.dgvAmount.MinimumWidth = 6;
-            this.dgvAmount.Name = "dgvAmount";
-            this.dgvAmount.Width = 125;
-            // 
-            // dgvDelete
-            // 
-            this.dgvDelete.FillWeight = 70F;
-            this.dgvDelete.HeaderText = "";
-            this.dgvDelete.Image = global::Bar_Management.Properties.Resources.bin;
-            this.dgvDelete.MinimumWidth = 70;
-            this.dgvDelete.Name = "dgvDelete";
-            this.dgvDelete.Width = 70;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -379,56 +168,236 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 29);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button28
+            // btnLuu
             // 
-            this.button28.Location = new System.Drawing.Point(1324, 613);
-            this.button28.Margin = new System.Windows.Forms.Padding(4);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(125, 41);
-            this.button28.TabIndex = 16;
-            this.button28.Text = "Payment";
-            this.button28.UseVisualStyleBackColor = true;
+            this.btnLuu.Location = new System.Drawing.Point(941, 763);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(80, 41);
+            this.btnLuu.TabIndex = 16;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // button27
+            // btnAdd
             // 
-            this.button27.Location = new System.Drawing.Point(1009, 618);
-            this.button27.Margin = new System.Windows.Forms.Padding(4);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(125, 41);
-            this.button27.TabIndex = 15;
-            this.button27.Text = "Change Table";
-            this.button27.UseVisualStyleBackColor = true;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(1633, 240);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(93, 92);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // comboBox4
+            // txtTotal
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(847, 618);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(135, 38);
-            this.comboBox4.TabIndex = 14;
+            this.txtTotal.AutoSize = true;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(1206, 760);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(189, 44);
+            this.txtTotal.TabIndex = 12;
+            this.txtTotal.Text = "Total Cost";
+            this.txtTotal.Click += new System.EventHandler(this.txtTotal_Click);
             // 
-            // textBox2
+            // ProductPanel
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1032, 567);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(420, 37);
-            this.textBox2.TabIndex = 13;
+            this.ProductPanel.Controls.Add(this.product1);
+            this.ProductPanel.Controls.Add(this.product2);
+            this.ProductPanel.Controls.Add(this.product3);
+            this.ProductPanel.Controls.Add(this.product4);
+            this.ProductPanel.Location = new System.Drawing.Point(288, 149);
+            this.ProductPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ProductPanel.Name = "ProductPanel";
+            this.ProductPanel.Size = new System.Drawing.Size(627, 602);
+            this.ProductPanel.TabIndex = 18;
             // 
-            // label2
+            // product1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(841, 575);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 27);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Total Cost";
+            this.product1.Id = 0;
+            this.product1.Location = new System.Drawing.Point(3, 2);
+            this.product1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.product1.Name = "product1";
+            this.product1.PCatergory = null;
+            this.product1.PImage = ((System.Drawing.Image)(resources.GetObject("product1.PImage")));
+            this.product1.PName = "ProductName";
+            this.product1.PPrice = null;
+            this.product1.Size = new System.Drawing.Size(149, 150);
+            this.product1.TabIndex = 0;
+            // 
+            // product2
+            // 
+            this.product2.Id = 0;
+            this.product2.Location = new System.Drawing.Point(158, 2);
+            this.product2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.product2.Name = "product2";
+            this.product2.PCatergory = null;
+            this.product2.PImage = ((System.Drawing.Image)(resources.GetObject("product2.PImage")));
+            this.product2.PName = "ProductName";
+            this.product2.PPrice = null;
+            this.product2.Size = new System.Drawing.Size(149, 150);
+            this.product2.TabIndex = 1;
+            // 
+            // product3
+            // 
+            this.product3.Id = 0;
+            this.product3.Location = new System.Drawing.Point(313, 2);
+            this.product3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.product3.Name = "product3";
+            this.product3.PCatergory = null;
+            this.product3.PImage = ((System.Drawing.Image)(resources.GetObject("product3.PImage")));
+            this.product3.PName = "ProductName";
+            this.product3.PPrice = null;
+            this.product3.Size = new System.Drawing.Size(149, 150);
+            this.product3.TabIndex = 2;
+            // 
+            // product4
+            // 
+            this.product4.Id = 0;
+            this.product4.Location = new System.Drawing.Point(468, 2);
+            this.product4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.product4.Name = "product4";
+            this.product4.PCatergory = null;
+            this.product4.PImage = ((System.Drawing.Image)(resources.GetObject("product4.PImage")));
+            this.product4.PName = "ProductName";
+            this.product4.PPrice = null;
+            this.product4.Size = new System.Drawing.Size(149, 150);
+            this.product4.TabIndex = 3;
+            // 
+            // gunaDataGridView1
+            // 
+            this.gunaDataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.gunaDataGridView1.ColumnHeadersHeight = 18;
+            this.gunaDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStt,
+            this.dgvId,
+            this.dgvTenmon,
+            this.dgvQty,
+            this.dgvGia,
+            this.dgvThanhtien});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView1.Location = new System.Drawing.Point(941, 153);
+            this.gunaDataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaDataGridView1.Name = "gunaDataGridView1";
+            this.gunaDataGridView1.ReadOnly = true;
+            this.gunaDataGridView1.RowHeadersVisible = false;
+            this.gunaDataGridView1.RowHeadersWidth = 51;
+            this.gunaDataGridView1.RowTemplate.Height = 24;
+            this.gunaDataGridView1.Size = new System.Drawing.Size(671, 598);
+            this.gunaDataGridView1.TabIndex = 19;
+            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 18;
+            this.gunaDataGridView1.ThemeStyle.ReadOnly = true;
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 24;
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridView1_CellContentClick_1);
+            this.gunaDataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gunaDataGridView1_CellFormatting);
+            // 
+            // dgvStt
+            // 
+            this.dgvStt.HeaderText = "Stt";
+            this.dgvStt.MinimumWidth = 6;
+            this.dgvStt.Name = "dgvStt";
+            this.dgvStt.ReadOnly = true;
+            // 
+            // dgvId
+            // 
+            this.dgvId.HeaderText = "Id";
+            this.dgvId.MinimumWidth = 6;
+            this.dgvId.Name = "dgvId";
+            this.dgvId.ReadOnly = true;
+            this.dgvId.Visible = false;
+            // 
+            // dgvTenmon
+            // 
+            this.dgvTenmon.HeaderText = "Tên món";
+            this.dgvTenmon.MinimumWidth = 6;
+            this.dgvTenmon.Name = "dgvTenmon";
+            this.dgvTenmon.ReadOnly = true;
+            // 
+            // dgvQty
+            // 
+            this.dgvQty.HeaderText = "Số lượng";
+            this.dgvQty.MinimumWidth = 6;
+            this.dgvQty.Name = "dgvQty";
+            this.dgvQty.ReadOnly = true;
+            // 
+            // dgvGia
+            // 
+            this.dgvGia.HeaderText = "Giá";
+            this.dgvGia.MinimumWidth = 6;
+            this.dgvGia.Name = "dgvGia";
+            this.dgvGia.ReadOnly = true;
+            // 
+            // dgvThanhtien
+            // 
+            this.dgvThanhtien.HeaderText = "Thành tiền ";
+            this.dgvThanhtien.MinimumWidth = 6;
+            this.dgvThanhtien.Name = "dgvThanhtien";
+            this.dgvThanhtien.ReadOnly = true;
+            // 
+            // btnTru
+            // 
+            this.btnTru.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTru.Location = new System.Drawing.Point(1633, 367);
+            this.btnTru.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTru.Name = "btnTru";
+            this.btnTru.Size = new System.Drawing.Size(93, 85);
+            this.btnTru.TabIndex = 15;
+            this.btnTru.Text = "Bớt";
+            this.btnTru.UseVisualStyleBackColor = true;
+            this.btnTru.Click += new System.EventHandler(this.btnTru_Click);
+            // 
+            // btnTInhTien
+            // 
+            this.btnTInhTien.Location = new System.Drawing.Point(1049, 763);
+            this.btnTInhTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTInhTien.Name = "btnTInhTien";
+            this.btnTInhTien.Size = new System.Drawing.Size(127, 41);
+            this.btnTInhTien.TabIndex = 21;
+            this.btnTInhTien.Text = "Thanh Toán";
+            this.btnTInhTien.UseVisualStyleBackColor = true;
+            this.btnTInhTien.Click += new System.EventHandler(this.btnTInhTien_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -439,33 +408,51 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 70;
             // 
+            // btnBochon
+            // 
+            this.btnBochon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBochon.Location = new System.Drawing.Point(1633, 490);
+            this.btnBochon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBochon.Name = "btnBochon";
+            this.btnBochon.Size = new System.Drawing.Size(93, 89);
+            this.btnBochon.TabIndex = 15;
+            this.btnBochon.Text = "Bỏ chọn";
+            this.btnBochon.UseVisualStyleBackColor = true;
+            this.btnBochon.Click += new System.EventHandler(this.btnBochon_Click);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1457, 688);
-            this.Controls.Add(this.button28);
-            this.Controls.Add(this.button27);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnTInhTien);
+            this.Controls.Add(this.gunaDataGridView1);
+            this.Controls.Add(this.ProductPanel);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnBochon);
+            this.Controls.Add(this.btnTru);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1942, 1252);
+            this.MinimumSize = new System.Drawing.Size(1918, 1028);
             this.Name = "Payment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Payment";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Payment_FormClosed);
+            this.Load += new System.EventHandler(this.Payment_Load);
             this.panel1.ResumeLayout(false);
+            this.CategoryPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.ProductPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,37 +462,31 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
-        private System.Windows.Forms.DataGridViewImageColumn dgvDelete;
-        private ucProduct ucProduct2;
-        private ucProduct ucProduct1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private ucProduct ucProduct5;
-        private ucProduct ucProduct6;
-        private ucProduct ucProduct4;
-        private ucProduct ucProduct3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private Models.Product product2;
+        private Models.Product product1;
+        private Models.Product product4;
+        private Models.Product product3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.FlowLayoutPanel CategoryPanel;
+        private System.Windows.Forms.FlowLayoutPanel ProductPanel;
+        private System.Windows.Forms.Label txtTotal;
+        private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridView1;
+        private System.Windows.Forms.Button btnTru;
+        private System.Windows.Forms.Button btnTInhTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenmon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvThanhtien;
+        private System.Windows.Forms.Button btnBochon;
     }
 }

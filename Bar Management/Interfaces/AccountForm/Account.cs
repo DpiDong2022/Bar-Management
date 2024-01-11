@@ -6,6 +6,7 @@ using Bar_Management.Models;
 using Bar_Management.Tool;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -36,6 +37,7 @@ namespace Bar_Management.Interfaces.AccountForm
 
         private void LoadTable()
         {
+            dataGridView1.ClearSelection();
             if (_table != null)
             {
                 _table = null;
@@ -43,6 +45,8 @@ namespace Bar_Management.Interfaces.AccountForm
             _table = new SortableBindingList<TaiKhoanDTO>(_logic.GetAll().ToList());
             dataGridView1.DataSource = _table;
             dataGridView1.Columns["Setting"].Visible = false;
+            txtTen.Focus();
+             dataGridView1.ClearSelection();
         }
         private bool Validate(string tenTK, int roleID, string matKhau, int nhanvienID)
         {
@@ -155,7 +159,7 @@ namespace Bar_Management.Interfaces.AccountForm
 
         private void Account_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.ClearSelection();
             // tải bảng tài khoản
             LoadTable();
 
@@ -214,11 +218,12 @@ namespace Bar_Management.Interfaces.AccountForm
 
             string tenTk = txtTen.Text.Trim();
             string matKhau = txtMatkhau.Text.Trim();
-            int tenNguoidung = (cbTennhanvien.SelectedItem as NhanVien).Id;
+            var nguoiDung = cbTennhanvien.SelectedItem;
+            int tenNguoidungId = ((NhanVienDTO)(nguoiDung)).Id;
             int tenRole = (cbRole.SelectedItem as Role).Id;
 
             // validate
-            bool isValid = Validate(tenTk, tenRole, matKhau, tenNguoidung);
+            bool isValid = Validate(tenTk, tenRole, matKhau, tenNguoidungId);
             if (!isValid) return;
 
             TaiKhoan taiKhoan = new TaiKhoan()
@@ -226,7 +231,7 @@ namespace Bar_Management.Interfaces.AccountForm
                 Ten = tenTk,
                 MatKhau = matKhau,
                 RoleId = tenRole,
-                NhanVienId = tenNguoidung
+                NhanVienId = tenNguoidungId
 
             };
 
@@ -240,12 +245,26 @@ namespace Bar_Management.Interfaces.AccountForm
 
                 // Mapper from monAn to monAnDto
                 TaiKhoanDTO taiKhoanDTo = _mapper.Map<TaiKhoanDTO>(taiKhoan);
+                
                 update(taiKhoan, taiKhoanDTo);
+            } else {
+                if (_logic.Insert(taiKhoan)) {
+                    MessageBox.Show("Thêm thành công");
+                }
             }
+            LoadTable();
+            dataGridView1.ClearSelection();
 
         }
         private void update(TaiKhoan taiKhoan, TaiKhoanDTO taiKhoanDTO)
         {
+            if (dataGridView1.SelectedRows.Count==0) {
+                return;
+            }
+            if (dataGridView1.Rows.Count == 0) {
+                return;
+            }
+
             int index = dataGridView1.SelectedRows[0].Index;
             int id = (int)(dataGridView1.Rows[index].Cells[0].Value);
             taiKhoan.Id = id;
@@ -281,6 +300,7 @@ namespace Bar_Management.Interfaces.AccountForm
                 }
                 ClearInputBoxs();
             }
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)

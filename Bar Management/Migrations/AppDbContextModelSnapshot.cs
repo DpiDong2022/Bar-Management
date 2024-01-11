@@ -168,7 +168,7 @@ namespace Bar_Management.Migrations
 
             modelBuilder.Entity("Bar_Management.Models.MonAn", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);

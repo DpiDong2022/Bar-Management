@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Bar_Management.BusinessLogic;
 using Bar_Management.DTO;
 using Bar_Management.Models;
 using System;
+using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Bar_Management.Tool {
     public class AutoMapperProfile {
@@ -11,6 +14,13 @@ namespace Bar_Management.Tool {
             {
                 cfg.CreateMap<MonAn, MonAnDto>()
             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.IsAvailable));
+
+                cfg.CreateMap<MonAn, MonAnOrderDTO>()
+            .ForMember(dest => dest.TenMon, opt => opt.MapFrom(src => src.TenMon))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Gia, opt => opt.MapFrom(src => src.Gia))
+            .ForMember(dest => dest.HinhAnh, opt => opt.MapFrom(src => src.HinhAnh))
+            .ForMember(dest => dest.LoaiMonAn, opt => opt.MapFrom(src => src.LoaiMonAn));
 
                 cfg.CreateMap<MonAnDto, MonAn>()
             .ForMember(dest => dest.IsAvailable, opt => opt.MapFrom(src => src.TrangThai == "Còn" ? 1:0))
@@ -45,7 +55,7 @@ namespace Bar_Management.Tool {
                 // Hóa đơn
                 cfg.CreateMap<HoaDon, HoaDonDto>()
             .ForMember(dest => dest.TaiKhoanTao, opt => opt.MapFrom(src => src.TaiKhoanTao))
-            .ForMember(dest => dest.Ban, opt => opt.MapFrom(src => src.Ban));
+            .ForMember(dest => dest.Ban, opt => opt.MapFrom(src => (new BanLogic().GetAll()).ToList().First(ban => ban.Id == src.BanId)));
                 cfg.CreateMap<HoaDonDto, HoaDon>()
             .ForMember(dest => dest.TongGia, opt => opt.MapFrom(src => decimal.Parse(((string)src.TongGia).Replace(",",""))))
             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai == "Đã thanh toán" ? true:false))

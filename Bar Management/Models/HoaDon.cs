@@ -29,7 +29,6 @@ namespace Bar_Management.Models {
         [Required]
         public int BanId { get; set; }
 
-        [ForeignKey("BanId")]
         public Ban Ban { get; set; }
 
     }

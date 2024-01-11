@@ -10,7 +10,8 @@ namespace Bar_Management.BusinessLogic {
 
     public class BanLogic {
 
-        private readonly AppDbContext _context;
+        public AppDbContext _context;
+
         private readonly GenericRepository<Ban> _repo;
 
         public BanLogic() {
@@ -32,6 +33,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(Ban obj) {
+            var existedMonan = this._context.Set<Ban>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

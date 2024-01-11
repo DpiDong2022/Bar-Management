@@ -40,9 +40,10 @@
             this.button1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(447, 337);
+            this.button1.Location = new System.Drawing.Point(596, 415);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 51);
+            this.button1.Size = new System.Drawing.Size(175, 63);
             this.button1.TabIndex = 1;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = false;
@@ -50,9 +51,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Bar_Management.Properties.Resources.apartment;
-            this.pictureBox1.Location = new System.Drawing.Point(421, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(561, 220);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 139);
+            this.pictureBox1.Size = new System.Drawing.Size(257, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -62,9 +64,10 @@
             this.button2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(447, 411);
+            this.button2.Location = new System.Drawing.Point(596, 506);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 50);
+            this.button2.Size = new System.Drawing.Size(175, 62);
             this.button2.TabIndex = 5;
             this.button2.Text = "Change Password";
             this.button2.UseVisualStyleBackColor = false;
@@ -75,23 +78,26 @@
             this.button3.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(447, 478);
+            this.button3.Location = new System.Drawing.Point(596, 588);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 43);
+            this.button3.Size = new System.Drawing.Size(175, 53);
             this.button3.TabIndex = 6;
             this.button3.Text = "Sign Out";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 629);
+            this.ClientSize = new System.Drawing.Size(1337, 774);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

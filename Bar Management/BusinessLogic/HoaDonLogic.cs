@@ -30,23 +30,27 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(HoaDon obj) {
+            var existedMonan = _context.Set<HoaDon>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                _context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 
         public IEnumerable<HoaDon> GetAll() {
             var taiKhoans = _repoTaiKhoan.GetAll();
             var bans = _repoBan.GetAll();
-            var result = _repo.GetAll().Select(hoaDon => new HoaDon() {
+            var dd =_repo.GetAll().Select(hoaDon => new HoaDon() {
                 Id = hoaDon.Id,
                 BanId = hoaDon.BanId,
                 TrangThai = hoaDon.TrangThai,
                 NgayTao = hoaDon.NgayTao,
                 TaiKhoanTaoId = hoaDon.TaiKhoanTaoId,
                 TongGia = hoaDon.TongGia,
-                TaiKhoanTao = taiKhoans.First(tk => tk.Id == hoaDon.TaiKhoanTaoId),
-                Ban = bans.First(ban => ban.Id == hoaDon.BanId)
+                TaiKhoanTao = taiKhoans.FirstOrDefault(tk => tk.Id == hoaDon.Id),
+                //Ban = bans.FirstOrDefault(ban => ban.Id == hoaDon.BanId)
             });
-            return result;
+            return dd;
         }
 
         public IEnumerable<BillMonth> LayDuLieuThongKeThang(int nam, int thangThu) {
@@ -87,7 +91,8 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public IEnumerable<HoaDonDto> GetAllDto() {
-            return GetAll().Select(hoadon => _mapper.Map<HoaDonDto>(hoadon));
+            var dd = GetAll().Select(hoadon => _mapper.Map<HoaDonDto>(hoadon));
+            return dd;
         }
 
         public IEnumerable<HoaDonDto> LocHoaDon(int banId=-1, int taiKhoanId=-1, DateTime? dateTimeStart=null, DateTime? dateTimeEnd=null) {
@@ -123,6 +128,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(HoaDon obj) {
+            var existedMonan = this._context.Set<HoaDon>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null) {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

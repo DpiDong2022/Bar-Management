@@ -18,11 +18,14 @@ using System.Windows.Forms;
 using Bar_Management.OrderHistoryForm;
 using Bar_Management.Interfaces.AccountForm;
 using Bar_Management.Interfaces.WarehouseForm;
+using Bar_Management.Models;
+using Bar_Management.DAO;
 
 namespace Bar_Management.MainForm
 {
     public partial class Main : Form
     {
+        public string TaiKhoanId { get; set; }
         public Main()
         {
             InitializeComponent();
@@ -47,12 +50,14 @@ namespace Bar_Management.MainForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            addControls(new Home());
+            addControls(new Home(this));
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            addControls(new Order());
+            Order order = new Order();
+            addControls(order);
+            order.NhanVienID = TaiKhoanId;
         }
 
         private void btnFood_Click(object sender, EventArgs e)
@@ -62,7 +67,7 @@ namespace Bar_Management.MainForm
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            addControls(new NhaCungCap());
+            addControls(new TableForm.NhaCungCap());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

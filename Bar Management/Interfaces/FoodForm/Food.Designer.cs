@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchKeytextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TenMonAnbox = new System.Windows.Forms.TextBox();
@@ -61,12 +61,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTranthai = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMonDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiMonAnDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.LocTrangThaicomboBox = new System.Windows.Forms.ComboBox();
@@ -81,6 +75,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.openDialogimage = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiMonAnDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorMota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorTenMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorGia)).BeginInit();
@@ -165,7 +165,7 @@
             this.ThemBtn.Name = "ThemBtn";
             this.ThemBtn.Size = new System.Drawing.Size(115, 55);
             this.ThemBtn.TabIndex = 25;
-            this.ThemBtn.Text = "Thêm";
+            this.ThemBtn.Text = "Thêm mới";
             this.ThemBtn.UseVisualStyleBackColor = true;
             this.ThemBtn.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -345,20 +345,20 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvID,
@@ -367,14 +367,14 @@
             this.GiaDgv,
             this.TrangThaiDgv,
             this.moTaDgv});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(47, 307);
@@ -400,56 +400,6 @@
             this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
             this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
-            // 
-            // dgvID
-            // 
-            this.dgvID.DataPropertyName = "Id";
-            this.dgvID.FillWeight = 30.32747F;
-            this.dgvID.HeaderText = "ID";
-            this.dgvID.MaxInputLength = 50;
-            this.dgvID.MinimumWidth = 6;
-            this.dgvID.Name = "dgvID";
-            // 
-            // TenMonDgv
-            // 
-            this.TenMonDgv.DataPropertyName = "TenMon";
-            this.TenMonDgv.FillWeight = 30.32747F;
-            this.TenMonDgv.HeaderText = "Tên món ăn";
-            this.TenMonDgv.MinimumWidth = 6;
-            this.TenMonDgv.Name = "TenMonDgv";
-            // 
-            // LoaiMonAnDgv
-            // 
-            this.LoaiMonAnDgv.DataPropertyName = "LoaiMonAn";
-            this.LoaiMonAnDgv.FillWeight = 30.32747F;
-            this.LoaiMonAnDgv.HeaderText = "Loại món ăn";
-            this.LoaiMonAnDgv.MinimumWidth = 6;
-            this.LoaiMonAnDgv.Name = "LoaiMonAnDgv";
-            // 
-            // GiaDgv
-            // 
-            this.GiaDgv.DataPropertyName = "Gia";
-            this.GiaDgv.FillWeight = 30.32747F;
-            this.GiaDgv.HeaderText = "Giá";
-            this.GiaDgv.MinimumWidth = 6;
-            this.GiaDgv.Name = "GiaDgv";
-            // 
-            // TrangThaiDgv
-            // 
-            this.TrangThaiDgv.DataPropertyName = "TrangThai";
-            this.TrangThaiDgv.FillWeight = 70F;
-            this.TrangThaiDgv.HeaderText = "Trạng thái";
-            this.TrangThaiDgv.MinimumWidth = 70;
-            this.TrangThaiDgv.Name = "TrangThaiDgv";
-            this.TrangThaiDgv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // moTaDgv
-            // 
-            this.moTaDgv.DataPropertyName = "MoTa";
-            this.moTaDgv.FillWeight = 30.32747F;
-            this.moTaDgv.HeaderText = "Mô tả";
-            this.moTaDgv.MinimumWidth = 6;
-            this.moTaDgv.Name = "moTaDgv";
             // 
             // label8
             // 
@@ -600,6 +550,56 @@
             this.openFileDialog2.FileName = "openFileDialog2";
             this.openFileDialog2.Filter = "\"Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files|*.*\"";
             // 
+            // dgvID
+            // 
+            this.dgvID.DataPropertyName = "Id";
+            this.dgvID.FillWeight = 30.32747F;
+            this.dgvID.HeaderText = "STT";
+            this.dgvID.MaxInputLength = 50;
+            this.dgvID.MinimumWidth = 6;
+            this.dgvID.Name = "dgvID";
+            // 
+            // TenMonDgv
+            // 
+            this.TenMonDgv.DataPropertyName = "TenMon";
+            this.TenMonDgv.FillWeight = 30.32747F;
+            this.TenMonDgv.HeaderText = "Tên món ăn";
+            this.TenMonDgv.MinimumWidth = 6;
+            this.TenMonDgv.Name = "TenMonDgv";
+            // 
+            // LoaiMonAnDgv
+            // 
+            this.LoaiMonAnDgv.DataPropertyName = "LoaiMonAn";
+            this.LoaiMonAnDgv.FillWeight = 30.32747F;
+            this.LoaiMonAnDgv.HeaderText = "Loại món ăn";
+            this.LoaiMonAnDgv.MinimumWidth = 6;
+            this.LoaiMonAnDgv.Name = "LoaiMonAnDgv";
+            // 
+            // GiaDgv
+            // 
+            this.GiaDgv.DataPropertyName = "Gia";
+            this.GiaDgv.FillWeight = 30.32747F;
+            this.GiaDgv.HeaderText = "Giá";
+            this.GiaDgv.MinimumWidth = 6;
+            this.GiaDgv.Name = "GiaDgv";
+            // 
+            // TrangThaiDgv
+            // 
+            this.TrangThaiDgv.DataPropertyName = "TrangThai";
+            this.TrangThaiDgv.FillWeight = 70F;
+            this.TrangThaiDgv.HeaderText = "Trạng thái";
+            this.TrangThaiDgv.MinimumWidth = 70;
+            this.TrangThaiDgv.Name = "TrangThaiDgv";
+            this.TrangThaiDgv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // moTaDgv
+            // 
+            this.moTaDgv.DataPropertyName = "MoTa";
+            this.moTaDgv.FillWeight = 30.32747F;
+            this.moTaDgv.HeaderText = "Mô tả";
+            this.moTaDgv.MinimumWidth = 6;
+            this.moTaDgv.Name = "moTaDgv";
+            // 
             // Food
             // 
             this.AllowDrop = true;
@@ -695,12 +695,6 @@
         private System.Windows.Forms.ComboBox LocTrangThaicomboBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox LocloaiMAComboBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiMonAnDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioSortTrangthai;
         private System.Windows.Forms.RadioButton radioSortGia;
@@ -710,5 +704,11 @@
         private System.Windows.Forms.Button openDialogimage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiMonAnDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDgv;
     }
 }

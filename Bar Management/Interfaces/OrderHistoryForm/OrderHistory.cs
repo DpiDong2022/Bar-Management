@@ -67,6 +67,9 @@ namespace Bar_Management.OrderHistoryForm
             for (int i = 0; i < dataGridView1.Rows.Count; i++) {
                 dataGridView1.Rows[i].Cells[0].Value = (i + 1).ToString();
             }
+            if (dataGridView1.SelectedRows.Count == 0) {
+                return;
+            }
             HoaDonDto hoadon = dataGridView1.SelectedRows[0].DataBoundItem as HoaDonDto;
             _tableChiTiet = new SortableBindingList<ChiTietHoaDonDto>(_chiTieHoaDonLogic
                 .GetByHoaDonId(hoadon.Id).Select(c => _mapper.Map<ChiTietHoaDonDto>(c)).ToList());

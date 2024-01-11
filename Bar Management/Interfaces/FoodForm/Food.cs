@@ -132,6 +132,7 @@ namespace Bar_Management.FoodForm {
         // clear các box đầu vào dữ liệu - Click Thêm
         private void button2_Click(object sender, EventArgs e) {
             ClearInputBoxs();
+            TenMonAnbox.Focus();
         }
 
         // click lưu
@@ -169,9 +170,17 @@ namespace Bar_Management.FoodForm {
                 monAn.HinhAnh = _urlImage;
                 // Mapper from monAn to monAnDto
                 MonAnDto monAnDto = _mapper.Map<MonAnDto>(monAn);
-                update(monAn, monAnDto);
+                try {
+                    update(monAn, monAnDto);
+                    MessageBox.Show("Sửa thành công");
+                } catch (Exception) {
+                    MessageBox.Show("Hãy ấn thêm để thêm mới");
+                }
+               
             } else{
                 monAn.HinhAnh = await CloudinaryService.uploadImage(_picturePath);
+                monAn.Id = null;
+                monAn.LoaiMonAn = null;
                 new LoadingForm(1).ShowDialog();
                 if (_logic.Insert(monAn)) {
                     LoadTable();

@@ -16,7 +16,7 @@ namespace Bar_Management.Models {
         # endregion
 
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [MaxLength(50, ErrorMessage ="Chiều dài của tên không nhỏ hơn 0 hoặc lớn hơn 50")]

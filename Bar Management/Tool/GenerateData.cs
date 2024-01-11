@@ -176,8 +176,8 @@ namespace Bar_Management.Tool {
             ThemBan();
             ThemNhanVien();
             ThemTaiKhoan();
-            ThemHoaDon();
-            ThemChiTietHoaDon();
+           /* ThemHoaDon();
+            ThemChiTietHoaDon();*/
             new TonKhoLogic().UpdateOutOfDate();
         }
 
