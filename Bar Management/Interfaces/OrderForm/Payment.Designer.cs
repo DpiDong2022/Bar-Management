@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.panel1 = new System.Windows.Forms.Panel();
             this.CategoryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -44,16 +44,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ProductPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.product1 = new Bar_Management.Models.Product();
-            this.product2 = new Bar_Management.Models.Product();
-            this.product3 = new Bar_Management.Models.Product();
-            this.product4 = new Bar_Management.Models.Product();
             this.dgvThanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +57,13 @@
             this.dgvStt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaDataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnThanhtoan = new System.Windows.Forms.Button();
+            this.btnTru = new System.Windows.Forms.Button();
+            this.btnTInhTien = new System.Windows.Forms.Button();
+            this.btnBochon = new System.Windows.Forms.Button();
+            this.product1 = new Bar_Management.Models.Product();
+            this.product2 = new Bar_Management.Models.Product();
+            this.product3 = new Bar_Management.Models.Product();
+            this.product4 = new Bar_Management.Models.Product();
             this.panel1.SuspendLayout();
             this.CategoryPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -204,41 +206,34 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button28
+            // btnLuu
             // 
-            this.button28.Location = new System.Drawing.Point(1806, 281);
-            this.button28.Margin = new System.Windows.Forms.Padding(4);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(125, 41);
-            this.button28.TabIndex = 16;
-            this.button28.Text = "Payment";
-            this.button28.UseVisualStyleBackColor = true;
+            this.btnLuu.Location = new System.Drawing.Point(941, 1174);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(80, 41);
+            this.btnLuu.TabIndex = 16;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // button27
+            // btnAdd
             // 
-            this.button27.Location = new System.Drawing.Point(1806, 210);
-            this.button27.Margin = new System.Windows.Forms.Padding(4);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(125, 41);
-            this.button27.TabIndex = 15;
-            this.button27.Text = "Change Table";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1806, 149);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(135, 38);
-            this.comboBox4.TabIndex = 14;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(1789, 419);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(117, 106);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtTotal
             // 
             this.txtTotal.AutoSize = true;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1593, 1180);
+            this.txtTotal.Location = new System.Drawing.Point(1555, 1174);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(189, 44);
@@ -265,54 +260,6 @@
             this.ProductPanel.Name = "ProductPanel";
             this.ProductPanel.Size = new System.Drawing.Size(627, 1101);
             this.ProductPanel.TabIndex = 18;
-            // 
-            // product1
-            // 
-            this.product1.Id = 0;
-            this.product1.Location = new System.Drawing.Point(3, 3);
-            this.product1.Name = "product1";
-            this.product1.PCatergory = null;
-            this.product1.PImage = ((System.Drawing.Image)(resources.GetObject("product1.PImage")));
-            this.product1.PName = "";
-            this.product1.PPrice = null;
-            this.product1.Size = new System.Drawing.Size(150, 150);
-            this.product1.TabIndex = 1;
-            // 
-            // product2
-            // 
-            this.product2.Id = 0;
-            this.product2.Location = new System.Drawing.Point(159, 3);
-            this.product2.Name = "product2";
-            this.product2.PCatergory = null;
-            this.product2.PImage = ((System.Drawing.Image)(resources.GetObject("product2.PImage")));
-            this.product2.PName = "";
-            this.product2.PPrice = null;
-            this.product2.Size = new System.Drawing.Size(150, 150);
-            this.product2.TabIndex = 1;
-            // 
-            // product3
-            // 
-            this.product3.Id = 0;
-            this.product3.Location = new System.Drawing.Point(315, 3);
-            this.product3.Name = "product3";
-            this.product3.PCatergory = null;
-            this.product3.PImage = ((System.Drawing.Image)(resources.GetObject("product3.PImage")));
-            this.product3.PName = "";
-            this.product3.PPrice = null;
-            this.product3.Size = new System.Drawing.Size(150, 150);
-            this.product3.TabIndex = 2;
-            // 
-            // product4
-            // 
-            this.product4.Id = 0;
-            this.product4.Location = new System.Drawing.Point(471, 3);
-            this.product4.Name = "product4";
-            this.product4.PCatergory = null;
-            this.product4.PImage = ((System.Drawing.Image)(resources.GetObject("product4.PImage")));
-            this.product4.PName = "";
-            this.product4.PPrice = null;
-            this.product4.Size = new System.Drawing.Size(150, 150);
-            this.product4.TabIndex = 2;
             // 
             // dgvThanhtien
             // 
@@ -359,6 +306,7 @@
             // 
             // gunaDataGridView1
             // 
+            this.gunaDataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -423,13 +371,95 @@
             // 
             this.btnThanhtoan.BackColor = System.Drawing.Color.PeachPuff;
             this.btnThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhtoan.Location = new System.Drawing.Point(1417, 1186);
+            this.btnThanhtoan.Location = new System.Drawing.Point(1386, 1182);
             this.btnThanhtoan.Name = "btnThanhtoan";
             this.btnThanhtoan.Size = new System.Drawing.Size(148, 38);
             this.btnThanhtoan.TabIndex = 20;
-            this.btnThanhtoan.Text = "Thanh toán";
+            this.btnThanhtoan.Text = "Tính tiền";
             this.btnThanhtoan.UseVisualStyleBackColor = false;
             this.btnThanhtoan.Click += new System.EventHandler(this.btnThanhtoan_Click);
+            // 
+            // btnTru
+            // 
+            this.btnTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTru.Location = new System.Drawing.Point(1789, 545);
+            this.btnTru.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTru.Name = "btnTru";
+            this.btnTru.Size = new System.Drawing.Size(117, 106);
+            this.btnTru.TabIndex = 15;
+            this.btnTru.Text = "-";
+            this.btnTru.UseVisualStyleBackColor = true;
+            this.btnTru.Click += new System.EventHandler(this.btnTru_Click);
+            // 
+            // btnTInhTien
+            // 
+            this.btnTInhTien.Location = new System.Drawing.Point(1050, 1174);
+            this.btnTInhTien.Name = "btnTInhTien";
+            this.btnTInhTien.Size = new System.Drawing.Size(127, 41);
+            this.btnTInhTien.TabIndex = 21;
+            this.btnTInhTien.Text = "Thanh Toán";
+            this.btnTInhTien.UseVisualStyleBackColor = true;
+            this.btnTInhTien.Click += new System.EventHandler(this.btnTInhTien_Click);
+            // 
+            // btnBochon
+            // 
+            this.btnBochon.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBochon.Location = new System.Drawing.Point(1789, 676);
+            this.btnBochon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBochon.Name = "btnBochon";
+            this.btnBochon.Size = new System.Drawing.Size(117, 106);
+            this.btnBochon.TabIndex = 15;
+            this.btnBochon.Text = "X";
+            this.btnBochon.UseVisualStyleBackColor = true;
+            this.btnBochon.Click += new System.EventHandler(this.btnBochon_Click);
+            // 
+            // product1
+            // 
+            this.product1.Id = 0;
+            this.product1.Location = new System.Drawing.Point(3, 3);
+            this.product1.Name = "product1";
+            this.product1.PCatergory = null;
+            this.product1.PImage = ((System.Drawing.Image)(resources.GetObject("product1.PImage")));
+            this.product1.PName = "";
+            this.product1.PPrice = null;
+            this.product1.Size = new System.Drawing.Size(150, 150);
+            this.product1.TabIndex = 1;
+            // 
+            // product2
+            // 
+            this.product2.Id = 0;
+            this.product2.Location = new System.Drawing.Point(159, 3);
+            this.product2.Name = "product2";
+            this.product2.PCatergory = null;
+            this.product2.PImage = ((System.Drawing.Image)(resources.GetObject("product2.PImage")));
+            this.product2.PName = "";
+            this.product2.PPrice = null;
+            this.product2.Size = new System.Drawing.Size(150, 150);
+            this.product2.TabIndex = 1;
+            // 
+            // product3
+            // 
+            this.product3.Id = 0;
+            this.product3.Location = new System.Drawing.Point(315, 3);
+            this.product3.Name = "product3";
+            this.product3.PCatergory = null;
+            this.product3.PImage = ((System.Drawing.Image)(resources.GetObject("product3.PImage")));
+            this.product3.PName = "";
+            this.product3.PPrice = null;
+            this.product3.Size = new System.Drawing.Size(150, 150);
+            this.product3.TabIndex = 2;
+            // 
+            // product4
+            // 
+            this.product4.Id = 0;
+            this.product4.Location = new System.Drawing.Point(471, 3);
+            this.product4.Name = "product4";
+            this.product4.PCatergory = null;
+            this.product4.PImage = ((System.Drawing.Image)(resources.GetObject("product4.PImage")));
+            this.product4.PName = "";
+            this.product4.PPrice = null;
+            this.product4.Size = new System.Drawing.Size(150, 150);
+            this.product4.TabIndex = 2;
             // 
             // Payment
             // 
@@ -437,12 +467,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(2393, 1262);
+            this.Controls.Add(this.btnTInhTien);
             this.Controls.Add(this.btnThanhtoan);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.ProductPanel);
-            this.Controls.Add(this.button28);
-            this.Controls.Add(this.button27);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnBochon);
+            this.Controls.Add(this.btnTru);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -451,6 +483,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Payment";
             this.Text = "Payment";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Payment_FormClosed);
             this.Load += new System.EventHandler(this.Payment_Load);
             this.panel1.ResumeLayout(false);
             this.CategoryPanel.ResumeLayout(false);
@@ -473,9 +506,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
@@ -496,5 +528,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvStt;
         private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridView1;
         private System.Windows.Forms.Button btnThanhtoan;
+        private System.Windows.Forms.Button btnTru;
+        private System.Windows.Forms.Button btnTInhTien;
+        private System.Windows.Forms.Button btnBochon;
     }
 }

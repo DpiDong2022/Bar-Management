@@ -256,7 +256,7 @@
     <Compile Include="BusinessLogic\TrangThaiTonKhoLogic.cs" />
     <Compile Include="BusinessLogic\ValidateTool.cs" />
     <Compile Include="DAO\AppDbContext.cs" />
-    <Compile Include="DAO\AppDbContextSingleton.cs" />
+    <Compile Include="DAO\Singleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />

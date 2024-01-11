@@ -5,7 +5,12 @@ using System;
 using Bar_Management.OrderForm;
 namespace Bar_Management.Tool {
     public class AutoMapperProfile {
+        public static DateTime ObjectToDateTime(object datetimeObj)
+        {
+            return DateTime.ParseExact(datetimeObj.ToString(), "dd-MM-yyyy", null);
+        }
         public static IMapper InitializeAutoMapper() {
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<MonAn, MonAnDto>()
@@ -49,6 +54,20 @@ namespace Bar_Management.Tool {
                 .ForMember(dest => dest.RoleId, opt => opt.MapFrom(src => src.Role.Id))
                 .ForMember(dest => dest.NhanVienId, opt => opt.MapFrom(src => src.NhanVien.Id))
                 .ForMember(dest => dest.SettingId, opt => opt.MapFrom(src => src.Setting.Id));
+
+                //Hóa đơn
+                // Hóa đơn
+                cfg.CreateMap<HoaDon, HoaDonDto>();
+                cfg.CreateMap<HoaDonDto, HoaDon>()
+            .ForMember(dest => dest.TongGia, opt => opt.MapFrom(src => decimal.Parse(((string)src.TongGia).Replace(",", ""))))
+            .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai == "Đã thanh toán" ? 1 : 0))
+            .ForMember(dest => dest.NgayTao, opt => opt.MapFrom(src => ObjectToDateTime(src.NgayTao)));
+
+                //chi tiết hóa đơn
+                cfg.CreateMap<ChiTietHoaDon, ChiTietHoaDonDto>();
+                cfg.CreateMap<ChiTietHoaDonDto, ChiTietHoaDon>()
+            .ForMember(dest => dest.ThanhTien, opt => opt.MapFrom(src => decimal.Parse(((string)src.ThanhTien).Replace(",", ""))));
+                
             });
 
             return config.CreateMapper();

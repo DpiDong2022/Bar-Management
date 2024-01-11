@@ -15,7 +15,7 @@ namespace Bar_Management.BusinessLogic {
 
         public BanLogic() {
 
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<Ban>();
         }
 
@@ -32,6 +32,11 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Update(Ban obj) {
+            var existedMonan = this._context.Set<Ban>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null)
+            {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

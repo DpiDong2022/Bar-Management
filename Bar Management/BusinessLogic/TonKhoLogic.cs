@@ -29,7 +29,7 @@ namespace Bar_Management.BusinessLogic {
 
         public TonKhoLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<TonKho>();
             _nhaCungCap = new GenericRepository<NhaCungCap>();
             _nguyenLieu= new GenericRepository<NguyenLieu>();

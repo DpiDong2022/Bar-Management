@@ -366,11 +366,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(88, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 31);
+            this.label1.Size = new System.Drawing.Size(254, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bar Management";
             // 
@@ -427,15 +427,14 @@
         private System.Windows.Forms.Panel ControlsPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnNhaCungCap;
-        private System.Windows.Forms.Button btnFood;
-        private System.Windows.Forms.Button btnOrder;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.Button btnOrderHistory;
-        private System.Windows.Forms.Button btnRevenue;
-        private System.Windows.Forms.Button btnEmployee;
-        private System.Windows.Forms.Button btnCategory;
+        public System.Windows.Forms.Button btnNhaCungCap;
+        public System.Windows.Forms.Button btnFood;
+        public System.Windows.Forms.Button btnHome;
+        public System.Windows.Forms.Button btnAccount;
+        public System.Windows.Forms.Button btnOrderHistory;
+        public System.Windows.Forms.Button btnRevenue;
+        public System.Windows.Forms.Button btnEmployee;
+        public System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -448,6 +447,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button btnWarehouse;
+        public System.Windows.Forms.Button btnWarehouse;
+        public System.Windows.Forms.Button btnOrder;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Bar_Management.BusinessLogic;
+using Bar_Management.DAO;
 using Bar_Management.DTO;
+using Bar_Management.MainForm;
 using Bar_Management.Models;
 using Bar_Management.Tool;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
@@ -17,21 +19,41 @@ namespace Bar_Management.OrderForm
 {
     public partial class Payment : Form
     {
+        public string TenBan {  get; set; }
+        public string NhanVienID { get; set; }
         private LoaiMonAnLogic _logicLoaimonan;
         private BindingList<LoaiMonAn> _table;
 
         private readonly MonAnLogic _logicMonan;
         private BindingList<MonAnOrderDTO> _tableMonan;
-        public Payment()
+
+        private readonly HoaDonLogic _logicHoaDon;
+        private SortableBindingList<HoaDonDto> _tableHoaDon;
+
+        private readonly ChiTieHoaDonLogic _logicChiTiet;
+        private SortableBindingList<ChiTietHoaDonDto> _tableChiTiet;
+
+        private readonly NhanVien _logicNhanVien;
+        private SortableBindingList<NhanVienDTO> _tableNhanVien;
+
+        private readonly BanLogic _logicBan;
+        
+        public Payment(Form parent)
         {
+            
             InitializeComponent();
             _logicLoaimonan = new LoaiMonAnLogic();
-
-            
+         
             _logicMonan = new MonAnLogic();
-            
 
-        }
+            _logicHoaDon = new HoaDonLogic(); 
+
+            _logicChiTiet = new ChiTieHoaDonLogic();
+
+            _logicBan = new BanLogic(); 
+
+
+    }
         private void LoadTable()
         {
             if (_table != null)
@@ -73,7 +95,18 @@ namespace Bar_Management.OrderForm
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this) // Đảm bảo không đóng Form1
+                {
+                    form.Close();
+                }
+            }
+            Main main = new Main();
+            main.Show();
+            main.btnOrder.PerformClick();
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -133,10 +166,42 @@ namespace Bar_Management.OrderForm
         {
 
         }
+        private void LoadDataGridView(int BanId)
+        {
+            HoaDon checkHoaDon = _logicHoaDon.GetAll().ToList().Where(x => x.BanId.ToString() == TenBan)
+                                                                    .OrderByDescending(x => x.NgayTao)
+                                                                    .FirstOrDefault();
+            if (checkHoaDon == null)
+            {
+                return;
+            }
+            else if (checkHoaDon != null && checkHoaDon.TrangThai == 0)
+            {
+                var ChiTiets = _logicChiTiet.GetAll().ToList().Where(x => x.HoaDonId == checkHoaDon.Id);
+                gunaDataGridView1.Rows.Clear();
+                if (ChiTiets != null)
+                {
+                    foreach (var item in ChiTiets)
+                    {
+                        string TenMon = item.MonAn.TenMon;
+                        gunaDataGridView1.Rows.Add(new object[] { item.Id, item.MonAnId, TenMon, item.SoLuong, item.MonAn.Gia, item.ThanhTien });
+                    }
+                }
+            }
+            else if (checkHoaDon.TrangThai == 1)
+            {
+                gunaDataGridView1.Rows.Clear();
+            }
+            
+            //gunaDataGridView1.Rows.Add(new object[] { 0, wdg.Id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
+
+        }
 
         private void Payment_Load(object sender, EventArgs e)
         {
             gunaDataGridView1.BorderStyle = BorderStyle.FixedSingle;
+            LoadDataGridView(int.Parse(TenBan));
+
             AddCategory();
 
             ProductPanel.Controls.Clear();
@@ -317,6 +382,139 @@ namespace Bar_Management.OrderForm
         private void btnThanhtoan_Click(object sender, EventArgs e)
         {
             GetTotal();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            var ban = _logicBan.GetAll().ToList().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            if (gunaDataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("Chưa có món ăn nào được chọn ! ");
+                return;
+            }
+            var checkHoaDon = _logicHoaDon.GetAll().ToList().Where(x => x.BanId.ToString() == TenBan)
+                                                                    .OrderByDescending(x => x.NgayTao)
+                                                                    .FirstOrDefault();
+            if (checkHoaDon == null || checkHoaDon.TrangThai == 1)
+            {
+                HoaDon hoaDon = new HoaDon()
+                {
+                    BanId  = int.Parse(TenBan),
+                    TaiKhoanTaoId = Singleton.TaiKhoanId,
+                    NgayTao = DateTime.Now,
+                    TongGia = 0,
+                    TrangThai = 0
+
+                };
+                _logicHoaDon.Update(hoaDon);
+                foreach (DataGridViewRow item in gunaDataGridView1.Rows)
+                {
+                    ChiTietHoaDon chiTiet = new ChiTietHoaDon()
+                    {
+                        HoaDonId = hoaDon.Id,
+                        //MonAn = _logicMonan.GetAll().ToList().FirstOrDefault(x => x.Id == int.Parse(item.Cells["dgvId"].Value.ToString()),
+                        MonAnId = int.Parse(item.Cells["dgvId"].Value.ToString()),
+                        SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString()),
+                        ThanhTien = decimal.Parse(item.Cells["dgvThanhTien"].Value.ToString()),
+                    };
+                }
+                
+                ban.TrangThaiId = 2;
+                _logicBan.Update(ban);
+                
+                MessageBox.Show("Lưu thành công ");
+                
+            }
+            else if (checkHoaDon != null) 
+            {
+                foreach (DataGridViewRow item in gunaDataGridView1.Rows)
+                {
+                    string CellMonan = item.Cells["dgvTenmon"].Value.ToString();
+                    
+                    var CheckChitiet = _logicChiTiet.GetAll().ToList().Where(x=> x.HoaDonId == checkHoaDon.Id);
+                    var CheckChiTietMonan = CheckChitiet.FirstOrDefault(x => x.MonAn.TenMon.ToString() == CellMonan);
+                    if (CheckChiTietMonan == null)
+                    {
+                        ChiTietHoaDon chiTiet = new ChiTietHoaDon()
+                        {
+                            HoaDonId = checkHoaDon.Id,
+                            //MonAn = _logicMonan.GetAll().ToList().FirstOrDefault(x => x.Id == int.Parse(item.Cells["dgvId"].Value.ToString()),
+                            MonAnId = int.Parse(item.Cells["dgvId"].Value.ToString()),
+                            SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString()),
+                            ThanhTien = decimal.Parse(item.Cells["dgvThanhTien"].Value.ToString()),
+                        };
+                        _logicChiTiet.Update(chiTiet);
+                    }
+                    else if (CheckChiTietMonan.SoLuong != int.Parse(item.Cells["dgvQty"].Value.ToString()))
+                    {
+                        CheckChiTietMonan.SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString());
+                        CheckChiTietMonan.ThanhTien = decimal.Parse(item.Cells["dgvThanhTien"].Value.ToString());
+                        _logicChiTiet.Update(CheckChiTietMonan);
+                    }
+                    
+                }
+                ban.TrangThaiId = 2;
+                _logicBan.Update(ban);
+                MessageBox.Show("Lưu thành công ");
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var item = gunaDataGridView1.SelectedRows[0];
+            if(item == null) { 
+                MessageBox.Show("Chưa chọn món cần tăng Số lượng ");
+                return;
+            };
+            item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
+        }
+
+        private void btnTru_Click(object sender, EventArgs e)
+        {
+            var item = gunaDataGridView1.SelectedRows[0];
+            if (item == null)
+            {
+                MessageBox.Show("Chưa chọn món cần giảm Số lượng ");
+                return;
+            };
+            item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) - 1;
+        }
+
+        private void btnBochon_Click(object sender, EventArgs e)
+        {
+            var checkHoaDon = _logicHoaDon.GetAll().ToList().Where(x => x.BanId.ToString() == TenBan)
+                                                                    .OrderByDescending(x => x.NgayTao)
+                                                                    .FirstOrDefault();
+            var item = gunaDataGridView1.SelectedRows[0];
+            if (item == null)
+            {
+                MessageBox.Show("Chưa chọn món cần xóa ");
+                return;
+            };
+            string CellMonan = item.Cells["dgvTenmon"].Value.ToString();
+            var chiTiet = _logicChiTiet.GetAll().ToList().FirstOrDefault(x=> x.HoaDonId == checkHoaDon.Id && x.MonAn.TenMon.ToString() == CellMonan);
+            gunaDataGridView1.Rows.Remove(item);
+            _logicChiTiet.Delete(chiTiet);
+        }
+
+        private void btnTInhTien_Click(object sender, EventArgs e)
+        {
+            var checkHoaDon = _logicHoaDon.GetAll().ToList().Where(x => x.BanId.ToString() == TenBan)
+                                                                    .OrderByDescending(x => x.NgayTao)
+                                                                    .FirstOrDefault();
+            checkHoaDon.TrangThai = 1;
+            _logicHoaDon.Update(checkHoaDon);
+            var ban = _logicBan.GetAll().ToList().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            ban.TrangThaiId = 1;
+            gunaDataGridView1.Rows.Clear(); 
+            _logicBan.Update(ban);
+            MessageBox.Show("Thanh toán thành công ");
+        }
+
+        private void Payment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           // ((Main)_parent.Parent).btnOrder.PerformClick();
         }
     }
 }

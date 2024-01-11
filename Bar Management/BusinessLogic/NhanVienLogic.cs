@@ -26,7 +26,7 @@ namespace Bar_Management.BusinessLogic {
 
         public NhanVienLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            Context = AppDbContextSingleton.Instance;
+            Context = Singleton.Instance;
             _repo = new GenericRepository<NhanVien>();
         }
 

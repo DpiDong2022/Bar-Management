@@ -29,62 +29,62 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBan1 = new System.Windows.Forms.Button();
+            this.btnBan6 = new System.Windows.Forms.Button();
+            this.btnBan11 = new System.Windows.Forms.Button();
+            this.btnBan16 = new System.Windows.Forms.Button();
+            this.btnBan21 = new System.Windows.Forms.Button();
+            this.btnBan2 = new System.Windows.Forms.Button();
+            this.btnBan12 = new System.Windows.Forms.Button();
+            this.btnBan7 = new System.Windows.Forms.Button();
+            this.btnBan17 = new System.Windows.Forms.Button();
+            this.btnBan22 = new System.Windows.Forms.Button();
+            this.btnBan3 = new System.Windows.Forms.Button();
+            this.btnBan4 = new System.Windows.Forms.Button();
+            this.btnBan13 = new System.Windows.Forms.Button();
+            this.btnBan14 = new System.Windows.Forms.Button();
+            this.btnBan8 = new System.Windows.Forms.Button();
+            this.btnBan9 = new System.Windows.Forms.Button();
+            this.btnBan18 = new System.Windows.Forms.Button();
+            this.btnBan19 = new System.Windows.Forms.Button();
+            this.btnBan23 = new System.Windows.Forms.Button();
+            this.btnBan24 = new System.Windows.Forms.Button();
+            this.btnBan5 = new System.Windows.Forms.Button();
+            this.btnBan15 = new System.Windows.Forms.Button();
+            this.btnBan10 = new System.Windows.Forms.Button();
+            this.btnBan20 = new System.Windows.Forms.Button();
+            this.btnBan25 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Linen;
-            this.panel1.Controls.Add(this.button21);
-            this.panel1.Controls.Add(this.button22);
-            this.panel1.Controls.Add(this.button23);
-            this.panel1.Controls.Add(this.button24);
-            this.panel1.Controls.Add(this.button25);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button19);
-            this.panel1.Controls.Add(this.button20);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnBan25);
+            this.panel1.Controls.Add(this.btnBan24);
+            this.panel1.Controls.Add(this.btnBan22);
+            this.panel1.Controls.Add(this.btnBan23);
+            this.panel1.Controls.Add(this.btnBan21);
+            this.panel1.Controls.Add(this.btnBan20);
+            this.panel1.Controls.Add(this.btnBan19);
+            this.panel1.Controls.Add(this.btnBan17);
+            this.panel1.Controls.Add(this.btnBan18);
+            this.panel1.Controls.Add(this.btnBan16);
+            this.panel1.Controls.Add(this.btnBan10);
+            this.panel1.Controls.Add(this.btnBan9);
+            this.panel1.Controls.Add(this.btnBan7);
+            this.panel1.Controls.Add(this.btnBan8);
+            this.panel1.Controls.Add(this.btnBan6);
+            this.panel1.Controls.Add(this.btnBan15);
+            this.panel1.Controls.Add(this.btnBan14);
+            this.panel1.Controls.Add(this.btnBan12);
+            this.panel1.Controls.Add(this.btnBan13);
+            this.panel1.Controls.Add(this.btnBan11);
+            this.panel1.Controls.Add(this.btnBan5);
+            this.panel1.Controls.Add(this.btnBan4);
+            this.panel1.Controls.Add(this.btnBan3);
+            this.panel1.Controls.Add(this.btnBan2);
+            this.panel1.Controls.Add(this.btnBan1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -93,255 +93,280 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button21
+            // btnBan1
             // 
-            this.button21.Location = new System.Drawing.Point(1903, 1135);
-            this.button21.Margin = new System.Windows.Forms.Padding(4);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(219, 167);
-            this.button21.TabIndex = 74;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnBan1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan1.Location = new System.Drawing.Point(606, 251);
+            this.btnBan1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan1.Name = "btnBan1";
+            this.btnBan1.Size = new System.Drawing.Size(219, 167);
+            this.btnBan1.TabIndex = 50;
+            this.btnBan1.Text = "Bàn 1";
+            this.btnBan1.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // btnBan6
             // 
-            this.button22.Location = new System.Drawing.Point(1579, 1135);
-            this.button22.Margin = new System.Windows.Forms.Padding(4);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(219, 167);
-            this.button22.TabIndex = 73;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnBan6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan6.Location = new System.Drawing.Point(606, 459);
+            this.btnBan6.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan6.Name = "btnBan6";
+            this.btnBan6.Size = new System.Drawing.Size(219, 167);
+            this.btnBan6.TabIndex = 50;
+            this.btnBan6.Text = "Bàn 6";
+            this.btnBan6.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // btnBan11
             // 
-            this.button23.Location = new System.Drawing.Point(1250, 1135);
-            this.button23.Margin = new System.Windows.Forms.Padding(4);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(219, 167);
-            this.button23.TabIndex = 72;
-            this.button23.Text = "button23";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btnBan11.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan11.Location = new System.Drawing.Point(606, 670);
+            this.btnBan11.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan11.Name = "btnBan11";
+            this.btnBan11.Size = new System.Drawing.Size(219, 167);
+            this.btnBan11.TabIndex = 50;
+            this.btnBan11.Text = "Bàn 11";
+            this.btnBan11.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btnBan16
             // 
-            this.button24.Location = new System.Drawing.Point(931, 1135);
-            this.button24.Margin = new System.Windows.Forms.Padding(4);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(219, 167);
-            this.button24.TabIndex = 71;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnBan16.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan16.Location = new System.Drawing.Point(606, 878);
+            this.btnBan16.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan16.Name = "btnBan16";
+            this.btnBan16.Size = new System.Drawing.Size(219, 167);
+            this.btnBan16.TabIndex = 50;
+            this.btnBan16.Text = "Bàn 16";
+            this.btnBan16.UseVisualStyleBackColor = true;
             // 
-            // button25
+            // btnBan21
             // 
-            this.button25.Location = new System.Drawing.Point(606, 1135);
-            this.button25.Margin = new System.Windows.Forms.Padding(4);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(219, 167);
-            this.button25.TabIndex = 70;
-            this.button25.Text = "button25";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btnBan21.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan21.Location = new System.Drawing.Point(606, 1091);
+            this.btnBan21.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan21.Name = "btnBan21";
+            this.btnBan21.Size = new System.Drawing.Size(219, 167);
+            this.btnBan21.TabIndex = 50;
+            this.btnBan21.Text = "Bàn 21";
+            this.btnBan21.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // btnBan2
             // 
-            this.button16.Location = new System.Drawing.Point(1903, 907);
-            this.button16.Margin = new System.Windows.Forms.Padding(4);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(219, 167);
-            this.button16.TabIndex = 69;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnBan2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan2.Location = new System.Drawing.Point(922, 251);
+            this.btnBan2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan2.Name = "btnBan2";
+            this.btnBan2.Size = new System.Drawing.Size(219, 167);
+            this.btnBan2.TabIndex = 50;
+            this.btnBan2.Text = "Bàn 2";
+            this.btnBan2.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnBan12
             // 
-            this.button17.Location = new System.Drawing.Point(1579, 907);
-            this.button17.Margin = new System.Windows.Forms.Padding(4);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(219, 167);
-            this.button17.TabIndex = 68;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnBan12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan12.Location = new System.Drawing.Point(922, 670);
+            this.btnBan12.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan12.Name = "btnBan12";
+            this.btnBan12.Size = new System.Drawing.Size(219, 167);
+            this.btnBan12.TabIndex = 50;
+            this.btnBan12.Text = "Bàn 12";
+            this.btnBan12.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnBan7
             // 
-            this.button18.Location = new System.Drawing.Point(1250, 907);
-            this.button18.Margin = new System.Windows.Forms.Padding(4);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(219, 167);
-            this.button18.TabIndex = 67;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnBan7.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan7.Location = new System.Drawing.Point(922, 459);
+            this.btnBan7.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan7.Name = "btnBan7";
+            this.btnBan7.Size = new System.Drawing.Size(219, 167);
+            this.btnBan7.TabIndex = 50;
+            this.btnBan7.Text = "Bàn 7";
+            this.btnBan7.UseVisualStyleBackColor = true;
             // 
-            // button19
+            // btnBan17
             // 
-            this.button19.Location = new System.Drawing.Point(931, 907);
-            this.button19.Margin = new System.Windows.Forms.Padding(4);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(219, 167);
-            this.button19.TabIndex = 66;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnBan17.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan17.Location = new System.Drawing.Point(922, 878);
+            this.btnBan17.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan17.Name = "btnBan17";
+            this.btnBan17.Size = new System.Drawing.Size(219, 167);
+            this.btnBan17.TabIndex = 50;
+            this.btnBan17.Text = "Bàn 17";
+            this.btnBan17.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // btnBan22
             // 
-            this.button20.Location = new System.Drawing.Point(606, 907);
-            this.button20.Margin = new System.Windows.Forms.Padding(4);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(219, 167);
-            this.button20.TabIndex = 65;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnBan22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan22.Location = new System.Drawing.Point(922, 1091);
+            this.btnBan22.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan22.Name = "btnBan22";
+            this.btnBan22.Size = new System.Drawing.Size(219, 167);
+            this.btnBan22.TabIndex = 50;
+            this.btnBan22.Text = "Bàn 22";
+            this.btnBan22.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnBan3
             // 
-            this.button11.Location = new System.Drawing.Point(1903, 676);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(219, 167);
-            this.button11.TabIndex = 64;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnBan3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan3.Location = new System.Drawing.Point(1235, 251);
+            this.btnBan3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan3.Name = "btnBan3";
+            this.btnBan3.Size = new System.Drawing.Size(219, 167);
+            this.btnBan3.TabIndex = 50;
+            this.btnBan3.Text = "Bàn 3";
+            this.btnBan3.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnBan4
             // 
-            this.button12.Location = new System.Drawing.Point(1579, 676);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(219, 167);
-            this.button12.TabIndex = 63;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnBan4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan4.Location = new System.Drawing.Point(1551, 251);
+            this.btnBan4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan4.Name = "btnBan4";
+            this.btnBan4.Size = new System.Drawing.Size(219, 167);
+            this.btnBan4.TabIndex = 50;
+            this.btnBan4.Text = "Bàn 4";
+            this.btnBan4.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnBan13
             // 
-            this.button13.Location = new System.Drawing.Point(1250, 676);
-            this.button13.Margin = new System.Windows.Forms.Padding(4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(219, 167);
-            this.button13.TabIndex = 62;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnBan13.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan13.Location = new System.Drawing.Point(1235, 670);
+            this.btnBan13.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan13.Name = "btnBan13";
+            this.btnBan13.Size = new System.Drawing.Size(219, 167);
+            this.btnBan13.TabIndex = 50;
+            this.btnBan13.Text = "Bàn 13";
+            this.btnBan13.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnBan14
             // 
-            this.button14.Location = new System.Drawing.Point(931, 676);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(219, 167);
-            this.button14.TabIndex = 61;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnBan14.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan14.Location = new System.Drawing.Point(1551, 670);
+            this.btnBan14.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan14.Name = "btnBan14";
+            this.btnBan14.Size = new System.Drawing.Size(219, 167);
+            this.btnBan14.TabIndex = 50;
+            this.btnBan14.Text = "Bàn 14";
+            this.btnBan14.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // btnBan8
             // 
-            this.button15.Location = new System.Drawing.Point(606, 676);
-            this.button15.Margin = new System.Windows.Forms.Padding(4);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(219, 167);
-            this.button15.TabIndex = 60;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnBan8.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan8.Location = new System.Drawing.Point(1235, 459);
+            this.btnBan8.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan8.Name = "btnBan8";
+            this.btnBan8.Size = new System.Drawing.Size(219, 167);
+            this.btnBan8.TabIndex = 50;
+            this.btnBan8.Text = "Bàn 8";
+            this.btnBan8.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnBan9
             // 
-            this.button6.Location = new System.Drawing.Point(1903, 464);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(219, 167);
-            this.button6.TabIndex = 59;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnBan9.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan9.Location = new System.Drawing.Point(1551, 459);
+            this.btnBan9.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan9.Name = "btnBan9";
+            this.btnBan9.Size = new System.Drawing.Size(219, 167);
+            this.btnBan9.TabIndex = 50;
+            this.btnBan9.Text = "Bàn 9";
+            this.btnBan9.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnBan18
             // 
-            this.button7.Location = new System.Drawing.Point(1579, 464);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(219, 167);
-            this.button7.TabIndex = 58;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnBan18.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan18.Location = new System.Drawing.Point(1235, 878);
+            this.btnBan18.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan18.Name = "btnBan18";
+            this.btnBan18.Size = new System.Drawing.Size(219, 167);
+            this.btnBan18.TabIndex = 50;
+            this.btnBan18.Text = "Bàn 18";
+            this.btnBan18.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnBan19
             // 
-            this.button8.Location = new System.Drawing.Point(1250, 464);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(219, 167);
-            this.button8.TabIndex = 57;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnBan19.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan19.Location = new System.Drawing.Point(1551, 878);
+            this.btnBan19.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan19.Name = "btnBan19";
+            this.btnBan19.Size = new System.Drawing.Size(219, 167);
+            this.btnBan19.TabIndex = 50;
+            this.btnBan19.Text = "Bàn 19";
+            this.btnBan19.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnBan23
             // 
-            this.button9.Location = new System.Drawing.Point(931, 464);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(219, 167);
-            this.button9.TabIndex = 56;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnBan23.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan23.Location = new System.Drawing.Point(1235, 1091);
+            this.btnBan23.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan23.Name = "btnBan23";
+            this.btnBan23.Size = new System.Drawing.Size(219, 167);
+            this.btnBan23.TabIndex = 50;
+            this.btnBan23.Text = "Bàn 23";
+            this.btnBan23.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnBan24
             // 
-            this.button10.Location = new System.Drawing.Point(606, 464);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(219, 167);
-            this.button10.TabIndex = 55;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnBan24.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan24.Location = new System.Drawing.Point(1551, 1091);
+            this.btnBan24.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan24.Name = "btnBan24";
+            this.btnBan24.Size = new System.Drawing.Size(219, 167);
+            this.btnBan24.TabIndex = 50;
+            this.btnBan24.Text = "Bàn 24";
+            this.btnBan24.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnBan5
             // 
-            this.button5.Location = new System.Drawing.Point(1903, 251);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(219, 167);
-            this.button5.TabIndex = 54;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBan5.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan5.Location = new System.Drawing.Point(1871, 251);
+            this.btnBan5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan5.Name = "btnBan5";
+            this.btnBan5.Size = new System.Drawing.Size(219, 167);
+            this.btnBan5.TabIndex = 50;
+            this.btnBan5.Text = "Bàn 5";
+            this.btnBan5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBan15
             // 
-            this.button4.Location = new System.Drawing.Point(1579, 251);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(219, 167);
-            this.button4.TabIndex = 53;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBan15.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan15.Location = new System.Drawing.Point(1871, 670);
+            this.btnBan15.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan15.Name = "btnBan15";
+            this.btnBan15.Size = new System.Drawing.Size(219, 167);
+            this.btnBan15.TabIndex = 50;
+            this.btnBan15.Text = "Bàn 15";
+            this.btnBan15.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnBan10
             // 
-            this.button3.Location = new System.Drawing.Point(1250, 251);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 167);
-            this.button3.TabIndex = 52;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBan10.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan10.Location = new System.Drawing.Point(1871, 459);
+            this.btnBan10.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan10.Name = "btnBan10";
+            this.btnBan10.Size = new System.Drawing.Size(219, 167);
+            this.btnBan10.TabIndex = 50;
+            this.btnBan10.Text = "Bàn 10";
+            this.btnBan10.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBan20
             // 
-            this.button2.Location = new System.Drawing.Point(931, 251);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(219, 167);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBan20.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan20.Location = new System.Drawing.Point(1871, 878);
+            this.btnBan20.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan20.Name = "btnBan20";
+            this.btnBan20.Size = new System.Drawing.Size(219, 167);
+            this.btnBan20.TabIndex = 50;
+            this.btnBan20.Text = "Bàn 20";
+            this.btnBan20.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBan25
             // 
-            this.button1.Location = new System.Drawing.Point(606, 251);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 167);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBan25.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan25.Location = new System.Drawing.Point(1871, 1091);
+            this.btnBan25.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan25.Name = "btnBan25";
+            this.btnBan25.Size = new System.Drawing.Size(219, 167);
+            this.btnBan25.TabIndex = 50;
+            this.btnBan25.Text = "Bàn 25";
+            this.btnBan25.UseVisualStyleBackColor = true;
             // 
             // Order
             // 
@@ -363,30 +388,30 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnBan1;
+        public System.Windows.Forms.Button btnBan25;
+        public System.Windows.Forms.Button btnBan24;
+        public System.Windows.Forms.Button btnBan22;
+        public System.Windows.Forms.Button btnBan23;
+        public System.Windows.Forms.Button btnBan21;
+        public System.Windows.Forms.Button btnBan20;
+        private System.Windows.Forms.Button btnBan19;
+        private System.Windows.Forms.Button btnBan17;
+        private System.Windows.Forms.Button btnBan18;
+        private System.Windows.Forms.Button btnBan16;
+        private System.Windows.Forms.Button btnBan10;
+        private System.Windows.Forms.Button btnBan9;
+        private System.Windows.Forms.Button btnBan7;
+        private System.Windows.Forms.Button btnBan8;
+        private System.Windows.Forms.Button btnBan6;
+        private System.Windows.Forms.Button btnBan15;
+        private System.Windows.Forms.Button btnBan14;
+        private System.Windows.Forms.Button btnBan12;
+        private System.Windows.Forms.Button btnBan13;
+        private System.Windows.Forms.Button btnBan11;
+        private System.Windows.Forms.Button btnBan5;
+        private System.Windows.Forms.Button btnBan4;
+        private System.Windows.Forms.Button btnBan3;
+        private System.Windows.Forms.Button btnBan2;
     }
 }

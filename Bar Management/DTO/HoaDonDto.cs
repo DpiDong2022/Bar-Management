@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bar_Management.DAO;
 
 namespace Bar_Management.DTO {
     public class HoaDonDto {
@@ -38,9 +39,12 @@ namespace Bar_Management.DTO {
             get {
                 return _trangThai;
             }
-            set {
+            set
+            {
+                
                 _trangThai = ((int)value) == 1 ? "Đã thanh toán" : "Chưa thanh toán";
             }
         }
+       
     }
 }

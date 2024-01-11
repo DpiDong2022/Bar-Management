@@ -18,11 +18,14 @@ using System.Windows.Forms;
 using Bar_Management.OrderHistoryForm;
 using Bar_Management.Interfaces.AccountForm;
 using Bar_Management.Interfaces.WarehouseForm;
+using System.Management.Instrumentation;
+using Bar_Management.DAO;
 
 namespace Bar_Management.MainForm
 {
     public partial class Main : Form
     {
+        public string TaiKhoanId { get; set; }
         public Main()
         {
             InitializeComponent();
@@ -48,11 +51,15 @@ namespace Bar_Management.MainForm
         private void btnHome_Click(object sender, EventArgs e)
         {
             addControls(new Home());
+
+            MessageBox.Show(Singleton.TaiKhoanId.ToString());
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            addControls(new Order());
+            Order order = new Order();
+            addControls(order);
+            order.NhanVienID = TaiKhoanId;
         }
 
         private void btnFood_Click(object sender, EventArgs e)
