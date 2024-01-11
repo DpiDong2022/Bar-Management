@@ -247,8 +247,10 @@
     <Compile Include="BusinessLogic\TrangThaiTonKhoLogic.cs" />
     <Compile Include="BusinessLogic\ValidateTool.cs" />
     <Compile Include="DAO\AppDbContext.cs" />
-    <Compile Include="DAO\AppDbContextSingleton.cs" />
+    <Compile Include="DAO\Singleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
+    <Compile Include="DTO\BillDay.cs" />
+    <Compile Include="DTO\BillMonth.cs" />
     <Compile Include="DTO\HoaDonDto.cs" />
     <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
@@ -405,6 +407,7 @@
     <Compile Include="Tool\CloudinaryService.cs" />
     <Compile Include="Tool\Export.cs" />
     <Compile Include="Tool\GenerateData.cs" />
+    <Compile Include="Tool\Helper.cs" />
     <Compile Include="Tool\Internet.cs" />
     <EmbeddedResource Include="Interfaces\AccountForm\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>

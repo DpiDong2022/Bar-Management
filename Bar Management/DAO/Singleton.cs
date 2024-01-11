@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Bar_Management.DAO {
-    public class AppDbContextSingleton {
+    public static class Singleton {
         private static AppDbContext _instance;
 
         public static AppDbContext Instance {

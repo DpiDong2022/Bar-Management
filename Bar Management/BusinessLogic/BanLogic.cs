@@ -15,7 +15,7 @@ namespace Bar_Management.BusinessLogic {
 
         public BanLogic() {
 
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<Ban>();
         }
 

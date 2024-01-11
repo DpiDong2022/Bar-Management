@@ -16,7 +16,7 @@ namespace Bar_Management.BusinessLogic {
 
         public NhaCungCapLogic() {
 
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<NhaCungCap>();
         }
 

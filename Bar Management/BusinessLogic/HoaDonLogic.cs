@@ -2,11 +2,13 @@
 using Bar_Management.DAO;
 using Bar_Management.DTO;
 using Bar_Management.Models;
+using Bar_Management.RevenueForm;
 using Bar_Management.Tool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Bar_Management.BusinessLogic {
@@ -21,7 +23,7 @@ namespace Bar_Management.BusinessLogic {
         public HoaDonLogic() {
 
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<HoaDon>();
             _repoTaiKhoan = new GenericRepository<TaiKhoan>();
             _repoBan = new GenericRepository<Ban>();
@@ -45,6 +47,43 @@ namespace Bar_Management.BusinessLogic {
                 Ban = bans.First(ban => ban.Id == hoaDon.BanId)
             });
             return result;
+        }
+
+        public IEnumerable<BillMonth> LayDuLieuThongKeThang(int nam, int thangThu) {
+            var bills = _repo.GetAll()
+                .Where(hd => hd.NgayTao.Year == nam
+                        && hd.NgayTao.Month == thangThu)
+                .OrderBy(hd => hd.NgayTao);
+
+            IEnumerable<int> days = Enumerable.Range(1,30);
+
+            var groupBillMonth = days.GroupJoin(bills, day=>day, bill => bill.NgayTao.Day, (day, billGroup)=>new {
+                Month = day,
+                Revenue = billGroup.Sum(bill => bill?.TongGia ?? 0)
+            }).Select(c => new BillMonth(){
+                Month = c.Month,
+                Revenue = c.Revenue
+            });
+            return groupBillMonth;
+        }
+
+        public IEnumerable<BillDay> LayDuLieuThongKeTuan(DateTime date) {
+            var bills = _repo.GetAll()
+                .Where(hd => hd.NgayTao > date 
+                    && hd.NgayTao < date.AddDays(7))
+                .OrderBy(hd => hd.NgayTao);
+
+            IEnumerable<string> daysOfWeek = Enum.GetNames(typeof(DayOfWeek)).AsEnumerable();
+
+
+            var groupBillWeak = daysOfWeek.GroupJoin(bills, day => day, bill => bill.NgayTao.DayOfWeek.ToString(), (day, billGroup)=> new {
+                Day = day,
+                Revenue = billGroup.Sum(bill => bill?.TongGia ?? 0)
+            }).Select(c => new BillDay(){
+                Day = c.Day,
+                Revenue = c.Revenue
+            });
+            return groupBillWeak;
         }
 
         public IEnumerable<HoaDonDto> GetAllDto() {

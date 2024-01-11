@@ -34,7 +34,12 @@ namespace Bar_Management.Interfaces.WarehouseForm {
 
         private void btnChonAnh_Click(object sender, EventArgs e) {
             if (openFileDialog1.ShowDialog() == DialogResult.OK) {
-                pictureBox.ImageLocation = openFileDialog1.FileName;
+                if (Helper.IsImageFile(pictureBox.ImageLocation)) {
+                    pictureBox.ImageLocation = openFileDialog1.FileName;
+                } else {
+                    MessageBox.Show("Hãy chọn một ảnh đúng định dạng");
+                }
+               
             }
         }
 
@@ -96,7 +101,10 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                     this.DialogResult = DialogResult.OK;
                 }
             }
-            
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e) {
+
         }
     }
 }

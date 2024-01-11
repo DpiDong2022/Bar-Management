@@ -15,7 +15,7 @@ namespace Bar_Management.BusinessLogic {
 
         public RoleLogic() {
 
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<Role>();
         }
 

@@ -24,7 +24,14 @@ namespace Bar_Management.BusinessLogic {
 
         public MonAnLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            Context = AppDbContextSingleton.Instance;
+            Context = Singleton.Instance;
+            _repo = new GenericRepository<MonAn>();
+            _loaiMonAnLogic = new LoaiMonAnLogic();
+        }
+
+        public MonAnLogic(AppDbContext appDbContext) {
+            _mapper = AutoMapperProfile.InitializeAutoMapper();
+            Context = appDbContext;
             _repo = new GenericRepository<MonAn>();
             _loaiMonAnLogic = new LoaiMonAnLogic();
         }

@@ -21,7 +21,7 @@ namespace Bar_Management.BusinessLogic {
         public ChiTieHoaDonLogic() {
 
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            _context = AppDbContextSingleton.Instance;
+            _context = Singleton.Instance;
             _repo = new GenericRepository<ChiTietHoaDon>();
             _repoHoaDon = new GenericRepository<HoaDon> { };
             _repoMonAn = new GenericRepository<MonAn> { };
