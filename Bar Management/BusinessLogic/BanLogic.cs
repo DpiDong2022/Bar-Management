@@ -10,7 +10,8 @@ namespace Bar_Management.BusinessLogic {
 
     public class BanLogic {
 
-        private readonly AppDbContext _context;
+        public AppDbContext _context;
+        
         private readonly GenericRepository<Ban> _repo;
 
         public BanLogic() {

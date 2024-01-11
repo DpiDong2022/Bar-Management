@@ -34,7 +34,9 @@ namespace Bar_Management.DAO {
             //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             optionsBuilder.UseSqlServer("server= TKien; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
             //optionsBuilder.UseSqlServer("server=DONG-LAPTOP\\DONGSQLSERVER; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-            //optionsBuilder.UseSqlServer("Server=192.168.1.9, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
+            //optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            ////optionsBuilder.UseSqlServer("Server=192.168.1.9, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
+            //optionsBuilder.EnableSensitiveDataLogging();
         }
     }
 }

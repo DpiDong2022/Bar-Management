@@ -53,7 +53,7 @@ namespace Bar_Management.OrderForm
             {
                 int num = int.Parse(clickedButton.Text.Split(' ')[1]);
                 int buttonNumber = num;
-                this.Close();
+                
                 // Lấy số từ tên nút
                 OpenNewForm(buttonNumber);
                 
@@ -63,11 +63,11 @@ namespace Bar_Management.OrderForm
         private void OpenNewForm(int buttonNumber)
         {
             // Tạo form mới và chuyển thông tin nếu cần
-            Payment newForm = new Payment(this);
-            newForm.TenBan = buttonNumber.ToString();
+            Payment newForm = new Payment(buttonNumber);
+            //newForm.TenBan = buttonNumber.ToString();
             newForm.NhanVienID = NhanVienID;
             
-            newForm.Show();
+            newForm.ShowDialog();
             
         }
 

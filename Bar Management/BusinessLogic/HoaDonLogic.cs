@@ -48,7 +48,7 @@ namespace Bar_Management.BusinessLogic
                 TaiKhoanTaoId = hoaDon.TaiKhoanTaoId,
                 TongGia = hoaDon.TongGia,
                 TaiKhoanTao = taiKhoans.FirstOrDefault(tk => tk.Id == hoaDon.Id),
-                Ban = bans.FirstOrDefault(ban => ban.Id == hoaDon.BanId)
+                //Ban = bans.FirstOrDefault(ban => ban.Id == hoaDon.BanId)
             });
         }
 
@@ -64,6 +64,11 @@ namespace Bar_Management.BusinessLogic
 
         public bool Update(HoaDon obj)
         {
+            var existedMonan = this._context.Set<HoaDon>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedMonan != null)
+            {
+                this._context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Update(obj);
         }
     }

@@ -19,7 +19,7 @@ namespace Bar_Management.OrderForm
 {
     public partial class Payment : Form
     {
-        public string TenBan {  get; set; }
+        public  string TenBan {  get; set; }
         public string NhanVienID { get; set; }
         private LoaiMonAnLogic _logicLoaimonan;
         private BindingList<LoaiMonAn> _table;
@@ -38,7 +38,7 @@ namespace Bar_Management.OrderForm
 
         private readonly BanLogic _logicBan;
         
-        public Payment(Form parent)
+        public Payment(int BanId)
         {
             
             InitializeComponent();
@@ -51,6 +51,7 @@ namespace Bar_Management.OrderForm
             _logicChiTiet = new ChiTieHoaDonLogic();
 
             _logicBan = new BanLogic(); 
+            TenBan = BanId.ToString();
 
 
     }
@@ -95,13 +96,7 @@ namespace Bar_Management.OrderForm
 
         private void button5_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form != this) // Đảm bảo không đóng Form1
-                {
-                    form.Close();
-                }
-            }
+            this.Close();
             Main main = new Main();
             main.Show();
             main.btnOrder.PerformClick();
@@ -355,7 +350,7 @@ namespace Bar_Management.OrderForm
             txtTotal.Text = "";
             foreach (DataGridViewRow row in gunaDataGridView1.Rows)
             {
-                if (int.Parse(row.Cells["dgvStt"].Value.ToString()) < gunaDataGridView1.Rows.Count  )
+                if (int.Parse(row.Cells["dgvStt"].Value.ToString()) <= gunaDataGridView1.Rows.Count  )
                 {
                     tot += double.Parse(row.Cells["dgvThanhtien"].Value.ToString());
                 }
@@ -382,6 +377,19 @@ namespace Bar_Management.OrderForm
         private void btnThanhtoan_Click(object sender, EventArgs e)
         {
             GetTotal();
+            Ban ban = _logicBan.GetAll().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            ban.TrangThaiId = 2;
+            _logicBan.Update(ban);
+
+            int TaiKhoanId = Singleton.TaiKhoanId;
+            var checkHoaDon = _logicHoaDon.GetAll().Where(x => x.BanId.ToString() == TenBan && x.TaiKhoanTaoId == Singleton.TaiKhoanId)
+                                                                    .OrderByDescending(x => x.NgayTao)
+                                                                    .FirstOrDefault();
+            checkHoaDon.Ban = _logicBan.GetAll().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            checkHoaDon.TrangThai = 1;
+            _logicHoaDon.Update(checkHoaDon);
+
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -418,10 +426,10 @@ namespace Bar_Management.OrderForm
                         ThanhTien = decimal.Parse(item.Cells["dgvThanhTien"].Value.ToString()),
                     };
                 }
-                
+
                 ban.TrangThaiId = 2;
                 _logicBan.Update(ban);
-                
+
                 MessageBox.Show("Lưu thành công ");
                 
             }
@@ -500,15 +508,23 @@ namespace Bar_Management.OrderForm
 
         private void btnTInhTien_Click(object sender, EventArgs e)
         {
-            var checkHoaDon = _logicHoaDon.GetAll().ToList().Where(x => x.BanId.ToString() == TenBan)
+            BanLogic _logicBan2 = new BanLogic();
+            int TaiKhoanId = Singleton.TaiKhoanId;
+            var checkHoaDon = _logicHoaDon.GetAll().Where(x => x.BanId.ToString() == TenBan && x.TaiKhoanTaoId == Singleton.TaiKhoanId)
                                                                     .OrderByDescending(x => x.NgayTao)
                                                                     .FirstOrDefault();
+
+            //checkHoaDon.Ban = _logicBan.GetAll().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            int IdBan = int.Parse(TenBan);
+            Ban ban1 = _logicBan._context.Find<Ban>(IdBan);
             checkHoaDon.TrangThai = 1;
             _logicHoaDon.Update(checkHoaDon);
-            var ban = _logicBan.GetAll().ToList().FirstOrDefault(x => x.Id.ToString() == TenBan);
+            var ban = _logicBan.GetAll().FirstOrDefault(x => x.Id.ToString() == TenBan);
             ban.TrangThaiId = 1;
-            gunaDataGridView1.Rows.Clear(); 
-            _logicBan.Update(ban);
+            gunaDataGridView1.Rows.Clear();
+            _logicBan2.Update(ban);
+            
+            
             MessageBox.Show("Thanh toán thành công ");
         }
 

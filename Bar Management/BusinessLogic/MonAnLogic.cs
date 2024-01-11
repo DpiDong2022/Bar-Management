@@ -127,7 +127,7 @@ namespace Bar_Management.BusinessLogic {
             }
             // Create a new Excel Application
             Excel.Application excelApp = new Excel.Application();
-            excelApp.Visible = false; // Set to true for debugging
+            excelApp.Visible = false; // Set to true for debuggin
 
             try {
                 // Open the template workbook
