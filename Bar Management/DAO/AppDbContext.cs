@@ -39,7 +39,7 @@ namespace Bar_Management.DAO {
 // Updated upstream
             //optionsBuilder.UseSqlServer("Server=172.20.10.2, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
 
-            optionsBuilder.UseSqlServer("Server=192.168.1.9, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
+            optionsBuilder.UseSqlServer("Server=172.20.10.2, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
 // Stashed changes
         }
 
