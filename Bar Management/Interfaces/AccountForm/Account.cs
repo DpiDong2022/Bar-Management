@@ -215,11 +215,13 @@ namespace Bar_Management.Interfaces.AccountForm
 
             string tenTk = txtTen.Text.Trim();
             string matKhau = txtMatkhau.Text.Trim();
-            int tenNguoidung = (cbTennhanvien.SelectedItem as NhanVien).Id;
+            string SelectNhanVienTen = cbTennhanvien.SelectedItem.ToString();
+            NhanVienDTO SelectedNV = _nhanVienLogic.GetAll().FirstOrDefault(x => x.Ten ==  SelectNhanVienTen.ToString());
+            int tenNguoidungId = SelectedNV.Id;
             int tenRole = (cbRole.SelectedItem as Role).Id;
 
             // validate
-            bool isValid = Validate(tenTk, tenRole, matKhau, tenNguoidung);
+            bool isValid = Validate(tenTk, tenRole, matKhau, tenNguoidungId);
             if (!isValid) return;
 
             TaiKhoan taiKhoan = new TaiKhoan()
@@ -227,7 +229,7 @@ namespace Bar_Management.Interfaces.AccountForm
                 Ten = tenTk,
                 MatKhau = matKhau,
                 RoleId = tenRole,
-                NhanVienId = tenNguoidung
+                NhanVienId = tenNguoidungId
 
             };
 
@@ -243,6 +245,7 @@ namespace Bar_Management.Interfaces.AccountForm
                 TaiKhoanDTO taiKhoanDTo = _mapper.Map<TaiKhoanDTO>(taiKhoan);
                 update(taiKhoan, taiKhoanDTo);
             }
+            LoadTable();
 
         }
         private void update(TaiKhoan taiKhoan, TaiKhoanDTO taiKhoanDTO)

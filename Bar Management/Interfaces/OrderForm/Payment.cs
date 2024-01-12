@@ -425,6 +425,7 @@ namespace Bar_Management.OrderForm
                         SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString()),
                         ThanhTien = decimal.Parse(item.Cells["dgvThanhTien"].Value.ToString()),
                     };
+                    _logicChiTiet.Update(chiTiet);
                 }
 
                 ban.TrangThaiId = 2;
