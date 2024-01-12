@@ -432,7 +432,6 @@
     <Compile Include="Interfaces\TableForm\NhaCungCap.Designer.cs">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </Compile>
-    <None Include="Bar Management_TemporaryKey.pfx" />
     <None Include="Templates\MonAnExcel.xlsx" />
     <Compile Include="Tool\AutoMapperProfile.cs" />
     <Compile Include="Tool\CloudinaryService.cs" />
@@ -613,15 +612,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QuanLyBarBon.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QuanLyBarBon_log.ldf">
-      <DependentUpon>QuanLyBarBon.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

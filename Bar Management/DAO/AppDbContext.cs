@@ -33,7 +33,7 @@ namespace Bar_Management.DAO {
         private string _serverName;
         public AppDbContext(string serverName="") {
             if (serverName == "") {
-                _serverName= " 172.20.10.2";
+                _serverName= "172.20.10.2";
             } else {
                 _serverName = serverName;
             }
