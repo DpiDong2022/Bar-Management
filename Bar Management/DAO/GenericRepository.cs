@@ -10,6 +10,13 @@ using System.Threading.Tasks;
 
 namespace Bar_Management.DAO {
 
+    public interface IGenericRepository<T> where T : class {
+        IEnumerable<T> GetAll();
+        bool Insert(T obj);
+        bool Delete(T ob0j);
+        bool Update(T ob0j);
+    }
+
     internal class GenericRepository<T>: IGenericRepository<T> where T : class{
         private readonly DbSet<T> _set;
         private readonly AppDbContext _context;
@@ -53,10 +60,6 @@ namespace Bar_Management.DAO {
 
                 throw;
             }
-        }
-
-        public static implicit operator GenericRepository<T>(GenericRepository<Setting> v) {
-            throw new NotImplementedException();
         }
     }
 }

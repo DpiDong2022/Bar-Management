@@ -79,6 +79,7 @@ namespace Bar_Management.BusinessLogic {
             if (existedMonan != null) {
                 _context.Entry(existedMonan).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
             }
+            obj.HoaDon = null;
             return _repo.Update(obj);
         }
     }

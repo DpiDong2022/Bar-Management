@@ -258,7 +258,6 @@
     <Compile Include="DTO\BillDay.cs" />
     <Compile Include="DTO\BillMonth.cs" />
     <Compile Include="DTO\HoaDonDto.cs" />
-    <Compile Include="DAO\IGenericRepository.cs" />
     <Compile Include="DAO\Result.cs" />
     <Compile Include="DTO\ChiTietHoaDonDto.cs" />
     <Compile Include="DTO\MonAnDto.cs" />
