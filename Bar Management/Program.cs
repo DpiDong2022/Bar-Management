@@ -22,7 +22,10 @@ namespace Bar_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+// Updated upstream
             
+ 
+// Stashed changes
         }
     }
 }
