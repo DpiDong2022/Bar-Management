@@ -67,6 +67,10 @@ namespace Bar_Management.BusinessLogic {
             return result;
         }
 
+        public IEnumerable<MonAn> GetAllMonAn() { 
+            return _repo.GetAll();
+        }
+
         public IEnumerable<MonAnDto> GetAll() {
             var loaiMonAns = _loaiMonAnLogic.GetAll();
             IEnumerable<MonAnDto> result = _repo.GetAll()

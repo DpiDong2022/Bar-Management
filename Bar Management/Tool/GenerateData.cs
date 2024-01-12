@@ -1,5 +1,6 @@
 ﻿using Bar_Management.BusinessLogic;
 using Bar_Management.Models;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
@@ -9,26 +10,26 @@ using System.Threading.Tasks;
 
 namespace Bar_Management.Tool {
     public class GenerateData {
-        static List<TrangThaiTonKho> trangThaiTonKhos = new List<TrangThaiTonKho> (){
+        public static List<TrangThaiTonKho> trangThaiTonKhos = new List<TrangThaiTonKho> (){
             new TrangThaiTonKho(){Ten = "Còn"},
             new TrangThaiTonKho(){Ten = "Hết"},
             new TrangThaiTonKho(){Ten = "Hết hạn"},
         };
 
-        static List<NhaCungCap> nhaCungCaps = new List<NhaCungCap> (){
+        public static List<NhaCungCap> nhaCungCaps = new List<NhaCungCap> (){
             new NhaCungCap(){Ten="Phùng Đại Đồng", DiaChi="Ba Vì Hà Nội", Email="phungdaidong1114@gmail.com", Sdt="0368728267"},
             new NhaCungCap(){Ten="Đỗ Quốc Tuấn", DiaChi="Hà Nam", Email="doquoctuan2021144@gmail.com", Sdt="0988876544"},
             new NhaCungCap(){Ten="Tạ Đặng Trung Kiên", DiaChi="Hà Nam", Email="tadangtrungkien33@gmail.com", Sdt="0999999999"}
         };
 
-        static List<NguyenLieu> nguyenLieus = new List<NguyenLieu> (){
+        public static List<NguyenLieu> nguyenLieus = new List<NguyenLieu> (){
             new NguyenLieu(){Ten = "Rượu nếp", GiaBan=10000, HinhAnh="https://www.lottemart.vn/media/catalog/product/cache/0x0/8/9/8934591001240.png.webp"},
             new NguyenLieu(){Ten = "Khăn bàn", GiaBan=20000, HinhAnh="https://napkinvietnam.vn/wp-content/uploads/2022/01/khan-ban-mau-xam-300x300.jpg"},
             new NguyenLieu(){Ten = "Chổi lau nhà kenco", GiaBan=40000, HinhAnh="https://songlongplastic.net/wp-content/uploads/2022/10/z3664682953857_efddd5aa210078b45d7fb8d20b971372-scaled.jpg"},
             new NguyenLieu(){Ten = "Ghế nhựa", GiaBan=120000, HinhAnh="https://bangheduytan.com/wp-content/uploads/2021/03/ghe-lun-lo-do.jpg"},
         };
 
-        static List<TonKho> tonKhos = new List<TonKho> (){
+        public static List<TonKho> tonKhos = new List<TonKho> (){
             new TonKho(){SoLuong = 2, DonVi = "Cái", NguyenLieuId = 1, NgayNhap = DateTime.Now, 
                 NgayHetHan = new DateTime(2024,2,14), GiaNhap=10000, NhaCungCapId=1, TrangThaiId = 1},
             new TonKho(){SoLuong = 4, DonVi = "Tải", NguyenLieuId = 2, NgayNhap = DateTime.Now,
@@ -41,7 +42,7 @@ namespace Bar_Management.Tool {
                 NgayHetHan = new DateTime(2025,12,10), GiaNhap=40000, NhaCungCapId=3, TrangThaiId = 1},
         };
 
-        static List<LoaiMonAn> loaiMonAns = new List<LoaiMonAn> (){
+        public static List<LoaiMonAn> loaiMonAns = new List<LoaiMonAn> (){
             new LoaiMonAn(){ TenLoai="Cocktail" },
             new LoaiMonAn(){ TenLoai="Rượu" },
             new LoaiMonAn(){ TenLoai="Rượu mạch" },
@@ -52,7 +53,7 @@ namespace Bar_Management.Tool {
             new LoaiMonAn(){ TenLoai="Đồ ăn đặc biệt" }
         };
 
-        static List<MonAn> monAns = new List<MonAn> (){
+        public static List<MonAn> monAns = new List<MonAn> (){
             new MonAn(){ TenMon="Margarita", MoTa="Một cocktail truyền thống của Mexico, Margarita thường được làm từ tequila, " +
                 "triple sec và nước cốt chanh. Được phục vụ trên đá hoặc shaken với đá.", 
                 IsAvailable=1, LoaiMonAnId=1, IsDelete=false, Gia=10000, 
@@ -111,23 +112,23 @@ namespace Bar_Management.Tool {
                 HinhAnh="https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format"}
         };
 
-        static List<Role> roles = new List<Role>(){
+        public static List<Role> roles = new List<Role>(){
             new Role(){Ten="Admin"},
             new Role(){Ten="Nhân viên kho"},
             new Role(){Ten="Nhân viên bàn"},
         };
 
-        static List<Setting> settings = new List<Setting>(){
+        public static List<Setting> settings = new List<Setting>(){
             new Setting(){NgonNgu="Tiếng Việt"},
             new Setting(){NgonNgu="Tiếng Anh"}
         };
 
-        static List<TrangThaiBan> trangThaiBans = new List<TrangThaiBan>(){
+        public static List<TrangThaiBan> trangThaiBans = new List<TrangThaiBan>(){
             new TrangThaiBan(){Ten="Trống"},
             new TrangThaiBan(){Ten="Đang dùng"}
         };
 
-        static List<NhanVien> nhanViens = new List<NhanVien>(){
+        public static List<NhanVien> nhanViens = new List<NhanVien>(){
             new NhanVien(){ Ten="Nguyễn văn A", Email="nguyenvana@gmail.com",SDT="0998867545", NgaySinh=new DateTime(1999,3,12), 
                 Luong=6000000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false},
             new NhanVien(){ Ten="Nguyễn văn B", Email="nguyenvanb@gmail.com",SDT="0998867546", NgaySinh=new DateTime(1998,4,13),
@@ -138,20 +139,20 @@ namespace Bar_Management.Tool {
                 Luong=8000000, HinhAnh="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg", IsDelete=false}
         };
 
-        static List<TaiKhoan> taiKhoans = new List<TaiKhoan>(){
+        public static List<TaiKhoan> taiKhoans = new List<TaiKhoan>(){
             new TaiKhoan(){ NhanVienId=1, MatKhau="admin", RoleId=1, SettingId=1, Ten="admin", IsDelete=false},
             new TaiKhoan(){ NhanVienId=2, MatKhau="123123", RoleId=2, SettingId=1, Ten="andraw tate", IsDelete=false},
             new TaiKhoan(){ NhanVienId=3, MatKhau="123123", RoleId=3, SettingId=1, Ten="le minh an", IsDelete=false},
             new TaiKhoan(){ NhanVienId=4, MatKhau="123123", RoleId=3, SettingId=1, Ten="ha nghiem", IsDelete=false},
         };
 
-        static List<HoaDon> hoaDons = new List<HoaDon>(){
+        public static List<HoaDon> hoaDons = new List<HoaDon>(){
             new HoaDon(){BanId=1, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,3,5), TongGia = 110000},
             new HoaDon(){BanId=1, TaiKhoanTaoId = 3, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 150000},
             new HoaDon(){BanId=2, TaiKhoanTaoId = 4, TrangThai = true, NgayTao = new DateTime(2024,4,6), TongGia = 130000}
         };
 
-        static List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>(){
+        public static List<ChiTietHoaDon> chiTietHoaDons = new List<ChiTietHoaDon>(){
             new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=1, SoLuong=2, ThanhTien= 20000},
             new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=2, SoLuong=2, ThanhTien= 30000},
             new ChiTietHoaDon(){ HoaDonId = 1, MonAnId=3, SoLuong=2, ThanhTien= 60000},
@@ -162,6 +163,34 @@ namespace Bar_Management.Tool {
             new ChiTietHoaDon(){ HoaDonId = 3, MonAnId=2, SoLuong=2, ThanhTien= 30000},
             new ChiTietHoaDon(){ HoaDonId = 3, MonAnId=5, SoLuong=3, ThanhTien= 60000},
         };
+
+        public static List<Ban> bans = new List<Ban>(){
+            new Ban(){ TenBan="Bàn 1", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 2", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 3", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 4", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 5", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 6", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 7", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 8", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 9", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 10", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 11", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 12", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 13", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 14", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 15", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 16", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 17", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 18", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 19", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 20", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 21", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 22", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 23", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 24", TrangThaiId=1},
+            new Ban(){ TenBan="Bàn 25", TrangThaiId=1}
+        }; 
 
         public static void Render() {
             ThemTrangThaiTonKho();

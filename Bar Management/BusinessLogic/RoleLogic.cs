@@ -1,14 +1,10 @@
 ﻿using Bar_Management.DAO;
 using Bar_Management.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bar_Management.BusinessLogic {
 
-    internal class RoleLogic {
+    public class RoleLogic {
 
         private readonly AppDbContext _context;
         private readonly GenericRepository<Role> _repo;
@@ -17,6 +13,12 @@ namespace Bar_Management.BusinessLogic {
 
             _context = Singleton.Instance;
             _repo = new GenericRepository<Role>();
+        }
+
+        public RoleLogic(AppDbContext context) {
+            _context = context;
+            _repo = new GenericRepository<Role>();
+
         }
 
         public bool Delete(Role obj) {
@@ -33,6 +35,10 @@ namespace Bar_Management.BusinessLogic {
 
         public bool Update(Role obj) {
             return _repo.Update(obj);
+        }
+
+        public int Count() {
+            return _repo.Count();
         }
     }
 }

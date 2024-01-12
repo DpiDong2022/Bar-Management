@@ -36,6 +36,10 @@ namespace Bar_Management.DAO {
             }
         }
 
+        public int Count() {
+            return _context.Set<T>().Count();
+        }
+
         public IEnumerable<T> GetAll() {
             return _set.AsNoTracking().ToList();
         }

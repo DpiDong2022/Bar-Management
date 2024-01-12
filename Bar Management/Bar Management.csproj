@@ -39,6 +39,9 @@
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.5.1.1\lib\net462\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="CloudinaryDotNet, Version=1.24.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
       <HintPath>..\packages\CloudinaryDotNet.1.24.0\lib\net452\CloudinaryDotNet.dll</HintPath>
     </Reference>
@@ -129,6 +132,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Moq, Version=4.20.70.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.20.70\lib\net462\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -252,6 +258,7 @@
     <Compile Include="BusinessLogic\TrangThaiTonKhoLogic.cs" />
     <Compile Include="BusinessLogic\ValidateTool.cs" />
     <Compile Include="DAO\AppDbContext.cs" />
+    <Compile Include="DAO\MockDbContext.cs" />
     <Compile Include="DAO\MonAnOrderDTO.cs" />
     <Compile Include="DAO\Singleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
@@ -399,6 +406,7 @@
     <Compile Include="Interfaces\TableForm\NhaCungCap.Designer.cs">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tool\TesetSetup.cs" />
     <None Include="Templates\MonAnExcel.xlsx" />
     <Compile Include="Tool\AutoMapperProfile.cs" />
     <Compile Include="Tool\CloudinaryService.cs" />
