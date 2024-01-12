@@ -22,6 +22,11 @@ namespace Bar_Management.OrderForm {
         }
 
         private void Order_Load(object sender, EventArgs e) {
+            LoadBtn();
+        }
+
+  
+        public void LoadBtn() { 
             for (int i = 1; i <= 25; i++) {
                 // Đặt tên cho nút theo thứ tự
                 Button btn = this.Controls.Find("btnBan" + i.ToString(), true).FirstOrDefault() as Button;
@@ -52,7 +57,7 @@ namespace Bar_Management.OrderForm {
 
         private void OpenNewForm(int buttonNumber) {
             // Tạo form mới và chuyển thông tin nếu cần
-            Payment newForm = new Payment(buttonNumber);
+            Payment newForm = new Payment(buttonNumber,this);
             //newForm.TenBan = buttonNumber.ToString();
             newForm.NhanVienID = NhanVienID;
 

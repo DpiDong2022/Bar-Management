@@ -36,7 +36,9 @@ namespace Bar_Management.OrderForm {
 
         private readonly BanLogic _logicBan;
 
-        public Payment(int BanId) {
+        private Form _parent;
+
+        public Payment(int BanId, Form parent) {
 
             InitializeComponent();
             _logicLoaimonan = new LoaiMonAnLogic();
@@ -49,7 +51,7 @@ namespace Bar_Management.OrderForm {
 
             _logicBan = new BanLogic();
             TenBan = BanId.ToString();
-
+            _parent = parent;
 
         }
         private void LoadTable() {
@@ -454,6 +456,9 @@ namespace Bar_Management.OrderForm {
 
         private void panel2_Paint(object sender, PaintEventArgs e) {
 
+        }
+
+        private void btnBan_Click(object sender, EventArgs e) {
         }
     }
 }

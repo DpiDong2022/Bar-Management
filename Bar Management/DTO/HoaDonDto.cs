@@ -43,13 +43,5 @@ namespace Bar_Management.DTO {
             }
         }
 
-/*        public HoaDonDto(int id, Ban ban, object ngayTao, TaiKhoan taiKhoanTao, object tongGia, object trangThai) {
-            Id = id;
-            Ban = ban;
-            NgayTao = ngayTao;
-            TaiKhoanTao = taiKhoanTao;
-            TongGia = tongGia;
-            TrangThai = trangThai;
-        }*/
     }
 }
