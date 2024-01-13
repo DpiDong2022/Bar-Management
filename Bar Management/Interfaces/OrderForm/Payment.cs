@@ -320,7 +320,7 @@ namespace Bar_Management.OrderForm {
                 foreach (DataGridViewRow item in gunaDataGridView1.Rows) {
                     ChiTietHoaDon chiTiet = new ChiTietHoaDon()
                     {
-                        HoaDonId = hoaDon.Id,
+                        HoaDonId = hoaDon.Id??0,
                         //MonAn = _logicMonan.GetAll().ToList().FirstOrDefault(x => x.Id == int.Parse(item.Cells["dgvId"].Value.ToString()),
                         MonAnId = int.Parse(item.Cells["dgvId"].Value.ToString()),
                         SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString()),
@@ -343,7 +343,7 @@ namespace Bar_Management.OrderForm {
                     if (CheckChiTietMonan == null) {
                         ChiTietHoaDon chiTiet = new ChiTietHoaDon()
                         {
-                            HoaDonId = checkHoaDon.Id,
+                            HoaDonId = checkHoaDon.Id??0,
                             //MonAn = _logicMonan.GetAll().ToList().FirstOrDefault(x => x.Id == int.Parse(item.Cells["dgvId"].Value.ToString()),
                             MonAnId = int.Parse(item.Cells["dgvId"].Value.ToString()),
                             SoLuong = int.Parse(item.Cells["dgvQty"].Value.ToString()),

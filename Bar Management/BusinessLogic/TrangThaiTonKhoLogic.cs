@@ -14,7 +14,7 @@ namespace Bar_Management.BusinessLogic {
         private readonly GenericRepository<TrangThaiTonKho> _repo;
 
         public TrangThaiTonKhoLogic() {
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<TrangThaiTonKho>();
         }
 
@@ -31,6 +31,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(TrangThaiTonKho obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

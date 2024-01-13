@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Bar_Management.Models {
     public class Setting {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [MaxLength(20)]
         public string NgonNgu { get; set; }

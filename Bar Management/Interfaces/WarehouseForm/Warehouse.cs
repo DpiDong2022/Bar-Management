@@ -184,9 +184,9 @@ namespace Bar_Management.Interfaces.WarehouseForm {
         }
 
         private void Loc() {
-            int nguyenLieuid =locNguyenLieu.SelectedItem != null ? ((NguyenLieu)locNguyenLieu.SelectedItem).Id : -1;
-            int nhaCcId =locNhaCc.SelectedItem != null ? ((Models.NhaCungCap)locNhaCc.SelectedItem).Id : -1;
-            int trangThaiId = locTranThai.SelectedItem != null ? ((TrangThaiTonKho)locTranThai.SelectedItem).Id : -1;
+            int nguyenLieuid =locNguyenLieu.SelectedItem != null ? ((NguyenLieu)locNguyenLieu.SelectedItem).Id??0 : -1;
+            int nhaCcId =locNhaCc.SelectedItem != null ? ((Models.NhaCungCap)locNhaCc.SelectedItem).Id??0 : -1;
+            int trangThaiId = locTranThai.SelectedItem != null ? ((TrangThaiTonKho)locTranThai.SelectedItem).Id??0 : -1;
 
             _table = new SortableBindingList<TonKhoDto>(_tonKhoLogic.Loc(nhaCcId, trangThaiId, nguyenLieuid));
             dataGridView1.DataSource = _table;
@@ -350,7 +350,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             string giaNhap = tbGiaNhap.Text;
             DateTime ngayHetHan = dtNgayHetHan.Value;
 
-            if (!IsValidate(soLuong, donVi, giaNhap, ngayHetHan, nguyenLieu.Id, nhaCungCap.Id, trangThaiTonKho.Id))
+            if (!IsValidate(soLuong, donVi, giaNhap, ngayHetHan, nguyenLieu.Id ?? 0, nhaCungCap.Id ?? 0, trangThaiTonKho.Id ?? 0))
                 return;
 
 
@@ -361,9 +361,9 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             }
 
             TonKho tonKhoMoi = new TonKho(){
-                NguyenLieuId = nguyenLieu.Id,
-                NhaCungCapId = nhaCungCap.Id,
-                TrangThaiId = trangThaiTonKho.Id,
+                NguyenLieuId = nguyenLieu.Id??0,
+                NhaCungCapId = nhaCungCap.Id??0,
+                TrangThaiId = trangThaiTonKho.Id??0,
                 SoLuong = int.Parse(soLuong),
                 DonVi = donVi,
                 GiaNhap = decimal.Parse(giaNhap),
@@ -417,7 +417,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             string giaNhap = tbGiaNhap.Text;
             DateTime ngayHetHan = dtNgayHetHan.Value;
 
-            if (!IsValidate(soLuong, donVi, giaNhap, ngayHetHan, nguyenLieu.Id, nhaCungCap.Id, trangThaiTonKho.Id))
+            if (!IsValidate(soLuong, donVi, giaNhap, ngayHetHan, nguyenLieu.Id ?? 0, nhaCungCap.Id ?? 0, trangThaiTonKho.Id ?? 0))
                 return;
 
             if (MessageBox.Show("Lưu thông tin tồn kho?", "Thông tin tồn kho", MessageBoxButtons.OKCancel,
@@ -471,13 +471,13 @@ namespace Bar_Management.Interfaces.WarehouseForm {
 
             for (int index = 0; index < _tableExportInfor.Count; index++) {
                 ExportInfor infor = _tableExportInfor.ToList()[index];
-                if (infor.Id == tonKhoDto.Id.ToString()) {
+                if ((infor.Id ?? 0).ToString() == tonKhoDto.Id.ToString()) {
                     return;
                 }
             }
 
             ExportInfor exportInfor = new ExportInfor(){
-                Id = tonKhoDto.Id.ToString(),
+                Id = tonKhoDto.Id,
                 SoLuong = 1,
                 TenNguyenLieu = tonKhoDto.NguyenLieu.Ten,
                 DonGia = tonKhoDto.GiaNhap.ToString(),
@@ -510,7 +510,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
             }
 
             ExportInfor exportInfor = dataGridView2.SelectedRows[0].DataBoundItem as ExportInfor;
-            if (_table.Any(tk => tk.Id.ToString() == exportInfor.Id && tk.SoLuong < exportInfor.SoLuong)) {
+            if (_table.Any(tk => tk.Id == exportInfor.Id && tk.SoLuong < exportInfor.SoLuong)) {
                 MessageBox.Show("Số lượng nguyên liệu muốn xuất vượt quá số lượng hiện tại đang có");
                 numSoLuongXuat.Value = 1;
             }
@@ -527,7 +527,7 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                 try {
                     for (int index = 0; index < dataGridView2.Rows.Count; index++) {
                         ExportInfor exportInfor = dataGridView2.Rows[index].DataBoundItem as ExportInfor;
-                        TonKhoDto tonKhoDto = _table.First(c => c.Id.ToString() == exportInfor.Id);
+                        TonKhoDto tonKhoDto = _table.First(c => c.Id == exportInfor.Id);
 
                         tonKhoDto.SoLuong -= exportInfor.SoLuong;
                         if (tonKhoDto.SoLuong == 0) {
@@ -538,9 +538,9 @@ namespace Bar_Management.Interfaces.WarehouseForm {
                             Id = tonKhoDto.Id,
                             SoLuong = tonKhoDto.SoLuong,
                             DonVi = tonKhoDto.DonVi,
-                            NguyenLieuId = tonKhoDto.NguyenLieu.Id,
-                            NhaCungCapId = tonKhoDto.NhaCungCap.Id,
-                            TrangThaiId = tonKhoDto.TrangThai.Id,
+                            NguyenLieuId = tonKhoDto.NguyenLieu.Id??0,
+                            NhaCungCapId = tonKhoDto.NhaCungCap.Id??0,
+                            TrangThaiId = tonKhoDto.TrangThai.Id??0,
                             GiaNhap = decimal.Parse(((string)tonKhoDto.GiaNhap).Replace(",","")),
                             NgayNhap = DateTime.ParseExact(tonKhoDto.NgayNhap.ToString(), "dd-MM-yyyy",null),
                             NgayHetHan = DateTime.ParseExact(tonKhoDto.NgayHetHan.ToString(), "dd-MM-yyyy", null)

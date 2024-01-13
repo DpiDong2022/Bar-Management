@@ -14,7 +14,7 @@ namespace Bar_Management.BusinessLogic {
 
         public NguyenLieuLogic() {
 
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<NguyenLieu>();
         }
 
@@ -30,10 +30,11 @@ namespace Bar_Management.BusinessLogic {
             return _repo.GetAll().Where(c => !c.IsDelete);
         }
 
+
         public bool Insert(NguyenLieu obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
-
         public bool Update(NguyenLieu obj) {
             var existedObj = _context.Set<NguyenLieu>().Local.FirstOrDefault(c => c.Id == obj.Id);
             if (existedObj != null) {

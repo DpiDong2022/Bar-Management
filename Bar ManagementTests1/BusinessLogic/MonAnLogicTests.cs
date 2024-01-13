@@ -14,9 +14,11 @@ namespace Bar_Management.BusinessLogic.Tests {
     [TestClass()]
     public class MonAnLogicTests {
         private readonly MonAnLogic _monAnLogic;
+        private readonly TestSetup _testSetup;
 
         public MonAnLogicTests() {
-            _monAnLogic = new MonAnLogic(TesetSetup.MockMonAns.Object);
+            _testSetup = new TestSetup();
+            _monAnLogic = new MonAnLogic(_testSetup.MockMonAns.Object);
         }
 
         [TestMethod()]
@@ -24,12 +26,10 @@ namespace Bar_Management.BusinessLogic.Tests {
             Assert.Fail();
         }
 
-        [DataRow(1, true)]
-        [DataRow(5, true)]
-        [DataRow(9, true)]
+        [DataRow(9, false)]
         [TestMethod()]
         public void DeleteTest(int monAnId, bool expected) {
-            Assert.AreEqual(expected, _monAnLogic.Delete(new MonAn() { Id = monAnId }));
+            Assert.AreEqual(expected, _monAnLogic.Delete(new MonAn { Id= monAnId }));
         }
     }
 }

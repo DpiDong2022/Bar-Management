@@ -29,7 +29,7 @@ namespace Bar_Management.BusinessLogic {
 
         public TonKhoLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<TonKho>();
             _nhaCungCap = new GenericRepository<NhaCungCap>();
             _nguyenLieu= new GenericRepository<NguyenLieu>();
@@ -54,24 +54,25 @@ namespace Bar_Management.BusinessLogic {
                         tonKho => tonKho.NguyenLieuId,
                         nguyenLieu => nguyenLieu.Id,
                         (tonkho, nguyenlieu)
-                        =>new TonKho(tonkho) {NguyenLieuId=nguyenlieu.Id, NguyenLieu = nguyenlieu})
+                        =>new TonKho(tonkho) {NguyenLieuId=nguyenlieu.Id ?? 0, NguyenLieu = nguyenlieu})
 
                         .Join(nhaCungCaps,
                         tonKho => tonKho.NhaCungCapId,
                         nhaCungCap => nhaCungCap.Id,
                         (tonkho, nhaCc) 
-                        => new TonKho(tonkho) { NhaCungCapId = nhaCc.Id, NhaCungCap = nhaCc })
+                        => new TonKho(tonkho) { NhaCungCapId = nhaCc.Id ?? 0, NhaCungCap = nhaCc })
 
                         .Join(trangThais,
                         tonKho => tonKho.TrangThaiId,
                         trangthai => trangthai.Id,
                         (tonkho, trangthai) 
-                        => new TonKho(tonkho) { TrangThaiId = trangthai.Id, TrangThai = trangthai })
+                        => new TonKho(tonkho) { TrangThaiId = trangthai.Id ?? 0, TrangThai = trangthai })
 
                         .Select(tk => _mapper.Map<TonKhoDto>(tk));
         }
 
         public bool Insert(TonKho obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

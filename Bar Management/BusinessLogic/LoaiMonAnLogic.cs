@@ -14,7 +14,7 @@ namespace Bar_Management.BusinessLogic {
 
         public LoaiMonAnLogic() {
 
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<LoaiMonAn>();
         }
 
@@ -30,7 +30,9 @@ namespace Bar_Management.BusinessLogic {
             return _repo.GetAll();
         }
 
+
         public bool Insert(LoaiMonAn obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

@@ -13,8 +13,10 @@ namespace Bar_Management.BusinessLogic.Tests {
     [TestClass()]
     public class RoleLogicTests {
         private RoleLogic _roleLogic;
+
         public RoleLogicTests() {
-            _roleLogic = new RoleLogic(TesetSetup.MockRoles.Object);
+            TestSetup.InitializeMockDbContext();
+            _roleLogic = new RoleLogic(TestSetup.MockRoles.Object);
         }
 
         [DataRow("Admin", true)]
@@ -35,6 +37,14 @@ namespace Bar_Management.BusinessLogic.Tests {
             int expected = 3;
             //Assert.AreEqual(expected, roleLogic.Count());
             Assert.AreEqual(expected, _roleLogic.Count());
+        }
+
+        [DataRow(1, true)]
+        [DataRow(2, true)]
+        [DataRow(3, true)]
+        [TestMethod()]
+        public void DeleteTest(int id, bool expected) {
+            Assert.AreEqual(expected, _roleLogic.Delete(new Role() { Id=id}));
         }
     }
 }

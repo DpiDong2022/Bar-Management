@@ -24,7 +24,7 @@ namespace Bar_Management.BusinessLogic {
 
         public MonAnLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            Context = Singleton.Instance;
+            Context = Singleton.AppDbContext;
             _repo = new GenericRepository<MonAn>();
             _loaiMonAnLogic = new LoaiMonAnLogic();
         }
@@ -94,6 +94,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(MonAn obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

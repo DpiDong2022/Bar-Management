@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Dynamic;
+using Bar_ManagementTests1;
 
 namespace Bar_Management.BusinessLogic.Tests {
     [TestClass()]
@@ -13,7 +14,8 @@ namespace Bar_Management.BusinessLogic.Tests {
         private readonly SettingLogic _settingLogic;
 
         public SettingLogicTests() {
-            _settingLogic = new SettingLogic();
+            TestSetup.InitializeMockDbContext();
+            _settingLogic = new SettingLogic(TestSetup.MockSettings.Object);
             ;
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bar_Management.Models {
     public class ExportInfor {
-        public string Id { get; set; }
+        public int? Id { get; set; }
         public string TenNguyenLieu { get; set; }
         public string DonVi { get; set; }
         public int SoLuong { get; set; }

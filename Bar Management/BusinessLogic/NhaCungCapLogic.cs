@@ -16,7 +16,7 @@ namespace Bar_Management.BusinessLogic {
 
         public NhaCungCapLogic() {
 
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<NhaCungCap>();
         }
 
@@ -33,8 +33,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(NhaCungCap obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
+    
 
         public bool Update(NhaCungCap obj) {
             var existedObj = _context.Set<NhaCungCap>().Local.FirstOrDefault(c => c.Id == obj.Id);

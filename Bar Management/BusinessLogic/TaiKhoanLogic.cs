@@ -28,7 +28,16 @@ namespace Bar_Management.BusinessLogic {
         public TaiKhoanLogic() {
 
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            Context = Singleton.Instance;
+            Context = Singleton.AppDbContext;
+            _repo = new GenericRepository<TaiKhoan>();
+            _roleLogic = new RoleLogic();
+            _nhanvienLogic = new NhanVienLogic();
+        }
+
+        public TaiKhoanLogic(AppDbContext appDbContext) {
+
+            _mapper = AutoMapperProfile.InitializeAutoMapper();
+            Context = appDbContext;
             _repo = new GenericRepository<TaiKhoan>();
             _roleLogic = new RoleLogic();
             _nhanvienLogic = new NhanVienLogic();
@@ -82,6 +91,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(TaiKhoan obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

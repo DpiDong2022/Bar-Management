@@ -131,7 +131,7 @@ namespace Bar_Management.OrderHistoryForm
 
         private void locBan_SelectedIndexChanged(object sender, EventArgs e) {
             if (locBan.SelectedItem != null) {
-                _banId = (locBan.SelectedItem as Ban).Id;
+                _banId = (locBan.SelectedItem as Ban).Id ?? 0;
             }
             _tableHoaDon = new SortableBindingList<HoaDonDto>(_hoaDonLogic.LocHoaDon(_banId, _taiKhoanId, _startDate, _endtDate).ToList());
             dataGridView1.DataSource = _tableHoaDon;

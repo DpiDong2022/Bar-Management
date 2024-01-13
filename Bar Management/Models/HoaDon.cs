@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 namespace Bar_Management.Models {
     public class HoaDon {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         public DateTime NgayTao { get; set; }
