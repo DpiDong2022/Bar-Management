@@ -20,6 +20,10 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Delete(Role obj) {
+            var existedNhanvien = _context.Set<Role>().Local.FirstOrDefault(c => c.Id == obj.Id);
+            if (existedNhanvien != null) {
+                this._context.Entry(existedNhanvien).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
             return _repo.Delete(obj);
         }
 

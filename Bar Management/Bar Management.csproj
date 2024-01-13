@@ -39,8 +39,8 @@
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="CloudinaryDotNet, Version=1.24.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
-      <HintPath>..\packages\CloudinaryDotNet.1.24.0\lib\net452\CloudinaryDotNet.dll</HintPath>
+    <Reference Include="CloudinaryDotNet, Version=1.25.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.25.0\lib\net452\CloudinaryDotNet.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -244,6 +244,7 @@
     <Compile Include="BusinessLogic\NguyenLieuLogic.cs" />
     <Compile Include="BusinessLogic\NhaCungCapLogic.cs" />
     <Compile Include="BusinessLogic\NhanVienLogic.cs" />
+    <Compile Include="BusinessLogic\NhanVienLogic2.cs" />
     <Compile Include="BusinessLogic\RoleLogic.cs" />
     <Compile Include="BusinessLogic\SettingLogic.cs" />
     <Compile Include="BusinessLogic\TaiKhoanLogic.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="BusinessLogic\ValidateTool.cs" />
     <Compile Include="DAO\AppDbContext.cs" />
     <Compile Include="DAO\MonAnOrderDTO.cs" />
+    <Compile Include="DAO\RepositoryTest.cs" />
     <Compile Include="DAO\Singleton.cs" />
     <Compile Include="DAO\GenericRepository.cs" />
     <Compile Include="DTO\BillDay.cs" />
@@ -348,6 +350,7 @@
     <Compile Include="Interfaces\OrderHistoryForm\OrderHistory.Designer.cs">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogicForTest\MonAnLogicForTest.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace Bar_Management.BusinessLogic.Tests {
     [TestClass()]
     public class NhanVienLogicTests {
-        private 
+        private NhanVienLogic _logic;
         [TestMethod()]
         public void DeleteTest() {
-            //
+            _logic = new NhanVienLogic();
 
-            Assert.IsTrue();
+            Assert.AreEqual(7, _logic.GetAll().Count());
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Bar_Management.DAO {
                 _context.SaveChanges();
                 return true;
             } catch (Exception) {
-
+                return false;
                 throw;
             }
         }

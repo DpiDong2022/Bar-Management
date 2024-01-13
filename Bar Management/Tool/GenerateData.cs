@@ -139,10 +139,10 @@ namespace Bar_Management.Tool {
         };
 
         static List<TaiKhoan> taiKhoans = new List<TaiKhoan>(){
-            new TaiKhoan(){ NhanVienId=1, MatKhau="admin", RoleId=1, SettingId=1, Ten="admin", IsDelete=false},
-            new TaiKhoan(){ NhanVienId=2, MatKhau="123123", RoleId=2, SettingId=1, Ten="andraw tate", IsDelete=false},
-            new TaiKhoan(){ NhanVienId=3, MatKhau="123123", RoleId=3, SettingId=1, Ten="le minh an", IsDelete=false},
-            new TaiKhoan(){ NhanVienId=4, MatKhau="123123", RoleId=3, SettingId=1, Ten="ha nghiem", IsDelete=false},
+            new TaiKhoan(){ NhanVienId=1, MatKhau="admin", RoleId=4, SettingId=1, Ten="admin", IsDelete=false},
+            new TaiKhoan(){ NhanVienId=2, MatKhau="123123", RoleId=5, SettingId=1, Ten="andraw tate", IsDelete=false},
+            new TaiKhoan(){ NhanVienId=3, MatKhau="123123", RoleId=6, SettingId=1, Ten="le minh an", IsDelete=false},
+            new TaiKhoan(){ NhanVienId=4, MatKhau="123123", RoleId=6, SettingId=1, Ten="ha nghiem", IsDelete=false},
         };
 
         static List<HoaDon> hoaDons = new List<HoaDon>(){
