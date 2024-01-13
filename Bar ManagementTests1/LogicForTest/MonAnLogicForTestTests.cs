@@ -125,10 +125,14 @@ namespace Bar_Management.LogicForTest.Tests {
         [DataRow("", 0, 1, true)]
         [DataRow("pizzA", 1, 5, true)]
         [DataRow("pizza", 1, 9, true)]
-        [DataRow("", 1, 3, true)]
+        [DataRow("n", 1, 3, true)]
         [TestMethod()]
         public void TimKiemTest(string keySearch, int trangThai, int loaiMonAnId, bool expected) {
+
+            //Tìm kiếm 
             IEnumerable<MonAn> monAns = _monAnLogicForTest.TimKiem(keySearch, trangThai, loaiMonAnId);
+
+            // Nếu tồn tại những món ăn khác trangthai, loaiMonAnId đầu vào thì sai (false)
             Assert.AreEqual(expected, monAns.Any(monAn => monAn.IsAvailable != trangThai
                                                     || monAn.LoaiMonAnId != loaiMonAnId
                                                     || !keySearch.Split(' ')
