@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bar_Management.BusinessLogic.Tests {
+namespace Bar_Management.BusinessLogic.Tests
+{
     [TestClass()]
-    public class NhanVienLogicTests {
-        private 
+    public class SettingLogicTests
+    {
         [TestMethod()]
-        public void DeleteTest() {
-            //
-
-            Assert.IsTrue();
+        public void DeleteTest()
+        {
+            Assert.Fail();
         }
     }
 }
