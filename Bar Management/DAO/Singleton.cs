@@ -11,7 +11,7 @@ namespace Bar_Management.DAO {
         private static int _taiKhoanId;
         private static int _banId;
 
-        public static AppDbContext Instance {
+        public static AppDbContext AppDbContext {
             get {
                 if (_instance == null) {
                     _instance = new AppDbContext();

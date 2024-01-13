@@ -21,7 +21,7 @@ namespace Bar_Management.DAO {
         private readonly DbSet<T> _set;
         private readonly AppDbContext _context;
         public GenericRepository() {
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _set = _context.Set<T>();
         }
 

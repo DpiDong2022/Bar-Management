@@ -23,7 +23,7 @@ namespace Bar_Management.BusinessLogic {
         public HoaDonLogic() {
 
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<HoaDon>();
             _repoTaiKhoan = new GenericRepository<TaiKhoan>();
             _repoBan = new GenericRepository<Ban>();
@@ -123,7 +123,9 @@ namespace Bar_Management.BusinessLogic {
             return hoadons.Select(hd => _mapper.Map<HoaDonDto>(hd));
         }
 
+
         public bool Insert(HoaDon obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

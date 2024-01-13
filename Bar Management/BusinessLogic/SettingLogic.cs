@@ -15,7 +15,12 @@ namespace Bar_Management.BusinessLogic {
 
         public SettingLogic() {
 
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
+            _repo = new GenericRepository<Setting>();
+        }
+        public SettingLogic(AppDbContext appDbContext) {
+
+            _context = appDbContext;
             _repo = new GenericRepository<Setting>();
         }
 
@@ -28,6 +33,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(Setting obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

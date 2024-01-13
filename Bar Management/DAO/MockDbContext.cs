@@ -5,7 +5,6 @@ using System.Linq;
 
 namespace Bar_Management.DAO {
     public class MockDbContext<T>: Mock<AppDbContext> where T : class {
-
         public MockDbContext(IEnumerable<T> data) {
             var mockSet = new Mock<DbSet<T>>();
             mockSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(data.AsQueryable().Provider);

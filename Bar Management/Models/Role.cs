@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Bar_Management.Models {
     public class Role {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [MaxLength(20)]

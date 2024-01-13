@@ -11,7 +11,7 @@ namespace Bar_Management.BusinessLogic {
 
         public RoleLogic() {
 
-            _context = Singleton.Instance;
+            _context = Singleton.AppDbContext;
             _repo = new GenericRepository<Role>();
         }
 
@@ -30,6 +30,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(Role obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Bar_Management.Models {
     public class TonKho {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         public int NguyenLieuId { get; set; }

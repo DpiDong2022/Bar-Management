@@ -26,7 +26,7 @@ namespace Bar_Management.BusinessLogic {
 
         public NhanVienLogic() {
             _mapper = AutoMapperProfile.InitializeAutoMapper();
-            Context = Singleton.Instance;
+            Context = Singleton.AppDbContext;
             _repo = new GenericRepository<NhanVien>();
         }
 
@@ -53,6 +53,7 @@ namespace Bar_Management.BusinessLogic {
         }
 
         public bool Insert(NhanVien obj) {
+            obj.Id = null;
             return _repo.Insert(obj);
         }
 

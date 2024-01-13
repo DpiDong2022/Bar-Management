@@ -6,14 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Dynamic;
+using Bar_ManagementTests1;
 
 namespace Bar_Management.BusinessLogic.Tests {
     [TestClass()]
     public class SettingLogicTests {
         private readonly SettingLogic _settingLogic;
+        private readonly TestSetup _testSetup;
 
         public SettingLogicTests() {
-            _settingLogic = new SettingLogic();
+            _testSetup = new TestSetup();
+            _settingLogic = new SettingLogic(_testSetup.MockSettings.Object);
             ;
         }
 

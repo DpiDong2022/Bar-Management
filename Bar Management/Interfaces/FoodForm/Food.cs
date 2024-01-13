@@ -148,14 +148,14 @@ namespace Bar_Management.FoodForm {
             LoaiMonAn loaiMonAn = LoaiMonAnComboBox.SelectedItem as LoaiMonAn;
             string trangThai = comboBoxTranthai.SelectedItem.ToString();
             // validate
-            bool isValid = Validate(tenMonAn, gia,moTa, loaiMonAn.Id, trangThai);
+            bool isValid = Validate(tenMonAn, gia,moTa, loaiMonAn.Id??0, trangThai);
             if (!isValid) return;
 
             MonAn monAn = new MonAn(){
                 TenMon = tenMonAn,
                 Gia = decimal.Parse(gia),
                 MoTa = moTa,
-                LoaiMonAnId = loaiMonAn.Id,
+                LoaiMonAnId = loaiMonAn.Id??0,
                 LoaiMonAn = loaiMonAn,
                 IsAvailable = trangThai == "Còn" ? 1:0
             };
@@ -246,7 +246,7 @@ namespace Bar_Management.FoodForm {
             GiaMonAnTextboxs.Text = (string)monAnDto.Gia;
             comboBoxTranthai.SelectedIndex = monAnDto.TrangThai == "Còn" ? 1 : 2;
 
-            int loaiMonAnId = monAnDto.LoaiMonAn.Id;
+            int loaiMonAnId = monAnDto.LoaiMonAn.Id??0;
 
             foreach (var item in LoaiMonAnComboBox.Items) {
                 if (((LoaiMonAn)item).Id == loaiMonAnId) {
@@ -282,7 +282,7 @@ namespace Bar_Management.FoodForm {
         // search
         private void textBox4_TextChanged(object sender, EventArgs e) {
 
-            int tenLoaiMonAnId = (LocloaiMAComboBox.SelectedItem as LoaiMonAn).Id;
+            int tenLoaiMonAnId = (LocloaiMAComboBox.SelectedItem as LoaiMonAn).Id??0;
             int trangThaiId = LocTrangThaicomboBox.SelectedIndex;
 
             if (trangThaiId == 0) {

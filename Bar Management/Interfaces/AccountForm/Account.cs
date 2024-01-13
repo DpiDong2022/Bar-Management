@@ -220,7 +220,7 @@ namespace Bar_Management.Interfaces.AccountForm
             string matKhau = txtMatkhau.Text.Trim();
             var nguoiDung = cbTennhanvien.SelectedItem;
             int tenNguoidungId = ((NhanVienDTO)(nguoiDung)).Id;
-            int tenRole = (cbRole.SelectedItem as Role).Id;
+            int tenRole = (cbRole.SelectedItem as Role).Id??0;
 
             // validate
             bool isValid = Validate(tenTk, tenRole, matKhau, tenNguoidungId);
@@ -324,7 +324,7 @@ namespace Bar_Management.Interfaces.AccountForm
             txtTen.Text = taiKhoanDTO.Ten;
             txtMatkhau.Text = taiKhoanDTO.MatKhau;
 
-            int RoleID = taiKhoanDTO.Role.Id;
+            int RoleID = taiKhoanDTO.Role.Id??0;
             foreach (var item in cbRole.Items)
             {
                 if (((Role)item).Id == RoleID) 
@@ -334,7 +334,7 @@ namespace Bar_Management.Interfaces.AccountForm
                 }
             }
 
-            int NhanvienID = taiKhoanDTO.NhanVien.Id;
+            int NhanvienID = taiKhoanDTO.NhanVien.Id??0;
             foreach (var item in cbTennhanvien.Items)
             {
                 if (((NhanVienDTO)item).Id == NhanvienID)
