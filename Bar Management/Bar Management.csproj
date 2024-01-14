@@ -241,6 +241,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\BanLogic.cs" />
     <Compile Include="BusinessLogic\ChiTieHoaDonLogic.cs" />
+    <Compile Include="BusinessLogic\ChiTietLogic.cs" />
     <Compile Include="BusinessLogic\DatBanTruocLogic.cs" />
     <Compile Include="BusinessLogic\HoaDonLogic.cs" />
     <Compile Include="BusinessLogic\LoaiMonAnLogic.cs" />

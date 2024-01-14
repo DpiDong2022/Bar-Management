@@ -47,6 +47,13 @@ namespace Bar_Management.BusinessLogic {
                 .Select(nhanvien => _mapper.Map<NhanVienDTO>(nhanvien));
             return result;
         }
+        public IEnumerable<NhanVien> GetAllNhanVien()
+        {
+            IEnumerable<NhanVien> result4 = _repo.GetAll().OrderByDescending(nv => nv.Luong.ToString().Replace(",", ""));
+
+            
+            return result4;
+        }
 
         public bool Insert(NhanVien obj) {
             return _repo.Insert(obj);
