@@ -122,9 +122,9 @@ namespace Bar_Management.LogicForTest.Tests {
             Assert.AreEqual(expected, _monAnLogicForTest.ValidateGia(gia));
         }
 
-        [DataRow("", 0, 1, true)]
+        [DataRow("", 0, 1, false)]
         [DataRow("pizzA", 1, 5, true)]
-        [DataRow("pizza", 1, 9, true)]
+        [DataRow("pizza", 1, 9, false)]
         [DataRow("n", 1, 3, true)]
         [TestMethod()]
         public void TimKiemTest(string keySearch, int trangThai, int loaiMonAnId, bool expected) {

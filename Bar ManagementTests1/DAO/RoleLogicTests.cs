@@ -24,7 +24,7 @@ namespace Bar_Management.DAO.Tests {
         [DataRow(18)]
         [DataRow(22)]
         [TestMethod()]
-        public void DeleteTest(int roleId) {
+        public void RoleDeleteTest(int roleId) {
             // sử dụng transaction để sau khi test có thể khiến dữ liệu trở lại ban đầu tránh
             // ảnh hưởng đến giữ liệu hiện có
             using (var transaction = _appDbContext.Database.BeginTransaction()) {
@@ -49,12 +49,12 @@ namespace Bar_Management.DAO.Tests {
         }
     
         [TestMethod()]
-        public void GetAllTest() {
+        public void RoleGetAllTest() {
             Assert.IsTrue(_appDbContext.Roles.Count() > 0);
         }
 
         [TestMethod()]
-        public void NotNullTest() {
+        public void RoleNotNullTest() {
             // kiểm tra số lượng bản ghi mặc định của phân quyền phải lớn hơn 0
             Assert.IsTrue(_appDbContext.Roles.Count() > 0);
         }
@@ -64,7 +64,7 @@ namespace Bar_Management.DAO.Tests {
         [DataRow("Nhan Vien 2","Nhan Vien 4", false)]
         [DataRow("Nhan Vien 3","Nhan Vien 3", true)]
         [TestMethod()]
-        public void InsertTest(string ten, string tenExpected, bool isOkExpected) {
+        public void RoleInsertTest(string ten, string tenExpected, bool isOkExpected) {
             using (var transaction = _appDbContext.Database.BeginTransaction()) {
                 // tạo object mới 
                 Role role = new Role(){Ten = ten};
