@@ -33,17 +33,7 @@ namespace Bar_Management.DAO {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
-            //optionsBuilder.UseSqlServer("server= DESKTOP-FJ29HTR; database=QuanLyBarHai; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-            optionsBuilder.UseSqlServer("server=DONG-LAPTOP\\DONGSQLSERVER; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
-// Updated upstream
-            //optionsBuilder.UseSqlServer("Server=172.20.10.2, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
-
-            //optionsBuilder.UseSqlServer("Server=192.168.1.113, 1433;Database=QuanLyBarBon;User Id=sa;Password=1;");
-// Stashed changes
+            optionsBuilder.UseSqlServer("server=192.168.1.253; database=QuanLyBarBon; trusted_connection=true; trustservercertificate=true; MultipleActiveResultSets=true");
         }
-
-        public override DatabaseFacade Database => base.Database;
-
     }
 }
